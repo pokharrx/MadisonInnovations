@@ -67,13 +67,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="studentHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="studentHome.aspx.cs">
+      <DependentUpon>studentHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentHome.aspx.designer.cs">
+      <DependentUpon>studentHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentMaster.Master.cs">
+      <DependentUpon>studentMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentMaster.Master.designer.cs">
+      <DependentUpon>studentMaster.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="studentMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

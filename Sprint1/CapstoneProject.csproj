@@ -75,7 +75,10 @@
     <Content Include="Login.aspx" />
     <Content Include="memberHome.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="NewCompany.aspx" />
+    <Content Include="NewCorporateSponsor.aspx" />
     <Content Include="NewInternship.aspx" />
+    <Content Include="NewJob.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -120,12 +123,33 @@
     <Compile Include="memberMaster.Master.designer.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="NewCompany.aspx.cs">
+      <DependentUpon>NewCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewCompany.aspx.designer.cs">
+      <DependentUpon>NewCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewCorporateSponsor.aspx.cs">
+      <DependentUpon>NewCorporateSponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewCorporateSponsor.aspx.designer.cs">
+      <DependentUpon>NewCorporateSponsor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NewInternship.aspx.cs">
       <DependentUpon>NewInternship.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewInternship.aspx.designer.cs">
       <DependentUpon>NewInternship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewJob.aspx.cs">
+      <DependentUpon>NewJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewJob.aspx.designer.cs">
+      <DependentUpon>NewJob.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddScholarship.aspx" />
+    <Content Include="CreateAccount.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="memberHome.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="AddScholarship.aspx.designer.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

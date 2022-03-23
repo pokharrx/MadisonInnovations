@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Job Opportunities</h2>
+    <h2>Job Opportunities: Test1 </h2>
     
     <%-- Gridview that shows all jobs --%>
     <asp:GridView

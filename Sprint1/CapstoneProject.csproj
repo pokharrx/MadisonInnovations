@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login.aspx" />
+    <Content Include="memberHome.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="studentProfilePage.aspx" />
     <Content Include="Web.config" />
@@ -79,6 +80,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberHome.aspx.cs">
+      <DependentUpon>memberHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberHome.aspx.designer.cs">
+      <DependentUpon>memberHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberMaster.Master.cs">
+      <DependentUpon>memberMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberMaster.Master.designer.cs">
+      <DependentUpon>memberMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +120,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="memberMaster.Master" />
     <None Include="packages.config" />
     <Content Include="studentMaster.Master" />
     <None Include="Web.Debug.config">

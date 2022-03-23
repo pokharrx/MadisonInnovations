@@ -6,7 +6,7 @@
     
     <%-- Gridview that shows all jobs --%>
     <asp:GridView
-        ID="grdJobResults"
+        ID="grdJob"
         runat="server"
         HorizontalAlign="Justify"
         AlternatingRowStyle="PowderBlue"
@@ -18,16 +18,15 @@
         CssClass="gridview">
         <Columns>
             <asp:BoundField HeaderText="Name" DataField="CompanyName" SortExpression="CompanyName"/>
-                                <asp:BoundField HeaderText="Address" DataField="CompanyAddress" SortExpression="CompanyAddress"/>
-                                <asp:BoundField HeaderText="Phone Number" DataField="CompanyPhone" SortExpression="CompanyPhone"/>
+                <asp:BoundField HeaderText="Job Title" DataField="JobTitle" SortExpression="JobTitle"/>
+                <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
+                <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
         </Columns>
     </asp:GridView>
 
     <%-- Data Sources for the gridviews --%>
     <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"
-            ConnectionString ="<%$ ConnectionStrings:Lab1 %>"
-            SelectCommand="Select * from Job"
-            UpdateCommand="UPDATE Job SET JobTitle=@JobTitle, JobYear=@JobYear, DateStart=@DateStart, DateEnd=@DateEnd 
-            WHERE JobID=@JobID">
+            ConnectionString ="<%$ ConnectionStrings:SDB %>"
+            SelectCommand="Select * from Job">
         </asp:SqlDataSource>
 </asp:Content>

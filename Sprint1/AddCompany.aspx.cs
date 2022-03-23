@@ -11,7 +11,7 @@ using System.Web.Configuration;
 
 namespace Sprint1
 {
-    public partial class AddScholarship : System.Web.UI.Page
+    public partial class AddCompany : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,13 +28,12 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
 
 
-                sc.CommandText = "INSERT INTO Scholarship (ScholarshipName, ScholarshipYear, Scholarship, GradeLevel, Major) VALUES ("
-                    + "@Name, @Year, @Description, @Amount, @Status)";
-                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtScholarshipName.Text)));
-                sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtScholarshipYear.Text)));
-                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtScholarshipDescription.Text)));
-                sc.Parameters.Add(new SqlParameter("@Amount", HttpUtility.HtmlEncode(txtScholarshipAmount.Text)));
-                sc.Parameters.Add(new SqlParameter("@Status", HttpUtility.HtmlEncode(txtScholarshipStatus.Text)));
+                sc.CommandText = "INSERT INTO Company (CompanyName, CompanyAddress, CompanyPhone) VALUES ("
+                    + "@Name, @Address, @Phone, @Grade, @Major)";
+                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtCompanyName.Text)));
+                sc.Parameters.Add(new SqlParameter("@Address", HttpUtility.HtmlEncode(txtCompanyAddress.Text)));
+                sc.Parameters.Add(new SqlParameter("@Phone", HttpUtility.HtmlEncode(txtCompanyPhone.Text)));
+                
 
 
 
@@ -47,7 +46,6 @@ namespace Sprint1
                 lblStatus.Text = "Error uploading!";
                 throw;
             }
-      
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Web.Configuration;
 
 namespace Sprint1
 {
-    public partial class AddScholarship : System.Web.UI.Page
+    public partial class AddInternship : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,13 +28,13 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
 
 
-                sc.CommandText = "INSERT INTO Scholarship (ScholarshipName, ScholarshipYear, Scholarship, GradeLevel, Major) VALUES ("
-                    + "@Name, @Year, @Description, @Amount, @Status)";
-                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtScholarshipName.Text)));
-                sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtScholarshipYear.Text)));
-                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtScholarshipDescription.Text)));
-                sc.Parameters.Add(new SqlParameter("@Amount", HttpUtility.HtmlEncode(txtScholarshipAmount.Text)));
-                sc.Parameters.Add(new SqlParameter("@Status", HttpUtility.HtmlEncode(txtScholarshipStatus.Text)));
+                sc.CommandText = "INSERT INTO Internship (InternshipTitle, DateStart, DateEnd, Description, ApplicationLink) VALUES ("
+                    + "@title, @Start, @End, @Description, @ApplicationLink)";
+                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtInternshipTitle.Text)));
+                sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtDateStart.Text)));
+                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtDateEnd.Text)));
+                sc.Parameters.Add(new SqlParameter("@Amount", HttpUtility.HtmlEncode(txtInternshipDescription.Text)));
+                sc.Parameters.Add(new SqlParameter("@Status", HttpUtility.HtmlEncode(txtApplicationLink.Text)));
 
 
 
@@ -47,7 +47,6 @@ namespace Sprint1
                 lblStatus.Text = "Error uploading!";
                 throw;
             }
-      
         }
     }
 }

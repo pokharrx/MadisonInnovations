@@ -11,7 +11,7 @@ using System.Web.Configuration;
 
 namespace Sprint1
 {
-    public partial class AddScholarship : System.Web.UI.Page
+    public partial class AddCorporateSponsor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,14 +28,13 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
 
 
-                sc.CommandText = "INSERT INTO Scholarship (ScholarshipName, ScholarshipYear, Scholarship, GradeLevel, Major) VALUES ("
-                    + "@Name, @Year, @Description, @Amount, @Status)";
-                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtScholarshipName.Text)));
-                sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtScholarshipYear.Text)));
-                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtScholarshipDescription.Text)));
-                sc.Parameters.Add(new SqlParameter("@Amount", HttpUtility.HtmlEncode(txtScholarshipAmount.Text)));
-                sc.Parameters.Add(new SqlParameter("@Status", HttpUtility.HtmlEncode(txtScholarshipStatus.Text)));
-
+                sc.CommandText = "INSERT INTO CorporateSponsor (ContactName, ContactPhone, ContactEmail, Role) VALUES ("
+                    + "@Name, @Phone, @Email, @Role)";
+                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtContactName.Text)));
+                sc.Parameters.Add(new SqlParameter("@Phone", HttpUtility.HtmlEncode(txtContactPhone.Text)));
+                sc.Parameters.Add(new SqlParameter("@Email", HttpUtility.HtmlEncode(txtContactEmail.Text)));
+                sc.Parameters.Add(new SqlParameter("@Role", HttpUtility.HtmlEncode(txtContactRole.Text)));
+                
 
 
                 sc.ExecuteNonQuery();
@@ -47,7 +46,6 @@ namespace Sprint1
                 lblStatus.Text = "Error uploading!";
                 throw;
             }
-      
         }
     }
 }

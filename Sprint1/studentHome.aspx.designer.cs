@@ -24,6 +24,24 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.GridView grdJob;
 
         /// <summary>
+        /// grdInternship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdInternship;
+
+        /// <summary>
+        /// grdScholarship control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdScholarship;
+
+        /// <summary>
         /// dtasrcAllJobs control.
         /// </summary>
         /// <remarks>
@@ -31,5 +49,23 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllJobs;
+
+        /// <summary>
+        /// dtasrcAllInternships control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllInternships;
+
+        /// <summary>
+        /// dtasrcAllScholarships control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllScholarships;
     }
 }

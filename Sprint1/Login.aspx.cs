@@ -59,12 +59,12 @@ namespace Sprint1
                             if (persontype == "Member" & activation == "Active")
                             {
                                 Session["Username"] = txtUsername.Text;
-                                Response.Redirect("MemberPage.aspx");
+                                Response.Redirect("memberHome.aspx");
                             }
                             else if (persontype == "Student" & activation == "Active")
                             {
                                 Session["Username"] = txtUsername.Text;
-                                Response.Redirect("StudentPage.aspx");
+                                Response.Redirect("studentHome.aspx");
                             }
                             else if (persontype == "Admin" & activation == "Active")
                             {

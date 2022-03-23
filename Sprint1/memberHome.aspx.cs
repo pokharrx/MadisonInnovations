@@ -11,6 +11,7 @@ namespace Sprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //data binding for gridviews
             grdStudents.DataSourceID = "dtasrcAllStudents";
             grdStudents.DataBind();
             grdCompanies.DataSourceID = "dtasrcAllCompanies";

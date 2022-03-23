@@ -84,7 +84,6 @@
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="studentHome.aspx" />
-    <Content Include="studentProfilePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -166,13 +165,6 @@
     </Compile>
     <Compile Include="studentMaster.Master.designer.cs">
       <DependentUpon>studentMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="studentProfilePage.aspx.cs">
-      <DependentUpon>studentProfilePage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="studentProfilePage.aspx.designer.cs">
-      <DependentUpon>studentProfilePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

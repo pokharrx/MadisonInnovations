@@ -75,6 +75,7 @@
     <Content Include="Login.aspx" />
     <Content Include="memberHome.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="NewInternship.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="memberMaster.Master.designer.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NewInternship.aspx.cs">
+      <DependentUpon>NewInternship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewInternship.aspx.designer.cs">
+      <DependentUpon>NewInternship.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

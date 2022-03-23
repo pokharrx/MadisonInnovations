@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="memberMaster.master.cs" Inherits="Sprint1.memberMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="memberMaster.master.cs" Inherits="CapstoneProject.memberMaster" %>
 
 <!DOCTYPE html>
 

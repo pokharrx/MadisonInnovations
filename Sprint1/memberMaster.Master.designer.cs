@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sprint1
+namespace CapstoneProject
 {
 
 

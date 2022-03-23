@@ -13,6 +13,14 @@ namespace Sprint1
         {
             grdStudents.DataSourceID = "dtasrcAllStudents";
             grdStudents.DataBind();
+            grdCompanies.DataSourceID = "dtasrcAllCompanies";
+            grdCompanies.DataBind();
+            grdJobs.DataSourceID = "dtasrcAllJobs";
+            grdJobs.DataBind();
+            grdInternships.DataSourceID = "dtasrcAllInternships";
+            grdInternships.DataBind();
+            grdScholarships.DataSourceID = "dtasrcAllScholarships";
+            grdScholarships.DataBind();
         }
     }
 }

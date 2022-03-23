@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%-- View Students --%>
-    <div>
-        <h2>View Students</h2>
+    <%-- Students --%>
+    <div id="Students">
+        <h2>Students</h2>
         <asp:GridView
             ID="grdStudents"
             runat="server"
@@ -27,13 +27,115 @@
             </Columns>
         </asp:GridView>
     </div>
-    <%-- View Companies --%>
-    <div>
-        <h2></h2>
+    <br />
+    <%-- Companies --%>
+    <div id="Companies">
+        <h2>Companies</h2>
+        <asp:GridView 
+            ID="grdCompanies"
+            runat="server" 
+            HorizontalAlign="Justify"
+            AlternatingRowStyle-BackColor="PowderBlue"
+            EmptyDataText="No Company Selected"
+            AllowSorting="true"
+            AutoGenerateColumns="false"
+            DataKeyNames="CompanyID"
+            CellPadding="10">
+            <Columns>
+                <asp:BoundField HeaderText="Name" DataField="CompanyName" SortExpression="CompanyName"/>
+                <asp:BoundField HeaderText="Address" DataField="CompanyAddress" SortExpression="CompanyAddress"/>
+                <asp:BoundField HeaderText="Phone Number" DataField="CompanyPhone" SortExpression="CompanyPhone"/>
+            </Columns>
+        </asp:GridView>
+    </div>
+    <br />
+    <%-- Jobs --%>
+    <div id="Jobs">
+        <h2>Jobs</h2>
+        <asp:GridView 
+            ID="grdJobs" 
+            runat="server"
+            HorizontalAlign="Justify"
+            AlternatingRowStyle-BackColor="PowderBlue"
+            EmptyDataText="No Job Selected"
+            AllowSorting="true"
+            AutoGenerateColumns="false"
+            DataKeyNames="JobID"
+            CellPadding="10">
+            <Columns>
+                <asp:BoundField HeaderText="Title" DataField="JobTitle" SortExpression="JobTitle"/> 
+                <asp:BoundField HeaderText="Start Date" DataField="DateStart" SortExpression="DateStart"/>
+                <asp:BoundField HeaderText="End Date" DataField="DateEnd" SortExpression="DateEnd"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
+                <asp:BoundField HeaderText="Details" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
+            </Columns>
+        </asp:GridView>
+    </div>
+    <br />
+    <%-- Internships --%>
+    <div id="Internships">
+        <h2>Internships</h2>
+        <asp:GridView 
+            ID="grdInternships" 
+            runat="server"
+            HorizontalAlign="Justify"
+            AlternatingRowStyle-BackColor="PowderBlue"
+            EmptyDataText="No Internship Selected"
+            AllowSorting="true"
+            AutoGenerateColumns="false"
+            DataKeyNames="InternshipID"
+            CellPadding="10">
+            <Columns>
+                <asp:BoundField HeaderText="Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
+                <asp:BoundField HeaderText="Start Date" DataField="DateStart" SortExpression="DateStart"/>
+                <asp:BoundField HeaderText="End Date" DataField="DateEnd" SortExpression="DateEnd"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
+                <asp:BoundField HeaderText="Details" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
+            </Columns>
+        </asp:GridView>
+    </div>
+    <br />
+    <%-- Scholarships --%>
+    <div id="Scholarships">
+        <h2>Scholarships</h2>
+        <asp:GridView 
+            ID="grdScholarships" 
+            runat="server"
+            HorizontalAlign="Justify"
+            AlternatingRowStyle-BackColor="PowderBlue"
+            EmptyDataText="No Scholarship Selected"
+            AllowSorting="true"
+            AutoGenerateColumns="false"
+            DataKeyNames="ScholarshipID"
+            CellPadding="10">
+            <Columns>
+                <asp:BoundField HeaderText="Name" DataField="ScholarshipName" SortExpression="ScholarshipName"/>
+                <asp:BoundField HeaderText="Year" DataField="ScholarshipYear" SortExpression="ScholarshipYear"/>
+                <asp:BoundField HeaderText="Amount" DataField="ScholarshipAmount" SortExpression="ScholarshipAmount"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
+                <asp:BoundField HeaderText="Status" DataField="Status" SortExpression="Status"/>
+            </Columns>
+        </asp:GridView>
     </div>
     <%-- Datasources --%>
     <asp:SqlDataSource ID="dtasrcAllStudents" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
         SelectCommand="Select * from Student Order By LastName ASC">
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="dtasrcAllCompanies" runat="server"
+        ConnectionString ="<%$ ConnectionStrings:SDB %>"
+        SelectCommand="Select * from Company Order By CompanyName ASC">
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"
+        ConnectionString ="<%$ ConnectionStrings:SDB %>"
+        SelectCommand="Select * from Job">
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="dtasrcAllInternships" runat="server"
+        ConnectionString ="<%$ ConnectionStrings:SDB %>"
+        SelectCommand="Select * from Internship">
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="dtasrcAllScholarships" runat="server"
+        ConnectionString ="<%$ ConnectionStrings:SDB %>"
+        SelectCommand="Select * from Scholarship">
     </asp:SqlDataSource>
 </asp:Content>

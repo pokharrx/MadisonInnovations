@@ -23,7 +23,7 @@
     <asp:TextBox ID="txtApplicationLink" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApplicationLink" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
     <br />
-    <asp:Button ID="btnSave" runat="server" Text="Save Company" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" runat="server" Text="Save Internship" OnClick="btnSave_Click" />
     <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>

@@ -28,8 +28,8 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
 
 
-                sc.CommandText = "INSERT INTO Scholarship (ScholarshipName, ScholarshipYear, ScholarshipAmount, Description, Status) VALUES ("
-                    + "@Name, @Year, @Description, @Amount, @Status)";
+                sc.CommandText = "INSERT INTO Scholarship (ScholarshipName, ScholarshipYear, ScholarshipAmount,  Description, Status) VALUES ("
+                    + "@Name, @Year, @Amount, @Description, @Status)";
                 sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtScholarshipName.Text)));
                 sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtScholarshipYear.Text)));
                 sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtScholarshipDescription.Text)));

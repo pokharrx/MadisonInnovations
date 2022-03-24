@@ -23,7 +23,7 @@
     <asp:Label ID="lblScholarshipStatus" runat="server" Text="Enter Scholarship Status: "></asp:Label>
     <asp:TextBox ID="txtScholarshipStatus" runat="server"></asp:TextBox>
     <br />
-    <asp:Button ID="btnSave" runat="server" Text="Save Company" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" runat="server" Text="Save Scholarship" OnClick="btnSave_Click" />
     <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>

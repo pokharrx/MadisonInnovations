@@ -22,7 +22,7 @@
     <asp:Label ID="lblApplicationLink" runat="server" Text="Enter Job Application Link: "></asp:Label>
     <asp:TextBox ID="txtApplicationLink" runat="server"></asp:TextBox>
     <br />
-    <asp:Button ID="btnSave" runat="server" Text="Save Company" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" runat="server" Text="Save Job" OnClick="btnSave_Click" />
     <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>

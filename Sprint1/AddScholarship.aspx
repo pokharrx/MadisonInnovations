@@ -14,7 +14,7 @@
     <asp:Label ID="lblScholarshipAmount" runat="server" Text="Enter Scholarship Amount:"></asp:Label>
     <asp:TextBox ID="txtScholarshipAmount" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtScholarshipAmount" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
-    <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" ControlToValidate="txtScholarshipAmount" MinimumValue="0" ForeColor="Red" Text="Must be an amount above 0" MaximumValue="500000000"></asp:RangeValidator>
+    
     <br />
     <asp:Label ID="lblScholarshipDescription" runat="server" Text="Enter Scholarship Description: "></asp:Label>
     <asp:TextBox ID="txtScholarshipDescription" runat="server"></asp:TextBox>

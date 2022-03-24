@@ -11,6 +11,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
+        <div id="navMenu">
+            <a href="memberHome.aspx">Home</a>
+            <a href="AddScholarship.aspx">Add Scholarship</a>
+            <a href="NewCompany.aspx">Add Company</a>
+            <a href="NewCorporateSponsor.aspx">Add Corporate Sponsor</a>
+            <a href="NewInternship.aspx">Add Internship</a>
+            <a href="NewJob.aspx">Add Job</a>
+        </div>    
+            <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

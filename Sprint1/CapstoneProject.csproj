@@ -83,6 +83,7 @@
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="StudentAccountProfile.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentAccountProfile.aspx.cs">
+      <DependentUpon>StudentAccountProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAccountProfile.aspx.designer.cs">
+      <DependentUpon>StudentAccountProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="studentHome.aspx.cs">
       <DependentUpon>studentHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

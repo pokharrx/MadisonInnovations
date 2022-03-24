@@ -29,7 +29,7 @@ namespace Sprint1
 
 
                 sc.CommandText = "INSERT INTO Company (CompanyName, CompanyAddress, CompanyPhone) VALUES ("
-                    + "@Name, @Address, @Phone, @Grade, @Major)";
+                    + "@Name, @Address, @Phone)";
                 sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtCompanyName.Text)));
                 sc.Parameters.Add(new SqlParameter("@Address", HttpUtility.HtmlEncode(txtCompanyAddress.Text)));
                 sc.Parameters.Add(new SqlParameter("@Phone", HttpUtility.HtmlEncode(txtCompanyPhone.Text)));

@@ -30,11 +30,11 @@ namespace Sprint1
 
                 sc.CommandText = "INSERT INTO Internship (InternshipTitle, DateStart, DateEnd, Description, ApplicationLink) VALUES ("
                     + "@title, @Start, @End, @Description, @ApplicationLink)";
-                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtInternshipTitle.Text)));
-                sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtDateStart.Text)));
-                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtDateEnd.Text)));
-                sc.Parameters.Add(new SqlParameter("@Amount", HttpUtility.HtmlEncode(txtInternshipDescription.Text)));
-                sc.Parameters.Add(new SqlParameter("@Status", HttpUtility.HtmlEncode(txtApplicationLink.Text)));
+                sc.Parameters.Add(new SqlParameter("@title", HttpUtility.HtmlEncode(txtInternshipTitle.Text)));
+                sc.Parameters.Add(new SqlParameter("@Start", HttpUtility.HtmlEncode(txtDateStart.Text)));
+                sc.Parameters.Add(new SqlParameter("@End", HttpUtility.HtmlEncode(txtDateEnd.Text)));
+                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtInternshipDescription.Text)));
+                sc.Parameters.Add(new SqlParameter("@ApplicationLink", HttpUtility.HtmlEncode(txtApplicationLink.Text)));
 
 
 

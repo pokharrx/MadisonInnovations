@@ -19,7 +19,7 @@
     <asp:TextBox ID="txtContactRole" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtContactRole" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
     <br />
-    <asp:Button ID="btnSave" runat="server" Text="Save Company" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" runat="server" Text="Save Contact" OnClick="btnSave_Click" />
     <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>

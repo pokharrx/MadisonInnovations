@@ -25,6 +25,8 @@
         <br />
         <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
         <br />
+        <a href="CreateAccount.aspx">Sign up</a>
+        <br />
         <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
         </div>
     </form>

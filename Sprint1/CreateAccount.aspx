@@ -67,6 +67,9 @@
         <br />
             <%--STATUS LABEL--%>
         <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+        <br />
+            <%--HYPER LINK TO LOGIN--%>
+        <a href="Login.aspx">Login</a>
         </div>
     </form>
 </body>

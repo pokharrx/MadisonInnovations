@@ -365,10 +365,32 @@ namespace Sprint1
             grdScholarships.DataSource = dt;
             grdScholarships.DataBind();
         }
+        protected void grStudents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdStudents.SelectedRow.Cells[3].Text;
+            String membersQuery = "SELECT StudentID FROM Student WHERE EmailAddress ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditStudentID"] = queryResults["StudentID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
 
         protected void btnEditStudent_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("editStudent.aspx");
         }
     }
 }       

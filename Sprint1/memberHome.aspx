@@ -17,8 +17,15 @@
             AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="StudentID"
+            AutoGenerateSelectButton="true"
+            OnSelectedIndexChanged="grStudents_SelectedIndexChanged"
             CellPadding="10">    
             <Columns>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnEditStudent" Text="Edit" OnClick="btnEditStudent_Click" runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField HeaderText="First Name" DataField="FirstName" SortExpression="FirstName"/>
                 <asp:BoundField HeaderText="Last Name" DataField="LastName" SortExpression="LastName"/>
                 <asp:BoundField HeaderText="Email" DataField="EmailAddress" SortExpression="EmailAddress"/>
@@ -27,11 +34,7 @@
                 <asp:BoundField HeaderText="Major" DataField="Major" SortExpression="Major"/>
                 <asp:BoundField HeaderText="Grade" DataField="Grade" SortExpression="Grade"/>
                 <asp:BoundField HeaderText="Employment Status" DataField="EmploymentStatus" SortExpression="EmploymentStatus"/>
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:Button ID="btnEditStudent" Text="Edit" OnClick="btnEditStudent_Click" runat="server" />
-                    </ItemTemplate>
-                </asp:TemplateField>
+            
             </Columns>
         </asp:GridView>
     </div>

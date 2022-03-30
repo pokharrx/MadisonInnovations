@@ -392,5 +392,41 @@ namespace Sprint1
         {
             Response.Redirect("editStudent.aspx");
         }
+
+        protected void grCompanies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnEditCompanies_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editStudent.aspx");
+        }
+
+        protected void grJobs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnEditJobs_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editStudent.aspx");
+        }
+
+        protected void grInternships_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnEditInternships_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editStudent.aspx");
+        }
+
+        protected void grScholarships_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnEditScholarships_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editStudent.aspx");
+        }
     }
 }       

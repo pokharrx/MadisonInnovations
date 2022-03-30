@@ -70,10 +70,11 @@ namespace Sprint1
         protected void lstStudentResume_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblSelectedIndex.Text = lstStudentResume.SelectedValue;
+
             
         }
 
-        protected void bttnpdf_Click(object sender, EventArgs e)
+            protected void bttnpdf_Click(object sender, EventArgs e)
         {
             string StudentResumename = lblSelectedIndex.Text;
             string FilePath = Server.MapPath("Resume") + "\\" + StudentResumename; //changed this from student resume to resume
@@ -118,8 +119,62 @@ namespace Sprint1
 
         }
 
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            
+            String sqlQuery = "UPDATE Student SET FirstName = @FirstName, LastName=@LastName, EmailAddress=@EmailAddress, PhoneNumber=@PhoneNumber, GradYear=@GradYear, Major=@Major, Grade=@Grade, EmploymentStatus=@EmploymentStatus WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+
+            SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnect);
+            sqlCommand.Parameters.AddWithValue("@FirstName", txtStudentFirstName.Text);
+            sqlCommand.Parameters.AddWithValue("@LastName", txtStudentLastName.Text);
+            sqlCommand.Parameters.AddWithValue("@EmailAddress", txtStudentEmail.Text);
+            sqlCommand.Parameters.AddWithValue("@PhoneNumber", txtStudentPhoneNumber.Text);
+            sqlCommand.Parameters.AddWithValue("@GradYear", txtExpectedGraduation.Text);
+            sqlCommand.Parameters.AddWithValue("@Major", txtMajor.Text);
+            sqlCommand.Parameters.AddWithValue("@Grade", txtGrade.Text);
+            sqlCommand.Parameters.AddWithValue("@EmploymentStatus", txtEmploymentStatus.Text);
+
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = sqlQuery;
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+
+            // Close all related connections
+            queryResults.Close();
+            sqlConnect.Close();
+
+            Response.Redirect("StudentAccountProfile.aspx");
+
+        }
+
+        protected void btnPopulate_Click(object sender, EventArgs e)
+        {
+            String sqlQuery2 = "SELECT * FROM Student WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
+            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand2 = new SqlCommand();
+            sqlCommand2.Parameters.AddWithValue("@StudentUserName", Session["StudentUserName"]);
+            sqlCommand2.Connection = sqlConnect2;
+            sqlCommand2.CommandType = CommandType.Text;
+            sqlCommand2.CommandText = sqlQuery2;
+            sqlConnect2.Open();
+            SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
 
 
+            while (queryResults2.Read())
+
+            {
+                txtStudentFirstName.Text = queryResults2["FirstName"].ToString();
+                txtStudentLastName.Text = queryResults2["LastName"].ToString();
+                txtStudentEmail.Text = queryResults2["EmailAddress"].ToString();
+                txtStudentPhoneNumber.Text = queryResults2["PhoneNumber"].ToString();
+                txtExpectedGraduation.Text = queryResults2["GradYear"].ToString();
+                txtMajor.Text = queryResults2["Major"].ToString();
+                txtGrade.Text = queryResults2["Grade"].ToString();
+                txtEmploymentStatus.Text = queryResults2["EmploymentStatus"].ToString();
+
+            }
+        }
     }
 
 

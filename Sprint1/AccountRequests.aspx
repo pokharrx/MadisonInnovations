@@ -27,8 +27,14 @@
         </asp:DetailsView>
         <br />
         <asp:Button ID="btnAuthorizeAccount" runat="server" Text="Authorize Account" OnClick="btnAuthorizeAccount_Click"/>
-        <asp:Button ID="Button2" runat="server" Text="Button" />
+        <asp:Button ID="btnUnAuthorizeAccount" runat="server" Text="Decline Account" OnClick="btnUnAuthorizeAccount_Click"/>
     </div>
+    <br />
+    <asp:Label ID="lblVerification" Visible="false" runat="server" Text="Are you sure you want to decline this user?"></asp:Label>
+    <br />
+    <asp:Button ID="btnYes" Visible="false" runat="server" Text="Yes" OnClick="btnYes_Click"/>
+    <asp:Button ID="btnNo" Visible="false" runat="server" Text="No" OnClick="btnNo_Click"/>
+
     <asp:SqlDataSource ID="dtsUnauthorizedUsers"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:AUTH %>"

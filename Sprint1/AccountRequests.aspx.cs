@@ -44,5 +44,24 @@ namespace Sprint1
 
             }
         }
+
+        protected void btnUnAuthorizeAccount_Click(object sender, EventArgs e)
+        {
+            lblVerification.Visible = true;
+            btnYes.Visible = true;
+            btnNo.Visible = true;
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            lblVerification.Visible = false;
+            btnYes.Visible = false;
+            btnNo.Visible = false;
+        }
     }
 }

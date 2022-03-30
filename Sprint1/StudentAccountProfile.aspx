@@ -18,7 +18,7 @@
             CellPadding="10">    
             <Columns>
                  <%-- Bind Data Fields --%>
-                <asp:CommandField ShowEditButton="True" />
+                <asp:CommandField ShowEditButton="false" />
                 <asp:BoundField Visible="false"  DataField="StudentID" HeaderText="StudentID" InsertVisible="False" ReadOnly="True" SortExpression="StudentID" />
                 <asp:BoundField HeaderText="First Name" DataField="FirstName" SortExpression="FirstName"/>
                 <asp:BoundField HeaderText="Last Name" DataField="LastName" SortExpression="LastName"/>
@@ -28,6 +28,7 @@
                 <asp:BoundField HeaderText="Major" DataField="Major" SortExpression="Major"/>
                 <asp:BoundField HeaderText="Grade" DataField="Grade" SortExpression="Grade"/>
                 <asp:BoundField HeaderText="Employment Status" DataField="EmploymentStatus" SortExpression="EmploymentStatus"/>
+
             </Columns>
         </asp:GridView>
     </div>

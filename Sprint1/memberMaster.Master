@@ -50,6 +50,7 @@
             <a href="NewCorporateSponsor.aspx">Add Corporate Sponsor |</a>
             <a href="NewInternship.aspx">Add Internship |</a>
             <a href="NewJob.aspx">Add Job</a>
+            <a href="memberAccountProfile.aspx">My Account</a>
         </div>    
             <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

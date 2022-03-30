@@ -74,6 +74,7 @@
     <Content Include="AddScholarship.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="CreateAccount.aspx" />
+    <Content Include="editStudent.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="memberAccountProfile.aspx" />
     <Content Include="memberHome.aspx" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="CreateAccount.aspx.designer.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editStudent.aspx.cs">
+      <DependentUpon>editStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editStudent.aspx.designer.cs">
+      <DependentUpon>editStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

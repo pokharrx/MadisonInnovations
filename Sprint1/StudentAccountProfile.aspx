@@ -46,7 +46,7 @@
         <asp:Label ID="Label2" runat="server" Text="File that is linked to your acccount"></asp:Label>
         <br />
         <asp:ListBox ID="lstStudentResume" runat="server"
-            AutoPostBack="True" 
+            AutoPostBack="false" 
             DataSourceID="sqlsrcStudentResumeLB"
             DataTextField="Resume"
             OnSelectedIndexChanged="lstStudentResume_SelectedIndexChanged">
@@ -54,6 +54,9 @@
         <asp:Label ID="lblSelectedIndex" runat="server" Text="Index"></asp:Label>
         <br />
         <asp:Button ID="bttnpdf" runat="server" Text="Click to view PDF" Font-Bold="True" OnClick="bttnpdf_Click" /> 
+        <br />
+        <br />
+
         
         <asp:SqlDataSource 
             ID="sqlsrcStudentResumeLB" 
@@ -67,11 +70,11 @@
             ID="SqlLoggedinStudent" 
             runat="server" 
             ConnectionString="<%$ ConnectionStrings:SDB %>" 
-            SelectCommand="SELECT [StudentID], [FirstName], [LastName], [EmailAddress], [PhoneNumber], [GradYear], [Major], [Grade], [EmploymentStatus] FROM [Student] WHERE ([StudentID] = @StudentID)" 
+            SelectCommand="SELECT [StudentID], [FirstName], [LastName], [EmailAddress], [PhoneNumber], [GradYear], [Major], [Grade], [EmploymentStatus] FROM [Student] WHERE ([StudentUserName] = @StudentUserName)" 
             UpdateCommand="UPDATE Student SET FirstName =@FirstName , LastName =@LastName , EmailAddress =@EmailAddress , 
-            PhoneNumber =@PhoneNumber , GradYear =@GradYear , Major =@Major ,  Grade =@Grade , EmploymentStatus =@EmploymentStatus WHERE ([StudentID] = @StudentID)">
+            PhoneNumber =@PhoneNumber , GradYear =@GradYear , Major =@Major ,  Grade =@Grade , EmploymentStatus =@EmploymentStatus WHERE ([StudentUserName] = @StudentUserName)">
         <SelectParameters>
-            <asp:SessionParameter Name="StudentID" SessionField="StudentID" Type="Int32" />
+            <asp:SessionParameter Name="StudentUserName" SessionField="StudentUserName" Type="String" />
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="FirstName" />

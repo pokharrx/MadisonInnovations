@@ -18,8 +18,8 @@ namespace Sprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Hard coding Session Student ID until all the SQL data is inuptes
-            //Session["StudentID"] = 1;
+            
+            Session["StudentUserName"] = Session["Username"].ToString();
             updateFROMDB();
 
         }
@@ -42,7 +42,7 @@ namespace Sprint1
                     string filename = fileUploadText.FileName;
                     txtDisplay.Text = filename + " has been saved to your account. To replace the uploaded file, upload another one and it will replace.";
                     //update Resume column from null to Resume file name
-                    String sqlQuery = "UPDATE Student SET Resume = '" + filename + "' WHERE StudentUsername = " + Session["Username"];
+                    String sqlQuery = "UPDATE Student SET Resume = '" + filename + "' WHERE StudentUserName = '" + Session["StudentUserName"].ToString()+"'" ;
 
                     SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
 
@@ -70,6 +70,7 @@ namespace Sprint1
         protected void lstStudentResume_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblSelectedIndex.Text = lstStudentResume.SelectedValue;
+            
         }
 
         protected void bttnpdf_Click(object sender, EventArgs e)

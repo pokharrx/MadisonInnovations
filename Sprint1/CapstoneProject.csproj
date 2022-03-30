@@ -71,10 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddScholarship.aspx" />
+    <Content Include="adminHome.aspx" />
     <Content Include="CreateAccount.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="memberAccountProfile.aspx" />
     <Content Include="memberHome.aspx" />
+    <Content Include="adminMaster.Master" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="NewCompany.aspx" />
     <Content Include="NewCorporateSponsor.aspx" />
@@ -95,6 +97,20 @@
     </Compile>
     <Compile Include="AddScholarship.aspx.designer.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminHome.aspx.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminHome.aspx.designer.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminMaster.Master.cs">
+      <DependentUpon>adminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMaster.Master.designer.cs">
+      <DependentUpon>adminMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>

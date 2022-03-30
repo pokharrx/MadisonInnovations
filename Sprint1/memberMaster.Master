@@ -13,6 +13,7 @@
         }
         .right {
             margin-top: 1%;
+            padding: 5px;
             float: right;
         }
         a:link, a:visited {
@@ -39,7 +40,8 @@
 <body>
     <form id="form1" runat="server">       
         <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="right" OnClick="btnLogout_Click"/>
-        <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>
+        <a href="memberAccountProfile.aspx" class="right">My Profile</a>
+        <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>      
         <div>
         <div id="navMenu">
             <a href="memberHome.aspx">Home |</a>

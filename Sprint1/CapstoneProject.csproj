@@ -73,6 +73,7 @@
     <Content Include="AddScholarship.aspx" />
     <Content Include="CreateAccount.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="memberAccountProfile.aspx" />
     <Content Include="memberHome.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="NewCompany.aspx" />
@@ -108,6 +109,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberAccountProfile.aspx.cs">
+      <DependentUpon>memberAccountProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberAccountProfile.aspx.designer.cs">
+      <DependentUpon>memberAccountProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="memberHome.aspx.cs">
       <DependentUpon>memberHome.aspx</DependentUpon>

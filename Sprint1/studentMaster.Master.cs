@@ -11,7 +11,21 @@ namespace Sprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Username"] != null)
+            {
+                lblUserName.Text = "Welcome, " + Session["Username"].ToString() + "!";
+            }
+            else
+            {
+                Session["MustLogin"] = "You Must Login To Access That Page";
+                Response.Redirect("Login.aspx");
+            }
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }

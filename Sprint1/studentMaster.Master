@@ -7,9 +7,20 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        body {
+            margin-bottom: 5%;
+        }
+        .right {
+            margin-top: 1%;
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="right" OnClick="btnLogout_Click"/>
+        <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

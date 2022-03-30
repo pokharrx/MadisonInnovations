@@ -1,16 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/memberMaster.Master" AutoEventWireup="true" CodeBehind="memberHome.aspx.cs" Inherits="Sprint1.memberHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/memberMaster.Master" AutoEventWireup="true" CodeBehind="memberHome.aspx.cs" Inherits="Sprint1.memberHome" MaintainScrollPositionOnPostback="true" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%-- Students --%>
     <div id="Students">
         <h2>Students</h2>
+        <asp:TextBox ID="txtStudentSearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnStudentSearch" runat="server" Text="Search" OnClick="btnStudentSearch_Click" />
+        <asp:Button ID="btnAllStudents" runat="server" Text="View All" OnClick="btnAllStudents_Click"/>
         <asp:GridView
             ID="grdStudents"
             runat="server"
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
-            EmptyDataText="No Student Selected"
+            EmptyDataText="No Student Found"
             AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="StudentID"
@@ -31,12 +34,15 @@
     <%-- Companies --%>
     <div id="Companies">
         <h2>Companies</h2>
+        <asp:TextBox ID="txtCompanySearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnCompanySearch" runat="server" Text="Search" OnClick="btnCompanySearch_Click" />
+        <asp:Button ID="btnAllCompanies" runat="server" Text="View All" OnClick="btnAllCompanies_Click"/>
         <asp:GridView 
             ID="grdCompanies"
             runat="server" 
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
-            EmptyDataText="No Company Selected"
+            EmptyDataText="No Company Found"
             AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="CompanyID"
@@ -52,12 +58,15 @@
     <%-- Jobs --%>
     <div id="Jobs">
         <h2>Jobs</h2>
+        <asp:TextBox ID="txtJobSearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnJobSearch" runat="server" Text="Search" OnClick="btnJobSearch_Click" />
+        <asp:Button ID="btnAllJobs" runat="server" Text="View All" OnClick="btnAllJobs_Click"/>
         <asp:GridView 
             ID="grdJobs" 
             runat="server"
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
-            EmptyDataText="No Job Selected"
+            EmptyDataText="No Job Found"
             AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="JobID"
@@ -75,12 +84,15 @@
     <%-- Internships --%>
     <div id="Internships">
         <h2>Internships</h2>
+        <asp:TextBox ID="txtInternshipSearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnInternshipSearch" runat="server" Text="Search" OnClick="btnInternshipSearch_Click" />
+        <asp:Button ID="btnAllInternships" runat="server" Text="View All" OnClick="btnAllInternships_Click"/>
         <asp:GridView 
             ID="grdInternships" 
             runat="server"
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
-            EmptyDataText="No Internship Selected"
+            EmptyDataText="No Internship Found"
             AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="InternshipID"
@@ -98,12 +110,15 @@
     <%-- Scholarships --%>
     <div id="Scholarships">
         <h2>Scholarships</h2>
+        <asp:TextBox ID="txtScholarshipSearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnScholarshipSearch" runat="server" Text="Search" OnClick="btnScholarshipSearch_Click" />
+        <asp:Button ID="txtAllScholarships" runat="server" Text="View All" OnClick="txtAllScholarships_Click"/>
         <asp:GridView 
             ID="grdScholarships" 
             runat="server"
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
-            EmptyDataText="No Scholarship Selected"
+            EmptyDataText="No Scholarship Found"
             AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="ScholarshipID"
@@ -117,25 +132,4 @@
             </Columns>
         </asp:GridView>
     </div>
-    <%-- Datasources --%>
-    <asp:SqlDataSource ID="dtasrcAllStudents" runat="server"
-        ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="Select * from Student Order By LastName ASC">
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="dtasrcAllCompanies" runat="server"
-        ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="Select * from Company Order By CompanyName ASC">
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"
-        ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="Select * from Job">
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="dtasrcAllInternships" runat="server"
-        ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="Select * from Internship">
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="dtasrcAllScholarships" runat="server"
-        ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="Select * from Scholarship">
-    </asp:SqlDataSource>
 </asp:Content>

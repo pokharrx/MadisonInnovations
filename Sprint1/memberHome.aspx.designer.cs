@@ -15,6 +15,33 @@ namespace Sprint1
     {
 
         /// <summary>
+        /// txtStudentSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStudentSearch;
+
+        /// <summary>
+        /// btnStudentSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnStudentSearch;
+
+        /// <summary>
+        /// btnAllStudents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllStudents;
+
+        /// <summary>
         /// grdStudents control.
         /// </summary>
         /// <remarks>
@@ -22,6 +49,33 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdStudents;
+
+        /// <summary>
+        /// txtCompanySearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCompanySearch;
+
+        /// <summary>
+        /// btnCompanySearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCompanySearch;
+
+        /// <summary>
+        /// btnAllCompanies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllCompanies;
 
         /// <summary>
         /// grdCompanies control.
@@ -33,6 +87,33 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.GridView grdCompanies;
 
         /// <summary>
+        /// txtJobSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtJobSearch;
+
+        /// <summary>
+        /// btnJobSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnJobSearch;
+
+        /// <summary>
+        /// btnAllJobs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllJobs;
+
+        /// <summary>
         /// grdJobs control.
         /// </summary>
         /// <remarks>
@@ -40,6 +121,33 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdJobs;
+
+        /// <summary>
+        /// txtInternshipSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtInternshipSearch;
+
+        /// <summary>
+        /// btnInternshipSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInternshipSearch;
+
+        /// <summary>
+        /// btnAllInternships control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllInternships;
 
         /// <summary>
         /// grdInternships control.
@@ -51,6 +159,33 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.GridView grdInternships;
 
         /// <summary>
+        /// txtScholarshipSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtScholarshipSearch;
+
+        /// <summary>
+        /// btnScholarshipSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnScholarshipSearch;
+
+        /// <summary>
+        /// txtAllScholarships control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button txtAllScholarships;
+
+        /// <summary>
         /// grdScholarships control.
         /// </summary>
         /// <remarks>
@@ -58,50 +193,5 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdScholarships;
-
-        /// <summary>
-        /// dtasrcAllStudents control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllStudents;
-
-        /// <summary>
-        /// dtasrcAllCompanies control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllCompanies;
-
-        /// <summary>
-        /// dtasrcAllJobs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllJobs;
-
-        /// <summary>
-        /// dtasrcAllInternships control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllInternships;
-
-        /// <summary>
-        /// dtasrcAllScholarships control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllScholarships;
     }
 }

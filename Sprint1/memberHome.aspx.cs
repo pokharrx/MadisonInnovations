@@ -367,7 +367,7 @@ namespace Sprint1
         }
         protected void grStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String Name = grdStudents.SelectedRow.Cells[3].Text;
+            String Name = grdStudents.SelectedRow.Cells[4].Text;
             String membersQuery = "SELECT StudentID FROM Student WHERE EmailAddress ='" + Name + "';";
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
             SqlCommand sqlCommand = new SqlCommand();

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:TextBox ID="txtFirst" runat="server"></asp:TextBox>
     <br />
-    <asp:TextBox ID="txtLast" runat="server"></asp:TextBox>]
+    <asp:TextBox ID="txtLast" runat="server"></asp:TextBox>
     <br />
     <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
     <br />

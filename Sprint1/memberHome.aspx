@@ -14,7 +14,7 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Student Found"
-            AllowSorting="true"
+            AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="StudentID"
             CellPadding="10">    
@@ -43,7 +43,7 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Company Found"
-            AllowSorting="true"
+            AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="CompanyID"
             CellPadding="10">
@@ -67,7 +67,7 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Job Found"
-            AllowSorting="true"
+            AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="JobID"
             CellPadding="10">
@@ -93,7 +93,7 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Internship Found"
-            AllowSorting="true"
+            AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="InternshipID"
             CellPadding="10">
@@ -119,7 +119,7 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Scholarship Found"
-            AllowSorting="true"
+            AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="ScholarshipID"
             CellPadding="10">

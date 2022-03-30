@@ -7,10 +7,51 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        body {
+            margin-bottom: 5%;
+        }
+        .right {
+            margin-top: 1%;
+            padding: 5px;
+            float: right;
+        }
+        a:link, a:visited {
+	        color: #121362;
+            text-decoration: none;
+            font-weight: bold;
+	    }
+        a:hover {
+            opacity: 0.5;
+        }
+        #navMenu {
+            padding: 1.5%;
+            margin: auto;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            text-align: center;
+            border: 2px outset #cbdbff;
+            box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            width: max-content;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="right" OnClick="btnLogout_Click"/>
+        <a href="memberAccountProfile.aspx" class="right">My Profile</a>
+        <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>      
         <div>
+        <div id="navMenu">
+            <a href="adminHome.aspx">Home |</a>
+            <a href="AddScholarship.aspx">Add Scholarship |</a>
+            <a href="NewCompany.aspx">Add Company |</a>
+            <a href="NewCorporateSponsor.aspx">Add Corporate Sponsor |</a>
+            <a href="NewInternship.aspx">Add Internship |</a>
+            <a href="NewJob.aspx">Add Job</a>
+        </div>    
+            <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

@@ -9,6 +9,7 @@
     <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Button ID="btnUpdate" runat="server" Text="Update" />
+    <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+    <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 </asp:Content>

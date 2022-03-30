@@ -75,6 +75,9 @@
     <Content Include="adminHome.aspx" />
     <Content Include="CreateAccount.aspx" />
     <Content Include="editCompanies.aspx" />
+    <Content Include="EditInternship.aspx" />
+    <Content Include="editJobs.aspx" />
+    <Content Include="EditScholarships.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="memberAccountProfile.aspx" />
@@ -135,6 +138,27 @@
     </Compile>
     <Compile Include="editCompanies.aspx.designer.cs">
       <DependentUpon>editCompanies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditInternship.aspx.cs">
+      <DependentUpon>EditInternship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditInternship.aspx.designer.cs">
+      <DependentUpon>EditInternship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editJobs.aspx.cs">
+      <DependentUpon>editJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editJobs.aspx.designer.cs">
+      <DependentUpon>editJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditScholarships.aspx.cs">
+      <DependentUpon>EditScholarships.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditScholarships.aspx.designer.cs">
+      <DependentUpon>EditScholarships.aspx</DependentUpon>
     </Compile>
     <Compile Include="editStudent.aspx.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>

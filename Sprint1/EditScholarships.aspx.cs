@@ -10,14 +10,14 @@ using System.Web.Configuration;
 
 namespace Sprint1
 {
-    public partial class editCompanies : System.Web.UI.Page
+    public partial class EditScholarships : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                String s = Session["EditCompanyID"].ToString();
-                String membersQuery = "SELECT CompanyName, CompanyAddress, CompanyPhone FROM Company WHERE CompanyID =" + s + ";";
+                String s = Session["EditScholarshipID"].ToString();
+                String membersQuery = "SELECT ScholarshipName, ScholarshipYear, ScholarshipAmount, Description, Status FROM Scholarship WHERE ScholarshipID =" + s + ";";
 
                 SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 SqlCommand sqlCommand = new SqlCommand();
@@ -29,9 +29,11 @@ namespace Sprint1
                 SqlDataReader queryResults = sqlCommand.ExecuteReader();
                 while (queryResults.Read())
                 {
-                    txtName.Text = queryResults["CompanyName"].ToString();
-                    txtAddress.Text = queryResults["CompanyAddress"].ToString();
-                    txtPhone.Text = queryResults["CompanyPhone"].ToString();
+                    txtName.Text = queryResults["ScholarshipName"].ToString();
+                    txtYear.Text = queryResults["ScholarshipYear"].ToString();
+                    txtAmount.Text = queryResults["ScholarshipAmount"].ToString();
+                    txtDescription.Text = queryResults["Description"].ToString();
+                    txtStatus.Text = queryResults["Status"].ToString();
 
                 }
 
@@ -48,12 +50,15 @@ namespace Sprint1
                 sqlConnect.Open();
                 SqlCommand sc = new SqlCommand();
                 sc.Connection = sqlConnect;
-                String s = Session["EditCompanyID"].ToString();
-                sc.CommandText = "Update Company SET CompanyName = @Name, CompanyAddress = @Address, CompanyPhone = @Phone WHERE CompanyID =" + s + ";";
+                String s = Session["EditScholarshipID"].ToString();
+                sc.CommandText = "Update Scholarship SET ScholarshipName = @Name, ScholarshipYear = @Year, ScholarshipAmount = @Amount, Description" +
+                    " = @Description, Status = @Status WHERE ScholarshipID =" + s + ";";
 
                 sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtName.Text)));
-                sc.Parameters.Add(new SqlParameter("@Address", HttpUtility.HtmlEncode(txtAddress.Text)));
-                sc.Parameters.Add(new SqlParameter("@Phone", HttpUtility.HtmlEncode(txtPhone.Text)));
+                sc.Parameters.Add(new SqlParameter("@Year", HttpUtility.HtmlEncode(txtYear.Text)));
+                sc.Parameters.Add(new SqlParameter("@Amount", HttpUtility.HtmlEncode(txtAmount.Text)));
+                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtDescription.Text)));
+                sc.Parameters.Add(new SqlParameter("@Status", HttpUtility.HtmlEncode(txtStatus.Text)));
                 sc.ExecuteNonQuery();
                 sqlConnect.Close();
                 ;

@@ -10,14 +10,14 @@ using System.Web.Configuration;
 
 namespace Sprint1
 {
-    public partial class editCompanies : System.Web.UI.Page
+    public partial class editJobs : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                String s = Session["EditCompanyID"].ToString();
-                String membersQuery = "SELECT CompanyName, CompanyAddress, CompanyPhone FROM Company WHERE CompanyID =" + s + ";";
+                String s = Session["EditJobID"].ToString();
+                String membersQuery = "SELECT JobTitle, DateStart, DateEnd, Description, ApplicationLink FROM Job WHERE JobID =" + s + ";";
 
                 SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 SqlCommand sqlCommand = new SqlCommand();
@@ -29,9 +29,11 @@ namespace Sprint1
                 SqlDataReader queryResults = sqlCommand.ExecuteReader();
                 while (queryResults.Read())
                 {
-                    txtName.Text = queryResults["CompanyName"].ToString();
-                    txtAddress.Text = queryResults["CompanyAddress"].ToString();
-                    txtPhone.Text = queryResults["CompanyPhone"].ToString();
+                    txtTitle.Text = queryResults["JobTitle"].ToString();
+                    txtStart.Text = queryResults["DateStart"].ToString();
+                    txtEnd.Text = queryResults["DateEnd"].ToString();
+                    txtDescription.Text = queryResults["Description"].ToString();
+                    txtApp.Text = queryResults["ApplicationLink"].ToString();
 
                 }
 
@@ -48,12 +50,15 @@ namespace Sprint1
                 sqlConnect.Open();
                 SqlCommand sc = new SqlCommand();
                 sc.Connection = sqlConnect;
-                String s = Session["EditCompanyID"].ToString();
-                sc.CommandText = "Update Company SET CompanyName = @Name, CompanyAddress = @Address, CompanyPhone = @Phone WHERE CompanyID =" + s + ";";
+                String s = Session["EditJobID"].ToString();
+                sc.CommandText = "Update Job SET JobTitle = @Title, DateStart = @Start, DateEnd = @End, Description" +
+                    " = @Description, ApplicationLink = @App WHERE JobID =" + s + ";";
 
-                sc.Parameters.Add(new SqlParameter("@Name", HttpUtility.HtmlEncode(txtName.Text)));
-                sc.Parameters.Add(new SqlParameter("@Address", HttpUtility.HtmlEncode(txtAddress.Text)));
-                sc.Parameters.Add(new SqlParameter("@Phone", HttpUtility.HtmlEncode(txtPhone.Text)));
+                sc.Parameters.Add(new SqlParameter("@Title", HttpUtility.HtmlEncode(txtTitle.Text)));
+                sc.Parameters.Add(new SqlParameter("@Start", HttpUtility.HtmlEncode(txtStart.Text)));
+                sc.Parameters.Add(new SqlParameter("@End", HttpUtility.HtmlEncode(txtEnd.Text)));
+                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtDescription.Text)));
+                sc.Parameters.Add(new SqlParameter("@App", HttpUtility.HtmlEncode(txtApp.Text)));
                 sc.ExecuteNonQuery();
                 sqlConnect.Close();
                 ;

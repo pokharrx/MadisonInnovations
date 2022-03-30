@@ -365,5 +365,10 @@ namespace Sprint1
             grdScholarships.DataSource = dt;
             grdScholarships.DataBind();
         }
+
+        protected void btnEditStudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }       

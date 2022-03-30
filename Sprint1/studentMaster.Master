@@ -22,6 +22,11 @@
         <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="right" OnClick="btnLogout_Click"/>
         <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>
         <div>
+            <div id="navMenu">
+            <a href="studentHome.aspx">Home |</a>
+                 <a href="StudentAccountProfile.aspx">My Account |</a>
+            
+        </div>    
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

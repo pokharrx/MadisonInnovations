@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountRequests.aspx" />
     <Content Include="AddScholarship.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="CreateAccount.aspx" />
@@ -91,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountRequests.aspx.cs">
+      <DependentUpon>AccountRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountRequests.aspx.designer.cs">
+      <DependentUpon>AccountRequests.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddScholarship.aspx.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

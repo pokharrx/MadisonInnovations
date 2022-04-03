@@ -63,5 +63,20 @@ namespace Sprint1
                 lblStatus.Text = "Info Updated";
             }
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            sqlConnect.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.Connection = sqlConnect;
+            sc.CommandType = CommandType.Text;
+            String s = Session["EditCompanyID"].ToString();
+
+            sc.CommandText = "DELETE FROM Company WHERE Student = StudentID  = " + s + ";"; 
+            sc.ExecuteScalar();
+            sqlConnect.Close();
+            ;
+        }
     }
 }

@@ -5,30 +5,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="loginstyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-        <asp:Label ID="lblWelcome" runat="server" Text="Welcome." Font-Bold="true"
-        CssClass="StrongText" Font-Size="Large"></asp:Label>
+            <br />
+            <br />
+   <section class ="container">
+       <div class="row align-content-around d-flex justify-content-center">
+           <div class="col-md-5">
+               <div class="box shadow bg-white p-4">
+                 <h3 class="mb-4 text-center fs-1">Welcome!</h3>
+                  <div class=" mx-auto text-center"> 
+                     <img src="Images/ole%20school%20group%20logo.png" class="justify-content-center"/>
+                       <asp:TextBox ID="txtUsername" runat="server"  class="form-control rounded-0" placeholder="Username"></asp:TextBox>
+                      <br />
+                       <asp:TextBox ID="txtPassword" runat="server" class="form-control rounded-0" placeholder="Password"></asp:TextBox>
+                              <a href="CreateAccount.aspx">Sign up</a>
+                      <br />
+                       <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+                      <br />
+                      <br />
+                       <div class="d-grid gap-2 mb-3">
+                      <asp:Button ID="btnLogin" runat="server" Text="Login"  class="btn btn-secondary btn-rounded" OnClick="btnLogin_Click"/>
+                    </div>  
+                     
+                </div>
+               </div>
+
+           </div>
+       </div>
+</section>
+
+
+  
         <br />
-        <asp:Label ID="lblLogin" runat="server" Text="Please Log in." Font-Bold="true"
-        CssClass="StrongText"></asp:Label>
-        <br />
-        <br />
-        <asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
-        <asp:TextBox ID="txtUsername" runat="server" Width="150px"></asp:TextBox>
-        <br />
-        <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-        <asp:TextBox ID="txtPassword" runat="server" Width="150px" TextMode="Password"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
-        <br />
-        <a href="CreateAccount.aspx">Sign up</a>
-        <br />
-        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+        
         </div>
     </form>
+     <script src="Scripts/jquery-3.6.0.slim.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

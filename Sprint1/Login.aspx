@@ -22,7 +22,7 @@
                      <img src="Images/ole%20school%20group%20logo.png" class="justify-content-center"/>
                        <asp:TextBox ID="txtUsername" runat="server"  class="form-control rounded-0" placeholder="Username"></asp:TextBox>
                       <br />
-                       <asp:TextBox ID="txtPassword" runat="server" class="form-control rounded-0" placeholder="Password"></asp:TextBox>
+                       <asp:TextBox ID="txtPassword" runat="server" class="form-control rounded-0" placeholder="Password" TextMode="Password"></asp:TextBox>
                               <a href="CreateAccount.aspx">Sign up</a>
                       <br />
                        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>

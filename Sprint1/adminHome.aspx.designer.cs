@@ -159,6 +159,42 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.GridView grdInternships;
 
         /// <summary>
+        /// txtOtherSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOtherSearch;
+
+        /// <summary>
+        /// btnOtherSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOtherSearch;
+
+        /// <summary>
+        /// btnAllOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllOther;
+
+        /// <summary>
+        /// grdOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdOther;
+
+        /// <summary>
         /// txtScholarshipSearch control.
         /// </summary>
         /// <remarks>

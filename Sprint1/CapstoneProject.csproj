@@ -93,6 +93,7 @@
     <Content Include="editCompanies.aspx" />
     <Content Include="EditInternship.aspx" />
     <Content Include="editJobs.aspx" />
+    <Content Include="editOther.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="images\ole school group logo.png" />
     <Content Include="Login.aspx" />
@@ -287,6 +288,13 @@
     </Compile>
     <Compile Include="editJobs.aspx.designer.cs">
       <DependentUpon>editJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editOther.aspx.cs">
+      <DependentUpon>editOther.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editOther.aspx.designer.cs">
+      <DependentUpon>editOther.aspx</DependentUpon>
     </Compile>
     <Compile Include="editStudent.aspx.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>

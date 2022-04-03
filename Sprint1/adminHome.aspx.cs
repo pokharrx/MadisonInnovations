@@ -32,6 +32,8 @@ namespace Sprint1
                 string internshipQuery = "SELECT * FROM Internship";
                 DataTable dt5 = new DataTable();
                 string scholarshipQuery = "SELECT * FROM Scholarship";
+                string otherQuery = "SELECT * FROM Other";
+                DataTable dt6 = new DataTable();
 
                 //using automatically closes the connection when its done being used
                 using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString))
@@ -40,6 +42,7 @@ namespace Sprint1
                 using (SqlDataAdapter jobAdapter = new SqlDataAdapter(jobQuery, connection))
                 using (SqlDataAdapter internshipAdapter = new SqlDataAdapter(internshipQuery, connection))
                 using (SqlDataAdapter scholarshipAdapter = new SqlDataAdapter(scholarshipQuery, connection))
+                using (SqlDataAdapter otherAdapter = new SqlDataAdapter(otherQuery, connection))
                 {
                     try
                     {
@@ -49,6 +52,7 @@ namespace Sprint1
                         jobAdapter.Fill(dt3);
                         internshipAdapter.Fill(dt4);
                         scholarshipAdapter.Fill(dt5);
+                        otherAdapter.Fill(dt6);
                     }
                     catch
                     {
@@ -61,6 +65,7 @@ namespace Sprint1
                 ViewState["grdJobs"] = dt3;
                 ViewState["grdInternships"] = dt4;
                 ViewState["grdScholarships"] = dt5;
+                ViewState["grdOther"] = dt6;
 
                 //bind the datasource to the gridview
                 grdStudents.DataSource = dt1;
@@ -73,6 +78,8 @@ namespace Sprint1
                 grdInternships.DataBind();
                 grdScholarships.DataSource = dt5;
                 grdScholarships.DataBind();
+                grdOther.DataSource = dt6;
+                grdOther.DataBind();
             }
         }
 
@@ -504,6 +511,92 @@ namespace Sprint1
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddAnnouncement.aspx");
+        }
+
+        protected void btnOtherSearch_Click(object sender, EventArgs e)
+        {
+            string searchOther = txtOtherSearch.Text.ToLower();
+
+            // check if the student search is at least 1 characters
+            if (searchOther.Length >= 1)
+            {
+                if (ViewState["grdOther"] == null)
+                    return;
+
+                DataTable dt = ViewState["grdOther"] as DataTable;
+
+                // making a clone of datatable
+                DataTable dtNew = dt.Clone();
+
+                // loop through table for correct fields
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["OtherTitle"].ToString().ToLower().Contains(searchOther))
+                    {
+                        //finding copy and add to new table
+                        dtNew.Rows.Add(row.ItemArray);
+                    }
+                }
+                // rebind the grid
+                grdOther.DataSource = dtNew;
+                grdOther.DataBind();
+            }
+        }
+
+        protected void btnAllOther_Click(object sender, EventArgs e)
+        {
+            //use a datatable for storing all the data
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Other";
+
+            //using automatically closes the connection when its done being used
+            using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+            {
+                try
+                {
+                    //database fills the datatable
+                    adapter.Fill(dt);
+                }
+                catch
+                {
+                }
+            }
+
+            //save the datatable into a viewstate for later use
+            ViewState["grdOther"] = dt;
+
+            //bind the datasource to the gridview
+            grdOther.DataSource = dt;
+            grdOther.DataBind();
+        }
+
+        protected void grdOther_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdOther.SelectedRow.Cells[2].Text;
+            String membersQuery = "SELECT OtherID FROM Other WHERE OtherTitle ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditOtherID"] = queryResults["OtherID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+
+        protected void btnEditOther_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editOther.aspx");
         }
     }
 }

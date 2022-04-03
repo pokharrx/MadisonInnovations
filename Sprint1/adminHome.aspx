@@ -33,6 +33,7 @@
                 <asp:BoundField HeaderText="Graduation Year" DataField="GradYear" SortExpression="GradYear"/>
                 <asp:BoundField HeaderText="Major" DataField="Major" SortExpression="Major"/>
                 <asp:BoundField HeaderText="Grade" DataField="Grade" SortExpression="Grade"/>
+                 <asp:BoundField HeaderText="Industry of Interest" DataField="Industry" SortExpression="Industry"/>
                 <asp:BoundField HeaderText="Employment Status" DataField="EmploymentStatus" SortExpression="EmploymentStatus"/>
             
             </Columns>
@@ -98,6 +99,7 @@
                 <asp:BoundField HeaderText="Title" DataField="JobTitle" SortExpression="JobTitle"/> 
                 <asp:BoundField HeaderText="Start Date" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="End Date" DataField="DateEnd" SortExpression="DateEnd"/>
+                 <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
                 <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
                 <asp:BoundField HeaderText="Details" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
             </Columns>
@@ -131,12 +133,49 @@
                 <asp:BoundField HeaderText="Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
                 <asp:BoundField HeaderText="Start Date" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="End Date" DataField="DateEnd" SortExpression="DateEnd"/>
+                <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
                 <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
                 <asp:BoundField HeaderText="Details" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
             </Columns>
         </asp:GridView>
     </div>
     <br />
+
+     <%-- Other Opportunities --%>
+    <div id="Other">
+        <h2>Other Opportunities</h2>
+        <asp:TextBox ID="txtOtherSearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnOtherSearch" runat="server" Text="Search" OnClick="btnOtherSearch_Click" />
+        <asp:Button ID="btnAllOther" runat="server" Text="View All" OnClick="btnAllOther_Click"/>
+        <asp:GridView 
+            ID="grdOther" 
+            runat="server"
+            HorizontalAlign="Justify"
+            AlternatingRowStyle-BackColor="PowderBlue"
+            EmptyDataText="No Other Opportunities Found"
+            AllowSorting="false"
+            AutoGenerateColumns="false"
+            DataKeyNames="OtherID"
+            CellPadding="10"
+            AutoGenerateSelectButton="true"
+            OnSelectedIndexChanged="grdOther_SelectedIndexChanged">
+            <Columns>
+                  <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnEditOther" Text="Edit" OnClick="btnEditOther_Click" runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField HeaderText="Title" DataField="OtherTitle" SortExpression="OtherTitle"/>
+                <asp:BoundField HeaderText="Start Date" DataField="DateStart" SortExpression="DateStart"/>
+                <asp:BoundField HeaderText="End Date" DataField="DateEnd" SortExpression="DateEnd"/>
+                 <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
+                <asp:BoundField HeaderText="Details" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
+            </Columns>
+        </asp:GridView>
+    </div>
+    <br />
+
     <%-- Scholarships --%>
     <div id="Scholarships">
         <h2>Scholarships</h2>

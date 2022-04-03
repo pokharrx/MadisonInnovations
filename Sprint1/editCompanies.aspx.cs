@@ -73,7 +73,7 @@ namespace Sprint1
             sc.CommandType = CommandType.Text;
             String s = Session["EditCompanyID"].ToString();
 
-            sc.CommandText = "DELETE FROM Company WHERE Student = StudentID  = " + s + ";"; 
+            sc.CommandText = "DELETE FROM Company WHERE CompanyID  = " + s + ";"; 
             sc.ExecuteScalar();
             sqlConnect.Close();
             ;

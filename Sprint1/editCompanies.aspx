@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/memberMaster.Master" AutoEventWireup="true" CodeBehind="editCompanies.aspx.cs" Inherits="Sprint1.editCompanies" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adminMaster.Master" AutoEventWireup="true" CodeBehind="editCompanies.aspx.cs" Inherits="Sprint1.editCompanies" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -9,6 +9,9 @@
     <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Button ID="btnUpdate" runat="server" Text="Update" />
+    <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
+    <br />
+    <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 </asp:Content>

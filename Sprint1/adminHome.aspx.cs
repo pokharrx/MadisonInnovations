@@ -106,7 +106,6 @@ namespace Sprint1
                 grdStudents.DataBind();
             }
         }
-
         protected void btnAllStudents_Click(object sender, EventArgs e)
         {
             //use a datatable for storing all the data
@@ -365,6 +364,146 @@ namespace Sprint1
             //bind the datasource to the gridview
             grdScholarships.DataSource = dt;
             grdScholarships.DataBind();
+        }
+        protected void grStudents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdStudents.SelectedRow.Cells[4].Text;
+            String membersQuery = "SELECT StudentID FROM Student WHERE EmailAddress ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditStudentID"] = queryResults["StudentID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+
+        protected void btnEditStudent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editStudent.aspx");
+        }
+
+        protected void grCompanies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdCompanies.SelectedRow.Cells[2].Text;
+            String membersQuery = "SELECT CompanyID FROM Company WHERE CompanyName ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditCompanyID"] = queryResults["CompanyID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+        protected void btnEditCompanies_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editCompanies.aspx");
+        }
+
+        protected void grJobs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdJobs.SelectedRow.Cells[2].Text;
+            String membersQuery = "SELECT JobID FROM Job WHERE JobTitle ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditJobID"] = queryResults["JobID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+        protected void btnEditJobs_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editJobs.aspx");
+        }
+
+        protected void grInternships_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdInternships.SelectedRow.Cells[2].Text;
+            String membersQuery = "SELECT InternshipID FROM Internship WHERE InternshipTitle ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditInternshipID"] = queryResults["InternshipID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+        protected void btnEditInternships_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editInternship.aspx");
+        }
+
+        protected void grScholarships_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String Name = grdScholarships.SelectedRow.Cells[2].Text;
+            String membersQuery = "SELECT ScholarshipID FROM Scholarship WHERE ScholarshipName ='" + Name + "';";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                Session["EditScholarshipID"] = queryResults["ScholarshipID"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+        protected void btnEditScholarships_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editScholarships.aspx");
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddAnnouncement.aspx");
         }
     }
 }

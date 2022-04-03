@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccountRequests.aspx" />
+    <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddScholarship.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -90,6 +91,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CreateAccount.aspx" />
     <Content Include="editCompanies.aspx" />
+    <Content Include="EditInternship.aspx" />
+    <Content Include="editJobs.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="images\ole school group logo.png" />
     <Content Include="Login.aspx" />
@@ -215,6 +218,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="StudentAccountProfile.aspx" />
+    <Content Include="StudentAnnouncements.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -225,6 +229,13 @@
     </Compile>
     <Compile Include="AccountRequests.aspx.designer.cs">
       <DependentUpon>AccountRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAnnouncement.aspx.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAnnouncement.aspx.designer.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddScholarship.aspx.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
@@ -260,6 +271,20 @@
     </Compile>
     <Compile Include="editCompanies.aspx.designer.cs">
       <DependentUpon>editCompanies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditInternship.aspx.cs">
+      <DependentUpon>EditInternship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditInternship.aspx.designer.cs">
+      <DependentUpon>EditInternship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editJobs.aspx.cs">
+      <DependentUpon>editJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editJobs.aspx.designer.cs">
+      <DependentUpon>editJobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="editStudent.aspx.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>
@@ -332,6 +357,13 @@
     </Compile>
     <Compile Include="StudentAccountProfile.aspx.designer.cs">
       <DependentUpon>StudentAccountProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentAnnouncements.aspx.cs">
+      <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAnnouncements.aspx.designer.cs">
+      <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
     </Compile>
     <Compile Include="studentHome.aspx.cs">
       <DependentUpon>studentHome.aspx</DependentUpon>

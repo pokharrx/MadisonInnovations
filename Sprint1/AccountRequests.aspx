@@ -22,23 +22,25 @@
                 <asp:BoundField DataField="FirstName" HeaderText="First Name" ReadOnly="true" />
                 <asp:BoundField DataField="LastName" HeaderText="Last Name" ReadOnly="true" />
                 <asp:BoundField DataField="Email" HeaderText="Email" ReadOnly="true" />
+                <asp:BoundField DataField="PersonType" HeaderText="Account Type" ReadOnly="true" />
                 <asp:BoundField DataField="Username" HeaderText="Username" ReadOnly="true" />
             </Fields>
         </asp:DetailsView>
         <br />
-        <asp:Button ID="btnAuthorizeAccount" runat="server" Text="Authorize Account" OnClick="btnAuthorizeAccount_Click"/>
-        <asp:Button ID="btnUnAuthorizeAccount" runat="server" Text="Decline Account" OnClick="btnUnAuthorizeAccount_Click"/>
+        <asp:Button ID="btnAuthorizeAccount" runat="server" Text="Authorize Account" OnClick="btnAuthorizeAccount_Click" OnClientClick="return confirm('Are you sure you want to authorize this account?')"/>
+        <asp:Button ID="btnUnAuthorizeAccount" runat="server" Text="Decline Account" OnClick="btnUnAuthorizeAccount_Click" OnClientClick="return confirm('Are you sure you want to decline this account?')"/>
+        <br />
+        <br />
+        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>
     <br />
     <asp:Label ID="lblVerification" Visible="false" runat="server" Text="Are you sure you want to decline this user?"></asp:Label>
     <br />
-    <asp:Button ID="btnYes" Visible="false" runat="server" Text="Yes" OnClick="btnYes_Click"/>
-    <asp:Button ID="btnNo" Visible="false" runat="server" Text="No" OnClick="btnNo_Click"/>
 
     <asp:SqlDataSource ID="dtsUnauthorizedUsers"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:AUTH %>"
-        SelectCommand="SELECT p.UserID, p.FirstName, p.LastName, p.Email, p.Username FROM Person p
+        SelectCommand="SELECT p.UserID, p.FirstName, p.LastName, p.Email, p.PersonType, p.Username FROM Person p
             JOIN Pass pa ON p.UserID=pa.UserID
             WHERE pa.Activation='Inactive'">
     </asp:SqlDataSource>

@@ -68,5 +68,20 @@ namespace Sprint1
                 lblStatus.Text = "Info Updated";
             }
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            sqlConnect.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.Connection = sqlConnect;
+            sc.CommandType = CommandType.Text;
+            String s = Session["EditInternshipID"].ToString();
+
+            sc.CommandText = "DELETE FROM Internship WHERE InternshipID  = " + s + ";";
+            sc.ExecuteScalar();
+            sqlConnect.Close();
+            ;
+        }
     }
 }

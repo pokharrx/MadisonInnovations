@@ -13,6 +13,7 @@
     <asp:TextBox ID="txtApp" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
     <br />
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 </asp:Content>

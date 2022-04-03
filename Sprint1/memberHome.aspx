@@ -168,5 +168,7 @@
                 <asp:BoundField HeaderText="Status" DataField="Status" SortExpression="Status"/>
             </Columns>
         </asp:GridView>
+        <br />
+        <asp:Button ID="btnAdd" runat="server" Text="Add Announcement" OnClick="btnAdd_Click" />
     </div>
 </asp:Content>

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccountRequests.aspx" />
+    <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddScholarship.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="CreateAccount.aspx" />
@@ -93,6 +94,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="StudentAccountProfile.aspx" />
+    <Content Include="StudentAnnouncements.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -103,6 +105,13 @@
     </Compile>
     <Compile Include="AccountRequests.aspx.designer.cs">
       <DependentUpon>AccountRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAnnouncement.aspx.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAnnouncement.aspx.designer.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddScholarship.aspx.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
@@ -231,6 +240,13 @@
     </Compile>
     <Compile Include="StudentAccountProfile.aspx.designer.cs">
       <DependentUpon>StudentAccountProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentAnnouncements.aspx.cs">
+      <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAnnouncements.aspx.designer.cs">
+      <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
     </Compile>
     <Compile Include="studentHome.aspx.cs">
       <DependentUpon>studentHome.aspx</DependentUpon>

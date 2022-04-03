@@ -57,42 +57,6 @@ namespace Sprint1
 
                         sc.Close();
 
-                        // INSERT INTO STUDENT/MEMBER TABLE
-                        System.Data.SqlClient.SqlConnection sc2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString.ToString());
-                        sc2.Open();
-
-                        if (ddlPersonType.Text == "Student")
-                        {
-                            System.Data.SqlClient.SqlCommand createStudent = new System.Data.SqlClient.SqlCommand();
-                            createStudent.Connection = sc2;
-
-                            // INSERT STUDENT RECORD
-                            createStudent.CommandText = "INSERT INTO Student (FirstName, LastName, EmailAddress, PhoneNumber, GradYear, Major, " +
-                                "Grade, EmploymentStatus, StudentUserName) VALUES (@FName, @LName, @EmailAddress, 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', @StudentUserName)";
-                            createStudent.Parameters.Add(new SqlParameter("@FName", txtFirstName.Text));
-                            createStudent.Parameters.Add(new SqlParameter("@LName", txtLastName.Text));
-                            createStudent.Parameters.Add(new SqlParameter("@EmailAddress", txtEmail.Text));
-                            createStudent.Parameters.Add(new SqlParameter("@StudentUserName", txtUsername.Text));
-                            createStudent.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            System.Data.SqlClient.SqlCommand createMember = new System.Data.SqlClient.SqlCommand();
-                            createMember.Connection = sc2;
-
-                            // INSERT MEMBER RECORD
-                            createMember.CommandText = "INSERT INTO Member (FirstName, LastName, EmailAddress, PhoneNumber, Title, MemberUserName, AccountType) " +
-                                "VALUES (@FName, @LName, @EmailAddress, 'N/A', 'N/A', @MemberUserName, 'Member')";
-                            createMember.Parameters.Add(new SqlParameter("@FName", txtFirstName.Text));
-                            createMember.Parameters.Add(new SqlParameter("@LName", txtLastName.Text));
-                            createMember.Parameters.Add(new SqlParameter("@EmailAddress", txtEmail.Text));
-                            createMember.Parameters.Add(new SqlParameter("@MemberUserName", txtUsername.Text));
-                            createMember.ExecuteNonQuery();
-
-                        }
-                        // CLOSE DB CONNECTION
-                        sc2.Close();
-
                         // GREY OUT TEXT BOXES
                         lblStatus.Text = "Account Request Submitted! You will be emailed soon with your verification.";
                         txtFirstName.Enabled = false;

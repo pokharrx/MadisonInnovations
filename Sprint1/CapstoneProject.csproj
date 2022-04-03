@@ -100,6 +100,7 @@
     <Content Include="memberAccountProfile.aspx" />
     <Content Include="memberHome.aspx" />
     <Content Include="adminMaster.Master" />
+    <Content Include="MentorshipAssignment.aspx" />
     <Content Include="messagePortal.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -321,6 +322,13 @@
     </Compile>
     <Compile Include="memberMaster.Master.designer.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MentorshipAssignment.aspx.cs">
+      <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorshipAssignment.aspx.designer.cs">
+      <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
     </Compile>
     <Compile Include="messagePortal.aspx.cs">
       <DependentUpon>messagePortal.aspx</DependentUpon>

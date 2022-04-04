@@ -15,6 +15,12 @@
             margin-top: 1%;
             float: right;
         }
+        .margin-top {
+            margin-top: 1%;
+        }
+        .text-wrap {
+            word-break: break-all;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +32,7 @@
             <a href="studentHome.aspx">Home |</a>
                  <a href="StudentAccountProfile.aspx">My Account |</a>
                  <a href="StudentAnnouncements.aspx">Dashboard |</a>
-                 <a href="messagePortal.aspx">Messaging Portal</a>
+                <a href="studentMessaging.aspx">Messaging Portal</a>
         </div>    
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

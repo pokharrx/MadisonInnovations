@@ -73,6 +73,7 @@
     <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddScholarship.aspx" />
     <Content Include="adminHome.aspx" />
+    <Content Include="adminMessaging.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -101,6 +102,7 @@
     <Content Include="memberAccountProfile.aspx" />
     <Content Include="memberHome.aspx" />
     <Content Include="adminMaster.Master" />
+    <Content Include="memberMessaging.aspx" />
     <Content Include="MentorshipAssignment.aspx" />
     <Content Include="messagePortal.aspx" />
     <Content Include="NewOther.aspx" />
@@ -224,6 +226,7 @@
     <Content Include="StudentAccountProfile.aspx" />
     <Content Include="StudentAnnouncements.aspx" />
     <Content Include="studentHome.aspx" />
+    <Content Include="studentMessaging.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +264,13 @@
     </Compile>
     <Compile Include="adminMaster.Master.designer.cs">
       <DependentUpon>adminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="adminMessaging.aspx.cs">
+      <DependentUpon>adminMessaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMessaging.aspx.designer.cs">
+      <DependentUpon>adminMessaging.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
@@ -331,6 +341,13 @@
     </Compile>
     <Compile Include="memberMaster.Master.designer.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="memberMessaging.aspx.cs">
+      <DependentUpon>memberMessaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberMessaging.aspx.designer.cs">
+      <DependentUpon>memberMessaging.aspx</DependentUpon>
     </Compile>
     <Compile Include="MentorshipAssignment.aspx.cs">
       <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
@@ -410,6 +427,13 @@
     </Compile>
     <Compile Include="studentMaster.Master.designer.cs">
       <DependentUpon>studentMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="studentMessaging.aspx.cs">
+      <DependentUpon>studentMessaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentMessaging.aspx.designer.cs">
+      <DependentUpon>studentMessaging.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

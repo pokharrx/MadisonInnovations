@@ -16,6 +16,12 @@
             padding: 5px;
             float: right;
         }
+        .margin-top {
+            margin-top: 1%;
+        }
+        .text-wrap {
+            word-break: break-all;
+        }
         a:link, a:visited {
 	        color: #121362;
             text-decoration: none;
@@ -50,7 +56,10 @@
             <a href="NewCorporateSponsor.aspx">Add Corporate Sponsor |</a>
             <a href="NewInternship.aspx">Add Internship |</a>
             <a href="NewJob.aspx">Add Job |</a>
-            <a href="AccountRequests.aspx">Authorize Accounts</a>
+            <a href="NewOther.aspx">Add Other Opportunity |</a>
+            <a href="AccountRequests.aspx">Authorize Accounts |</a>
+            <a href="MentorshipAssignment.aspx">Assign Mentorships |</a>
+            <a href="adminMessaging.aspx">Messaging Portal</a>
         </div>    
             <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

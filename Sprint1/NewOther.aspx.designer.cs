@@ -11,26 +11,26 @@ namespace Sprint1
 {
 
 
-    public partial class NewInternship
+    public partial class NewOther
     {
 
         /// <summary>
-        /// lblInternshipTitle control.
+        /// lblOtherTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInternshipTitle;
+        protected global::System.Web.UI.WebControls.Label lblOtherTitle;
 
         /// <summary>
-        /// txtInternshipTitle control.
+        /// txtOtherTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInternshipTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtOtherTitle;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -42,22 +42,22 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// lblDateStart control.
+        /// lblOtherStart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDateStart;
+        protected global::System.Web.UI.WebControls.Label lblOtherStart;
 
         /// <summary>
-        /// txtDateStart control.
+        /// txtOtherStart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateStart;
+        protected global::System.Web.UI.WebControls.TextBox txtOtherStart;
 
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -69,22 +69,22 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
-        /// lblDateEnd control.
+        /// lblOtherEnd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDateEnd;
+        protected global::System.Web.UI.WebControls.Label lblOtherEnd;
 
         /// <summary>
-        /// txtDateEnd control.
+        /// txtOtherEnd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateEnd;
+        protected global::System.Web.UI.WebControls.TextBox txtOtherEnd;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -114,22 +114,22 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.TextBox txtIndustry;
 
         /// <summary>
-        /// lblInternshipDescription control.
+        /// lblOtherDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInternshipDescription;
+        protected global::System.Web.UI.WebControls.Label lblOtherDescription;
 
         /// <summary>
-        /// txtInternshipDescription control.
+        /// txtOtherDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInternshipDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtOtherDescription;
 
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -157,15 +157,6 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApplicationLink;
-
-        /// <summary>
-        /// RequiredFieldValidator4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
         /// btnSave control.

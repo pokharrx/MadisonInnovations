@@ -15,7 +15,7 @@ using System.Drawing;
 
 namespace Sprint1
 {
-    public partial class messagePortal : System.Web.UI.Page
+    public partial class adminMessaging : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,32 +55,38 @@ namespace Sprint1
                     grdStudents.DataSource = dt2;
                     grdStudents.DataBind();
                 }
+                try
+                {
+                    //Populate Inbox
+                    String inboxQuery = "select SenderUsername, Message, Subject from Messaging where ReceiverUsername = '" + Session["Username"].ToString() + "';";
+                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    SqlDataAdapter sqlAdapter = new SqlDataAdapter(inboxQuery, sqlConnect);
+                    DataTable dtInbox = new DataTable();
+                    sqlAdapter.Fill(dtInbox);
+                    grdInbox.DataSource = dtInbox;
+                    grdInbox.DataBind();
+                    sqlConnect.Close();
 
-                //Populate Inbox
-                String inboxQuery = "select SenderUsername, Message, Subject from Messaging where ReceiverUsername = '" + Session["Username"].ToString() + "';";
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                SqlDataAdapter sqlAdapter = new SqlDataAdapter(inboxQuery, sqlConnect);
-                DataTable dtInbox = new DataTable();
-                sqlAdapter.Fill(dtInbox);
-                grdInbox.DataSource = dtInbox;
-                grdInbox.DataBind();
-                sqlConnect.Close();
+                    //Populate Sent
+                    String sentQuery = "select ReceiverUsername, Message, Subject from Messaging where SenderUsername = '" + Session["Username"] + "';";
+                    SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    SqlDataAdapter sqlAdapter2 = new SqlDataAdapter(sentQuery, sqlConnect);
+                    DataTable dtSent = new DataTable();
+                    sqlAdapter2.Fill(dtSent);
+                    grdSent.DataSource = dtSent;
+                    grdSent.DataBind();
+                    sqlConnect.Close();
+                }
+                catch
+                {
 
-                //Populate Sent
-                String sentQuery = "select ReceiverUsername, Message, Subject from Messaging where SenderUsername = '" + Session["Username"] + "';";
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                SqlDataAdapter sqlAdapter2 = new SqlDataAdapter(sentQuery, sqlConnect);
-                DataTable dtSent = new DataTable();
-                sqlAdapter2.Fill(dtSent);
-                grdSent.DataSource = dtSent;
-                grdSent.DataBind();
-                sqlConnect.Close();
+                }
             }
             else
             {
                 Session["MustLogin"] = "You Must Login To Access That Page";
                 Response.Redirect("Login.aspx");
-            }          
+            }
         }
 
         protected void btnRecipientSearch_Click(object sender, EventArgs e)
@@ -176,36 +182,49 @@ namespace Sprint1
 
         protected void btnSendMessage_Click(object sender, EventArgs e)
         {
-            String messageSender = Session["Username"].ToString();
-
-            try
+            if (txtRecipientSearch.Text != "" && txtSendMessage.Text != "" && txtSubject.Text != "" && ddlRecipientType.SelectedItem.Value != "Nothing")
             {
-                System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                sqlConnect.Open();
-                SqlCommand sc = new SqlCommand();
-                sc.Connection = sqlConnect;
+                try
+                {
+                    System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    sqlConnect.Open();
+                    SqlCommand sc = new SqlCommand();
+                    sc.Connection = sqlConnect;
 
+                    String messageSender = Session["Username"].ToString();
 
-                sc.CommandText = "INSERT INTO Messaging (SenderUsername, ReceiverUsername, Message, Subject) VALUES ('"
-                    + messageSender + "', @Recipient, @Message, @Subject)";
-                sc.Parameters.Add(new SqlParameter("@Recipient", HttpUtility.HtmlEncode(txtRecipientSearch.Text)));
-                sc.Parameters.Add(new SqlParameter("@Message", HttpUtility.HtmlEncode(txtSendMessage.Text)));
-                sc.Parameters.Add(new SqlParameter("@Subject", HttpUtility.HtmlEncode(txtSubject.Text)));              
+                    sc.CommandText = "INSERT INTO Messaging (SenderUsername, ReceiverUsername, Message, Subject) VALUES ('"
+                        + messageSender + "', @Recipient, @Message, @Subject)";
+                    sc.Parameters.Add(new SqlParameter("@Recipient", HttpUtility.HtmlEncode(txtRecipientSearch.Text)));
+                    sc.Parameters.Add(new SqlParameter("@Message", HttpUtility.HtmlEncode(txtSendMessage.Text)));
+                    sc.Parameters.Add(new SqlParameter("@Subject", HttpUtility.HtmlEncode(txtSubject.Text)));
 
-                sc.ExecuteNonQuery();
-                sqlConnect.Close();
-                lblMessageStatus.Text = "Message Sent!";
-
-                txtRecipientSearch.Text = "";
-                txtSubject.Text = "";
-                txtSendMessage.Text = "";
-                ddlRecipientType.SelectedItem.Value = "Nothing";
+                    sc.ExecuteNonQuery();
+                    sqlConnect.Close();
+                    Response.Redirect("memberMessaging.aspx");
+                }
+                catch (Exception)
+                {
+                    lblMessageStatus.Text = "Error Sending Message, Please Check That All Fields Are Filled Out Properly";
+                    throw;
+                }
             }
-            catch (Exception)
+            else
             {
-                lblMessageStatus.Text = "Error Sending Message, Please Check That All Fields Are Filled Out Properly";
-                throw;
+                lblMessageStatus.Text = "Please Fill Out All Fields";
             }
+        }
+
+        protected void grdInbox_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdInbox.PageIndex = e.NewPageIndex;
+            grdInbox.DataBind();
+        }
+
+        protected void grdSent_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdSent.PageIndex = e.NewPageIndex;
+            grdSent.DataBind();
         }
     }
 }

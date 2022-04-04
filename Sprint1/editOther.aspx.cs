@@ -8,16 +8,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 
+
 namespace Sprint1
 {
-    public partial class EditInternship : System.Web.UI.Page
+    public partial class editOther : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                String s = Session["EditInternshipID"].ToString();
-                String membersQuery = "SELECT InternshipTitle, DateStart, DateEnd, Industry, Description, ApplicationLink FROM Internship WHERE InternshipID =" + s + ";";
+                String s = Session["EditOtherID"].ToString();
+                String membersQuery = "SELECT OtherTitle, DateStart, DateEnd, Industry, Description, ApplicationLink FROM Other WHERE OtherID =" + s + ";";
 
                 SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 SqlCommand sqlCommand = new SqlCommand();
@@ -29,7 +30,7 @@ namespace Sprint1
                 SqlDataReader queryResults = sqlCommand.ExecuteReader();
                 while (queryResults.Read())
                 {
-                    txtTitle.Text = queryResults["InternshipTitle"].ToString();
+                    txtTitle.Text = queryResults["OtherTitle"].ToString();
                     txtStart.Text = queryResults["DateStart"].ToString();
                     txtEnd.Text = queryResults["DateEnd"].ToString();
                     txtIndustry.Text = queryResults["Industry"].ToString();
@@ -51,9 +52,9 @@ namespace Sprint1
                 sqlConnect.Open();
                 SqlCommand sc = new SqlCommand();
                 sc.Connection = sqlConnect;
-                String s = Session["EditInternshipID"].ToString();
-                sc.CommandText = "Update Internship SET InternshipTitle = @Title, DateStart = @Start, DateEnd = @End, Industry = @Industry, Description" +
-                    " = @Description, ApplicationLink = @App WHERE InternshipID =" + s + ";";
+                String s = Session["EditOtherID"].ToString();
+                sc.CommandText = "Update Other SET OtherTitle = @Title, DateStart = @Start, DateEnd = @End, Industry = @Industry, Description" +
+                    " = @Description, ApplicationLink = @App WHERE OtherID =" + s + ";";
 
                 sc.Parameters.Add(new SqlParameter("@Title", HttpUtility.HtmlEncode(txtTitle.Text)));
                 sc.Parameters.Add(new SqlParameter("@Start", HttpUtility.HtmlEncode(txtStart.Text)));
@@ -70,21 +71,6 @@ namespace Sprint1
                 lblStatus.Text = "Info Updated";
                 Response.Redirect("adminHome.aspx");
             }
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-            sqlConnect.Open();
-            SqlCommand sc = new SqlCommand();
-            sc.Connection = sqlConnect;
-            sc.CommandType = CommandType.Text;
-            String s = Session["EditInternshipID"].ToString();
-
-            sc.CommandText = "DELETE FROM Internship WHERE InternshipID  = " + s + ";";
-            sc.ExecuteScalar();
-            sqlConnect.Close();
-            ;
         }
     }
 }

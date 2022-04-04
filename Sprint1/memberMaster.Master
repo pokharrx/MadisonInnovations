@@ -16,6 +16,12 @@
             padding: 5px;
             float: right;
         }
+        .margin-top {
+            margin-top: 1%;
+        }
+        .text-wrap {
+            word-break: break-all;
+        }
         a:link, a:visited {
 	        color: #121362;
             text-decoration: none;
@@ -45,7 +51,8 @@
         <div>
         <div id="navMenu">
             <a href="memberHome.aspx">Home |</a>
-            <a href="memberAccountProfile.aspx">My Account</a>
+            <a href="memberAccountProfile.aspx">My Account |</a>
+            <a href="memberMessaging.aspx">Messaging Portal</a>
         </div>    
             <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

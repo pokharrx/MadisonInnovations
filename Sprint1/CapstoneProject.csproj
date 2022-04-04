@@ -73,6 +73,7 @@
     <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddScholarship.aspx" />
     <Content Include="adminHome.aspx" />
+    <Content Include="adminMessaging.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -93,6 +94,7 @@
     <Content Include="editCompanies.aspx" />
     <Content Include="EditInternship.aspx" />
     <Content Include="editJobs.aspx" />
+    <Content Include="editOther.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="images\ole school group logo.png" />
     <Content Include="Login.aspx" />
@@ -100,7 +102,10 @@
     <Content Include="memberAccountProfile.aspx" />
     <Content Include="memberHome.aspx" />
     <Content Include="adminMaster.Master" />
+    <Content Include="memberMessaging.aspx" />
+    <Content Include="MentorshipAssignment.aspx" />
     <Content Include="messagePortal.aspx" />
+    <Content Include="NewOther.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -221,6 +226,7 @@
     <Content Include="StudentAccountProfile.aspx" />
     <Content Include="StudentAnnouncements.aspx" />
     <Content Include="studentHome.aspx" />
+    <Content Include="studentMessaging.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +265,13 @@
     <Compile Include="adminMaster.Master.designer.cs">
       <DependentUpon>adminMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="adminMessaging.aspx.cs">
+      <DependentUpon>adminMessaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMessaging.aspx.designer.cs">
+      <DependentUpon>adminMessaging.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,6 +299,13 @@
     </Compile>
     <Compile Include="editJobs.aspx.designer.cs">
       <DependentUpon>editJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editOther.aspx.cs">
+      <DependentUpon>editOther.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editOther.aspx.designer.cs">
+      <DependentUpon>editOther.aspx</DependentUpon>
     </Compile>
     <Compile Include="editStudent.aspx.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>
@@ -322,6 +342,20 @@
     <Compile Include="memberMaster.Master.designer.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="memberMessaging.aspx.cs">
+      <DependentUpon>memberMessaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberMessaging.aspx.designer.cs">
+      <DependentUpon>memberMessaging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MentorshipAssignment.aspx.cs">
+      <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorshipAssignment.aspx.designer.cs">
+      <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="messagePortal.aspx.cs">
       <DependentUpon>messagePortal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -357,6 +391,13 @@
     <Compile Include="NewJob.aspx.designer.cs">
       <DependentUpon>NewJob.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewOther.aspx.cs">
+      <DependentUpon>NewOther.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewOther.aspx.designer.cs">
+      <DependentUpon>NewOther.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentAccountProfile.aspx.cs">
@@ -386,6 +427,13 @@
     </Compile>
     <Compile Include="studentMaster.Master.designer.cs">
       <DependentUpon>studentMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="studentMessaging.aspx.cs">
+      <DependentUpon>studentMessaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentMessaging.aspx.designer.cs">
+      <DependentUpon>studentMessaging.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

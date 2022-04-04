@@ -11,7 +11,7 @@ using System.Web.Configuration;
 
 namespace Sprint1
 {
-    public partial class NewInternship : System.Web.UI.Page
+    public partial class NewOther : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,14 +28,15 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
 
 
-                sc.CommandText = "INSERT INTO Internship (InternshipTitle, DateStart, DateEnd, Industry, Description, ApplicationLink) VALUES ("
-                    + "@title, @Start, @End, @Industry, @Description, @ApplicationLink)";
-                sc.Parameters.Add(new SqlParameter("@title", HttpUtility.HtmlEncode(txtInternshipTitle.Text)));
-                sc.Parameters.Add(new SqlParameter("@Start", HttpUtility.HtmlEncode(txtDateStart.Text)));
-                sc.Parameters.Add(new SqlParameter("@End", HttpUtility.HtmlEncode(txtDateEnd.Text)));
+                sc.CommandText = "INSERT INTO Other (OtherTitle, DateStart, DateEnd, Industry,  Description, ApplicationLink) VALUES ("
+                    + "@Title, @Start, @End, @Industry, @Description, @ApplicationLink)";
+                sc.Parameters.Add(new SqlParameter("@Title", HttpUtility.HtmlEncode(txtOtherTitle.Text)));
+                sc.Parameters.Add(new SqlParameter("@Start", HttpUtility.HtmlEncode(txtOtherStart.Text)));
+                sc.Parameters.Add(new SqlParameter("@End", HttpUtility.HtmlEncode(txtOtherEnd.Text)));
                 sc.Parameters.Add(new SqlParameter("@Industry", HttpUtility.HtmlEncode(txtIndustry.Text)));
-                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtInternshipDescription.Text)));
+                sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtOtherDescription.Text)));
                 sc.Parameters.Add(new SqlParameter("@ApplicationLink", HttpUtility.HtmlEncode(txtApplicationLink.Text)));
+
 
 
 

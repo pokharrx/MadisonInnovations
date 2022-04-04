@@ -11,115 +11,133 @@ namespace Sprint1
 {
 
 
-    public partial class studentHome
+    public partial class studentMessaging
     {
 
         /// <summary>
-        /// lbl1 control.
+        /// lblSelectRecipient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl1;
+        protected global::System.Web.UI.WebControls.Label lblSelectRecipient;
 
         /// <summary>
-        /// blAnnouncements control.
+        /// txtRecipientSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList blAnnouncements;
+        protected global::System.Web.UI.WebControls.TextBox txtRecipientSearch;
 
         /// <summary>
-        /// grdRecommendedJobs control.
+        /// ddlRecipientType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRecommendedJobs;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRecipientType;
 
         /// <summary>
-        /// SqlRecJobs control.
+        /// btnRecipientSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlRecJobs;
+        protected global::System.Web.UI.WebControls.Button btnRecipientSearch;
 
         /// <summary>
-        /// grdRecommendedInternships control.
+        /// lblMissingTypeAlert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRecommendedInternships;
+        protected global::System.Web.UI.WebControls.Label lblMissingTypeAlert;
 
         /// <summary>
-        /// SqlRecInternships control.
+        /// grdMembers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlRecInternships;
+        protected global::System.Web.UI.WebControls.GridView grdMembers;
 
         /// <summary>
-        /// grdRecommendedOther control.
+        /// grdStudents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRecommendedOther;
+        protected global::System.Web.UI.WebControls.GridView grdStudents;
 
         /// <summary>
-        /// SqlRecOther control.
+        /// lblSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlRecOther;
+        protected global::System.Web.UI.WebControls.Label lblSubject;
 
         /// <summary>
-        /// dtasrcAllJobs control.
+        /// txtSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllJobs;
+        protected global::System.Web.UI.WebControls.TextBox txtSubject;
 
         /// <summary>
-        /// dtasrcAllOther control.
+        /// txtSendMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllOther;
+        protected global::System.Web.UI.WebControls.TextBox txtSendMessage;
 
         /// <summary>
-        /// dtasrcAllInternships control.
+        /// btnSendMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllInternships;
+        protected global::System.Web.UI.WebControls.Button btnSendMessage;
 
         /// <summary>
-        /// dtasrcAllScholarships control.
+        /// lblMessageStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllScholarships;
+        protected global::System.Web.UI.WebControls.Label lblMessageStatus;
+
+        /// <summary>
+        /// grdInbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdInbox;
+
+        /// <summary>
+        /// grdSent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdSent;
     }
 }

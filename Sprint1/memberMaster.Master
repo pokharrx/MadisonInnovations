@@ -45,7 +45,8 @@
         <div>
         <div id="navMenu">
             <a href="memberHome.aspx">Home |</a>
-            <a href="memberAccountProfile.aspx">My Account</a>
+            <a href="memberAccountProfile.aspx">My Account |</a>
+            <a href="messagePortal.aspx">Messaging Portal</a>
         </div>    
             <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

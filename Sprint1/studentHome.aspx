@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <asp:Label ID="lbl1" runat="server" Text="Announcements"></asp:Label>
+    <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
     
       <%-- Recommended Job Opportunities --%>
     <div id="RecommendedJobs">
@@ -96,110 +99,6 @@
         </asp:SqlDataSource>
     </div>
     <br />
-    
-    
-    
-    <%-- Job Opportunities --%>
-    <div id="Jobs">
-        <h2>All Job Opportunities</h2>
-        <%-- Gridview that shows all jobs --%>
-        <asp:GridView
-            ID="grdJob"
-            runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle="PowderBlue"
-            EmptyDataText="No Company Selected"
-            AllowSorting="true"
-            AutoGenerateColumns="false"
-            DataKeyNames="JobID"
-            CellPadding="10"
-            CssClass="gridview">
-            <Columns>
-                <asp:BoundField HeaderText="Job Title" DataField="JobTitle" SortExpression="JobTitle"/>
-                <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
-                <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink" />
-            </Columns>
-        </asp:GridView>
-    </div>
-    <br />
-    <%-- Internship Opportunities --%>
-    <div id="Internships">
-        <h2>All Internship Opportunities</h2>
-        <%-- Gridview that shows all internships --%>
-        <asp:GridView
-            ID="grdInternship"
-            runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle="PowderBlue"
-            EmptyDataText="No Company Selected"
-            AllowSorting="true"
-            AutoGenerateColumns="false"
-            DataKeyNames="InternshipID"
-            CellPadding="10">
-            <Columns>
-                <asp:BoundField HeaderText="Internship Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
-                <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
-                <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
-            </Columns>
-        </asp:GridView>
-    </div>
-    <br />
-     <%-- Other Opportunities --%>
-    <div id="Other">
-        <h2> All Other Opportunities</h2>
-        <%-- Gridview that shows all jobs --%>
-        <asp:GridView
-            ID="grdOther"
-            runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle="PowderBlue"
-            EmptyDataText="No Other Opportunity Selected"
-            AllowSorting="true"
-            AutoGenerateColumns="false"
-            DataKeyNames="OtherID"
-            CellPadding="10"
-            CssClass="gridview">
-            <Columns>
-                <asp:BoundField HeaderText="Other Title" DataField="OtherTitle" SortExpression="OtherTitle"/>
-                <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
-                <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink" />
-            </Columns>
-        </asp:GridView>
-    </div>
-    <br />
-
-    <%-- Scholarship Opportunities --%>
-    <div id="Scholarships">
-        <h2>All Scholarships</h2>
-        <%-- Gridview that shows all scholarships --%>
-        <asp:GridView 
-             ID="grdScholarship" 
-             runat="server"
-             HorizontalAlign="Justify"
-             AlternatingRowStyle-BackColor="PowderBlue"
-             EmptyDataText="No Scholarship Selected"
-             AllowSorting="true"
-             AutoGenerateColumns="false"
-             DataKeyNames="ScholarshipID"
-             CellPadding="10">
-             <Columns>
-                 <asp:BoundField HeaderText="Name" DataField="ScholarshipName" SortExpression="ScholarshipName"/>
-                 <asp:BoundField HeaderText="Year" DataField="ScholarshipYear" SortExpression="ScholarshipYear"/>
-                 <asp:BoundField HeaderText="Amount" DataField="ScholarshipAmount" SortExpression="ScholarshipAmount"/>
-                 <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                 <asp:BoundField HeaderText="Status" DataField="Status" SortExpression="Status"/>
-            </Columns>
-         </asp:GridView>
-    </div>
-    <br />
-
-
        
     <%-- Data Sources for the gridviews --%>
     <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"

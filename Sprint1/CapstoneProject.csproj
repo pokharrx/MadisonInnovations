@@ -103,6 +103,7 @@
     <Content Include="adminMaster.Master" />
     <Content Include="MentorshipAssignment.aspx" />
     <Content Include="messagePortal.aspx" />
+    <Content Include="NewOther.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -372,6 +373,13 @@
     </Compile>
     <Compile Include="NewJob.aspx.designer.cs">
       <DependentUpon>NewJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewOther.aspx.cs">
+      <DependentUpon>NewOther.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewOther.aspx.designer.cs">
+      <DependentUpon>NewOther.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

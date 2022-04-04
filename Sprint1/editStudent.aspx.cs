@@ -14,11 +14,11 @@ namespace Sprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 String s = Session["EditStudentID"].ToString();
-                String membersQuery = "SELECT FirstName, LastName, EmailAddress, PhoneNumber, GradYear, Major, Grade, EmploymentStatus FROM Student WHERE StudentID =" + s + ";";
+                String membersQuery = "SELECT FirstName, LastName, EmailAddress, PhoneNumber, GradYear, Major, Grade, Industry, EmploymentStatus FROM Student WHERE StudentID =" + s + ";";
 
                 SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 SqlCommand sqlCommand = new SqlCommand();
@@ -37,8 +37,9 @@ namespace Sprint1
                     txtGrad.Text = queryResults["GradYear"].ToString();
                     txtMajor.Text = queryResults["Major"].ToString();
                     txtGrade.Text = queryResults["Grade"].ToString();
+                    txtIndustry.Text = queryResults["Industry"].ToString();
                     txtEmp.Text = queryResults["EmploymentStatus"].ToString();
-                   
+
                 }
 
 
@@ -56,7 +57,7 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
                 String s = Session["EditStudentID"].ToString();
                 sc.CommandText = "Update Student SET FirstName = @FName, LastName = @lName, EmailAddress = @Email, PhoneNumber" +
-                    " = @Phone, GradYear = @Grad, Major = @Major, Grade = @Grade, EmploymentStatus = @Emp WHERE StudentID =" + s + ";";
+                    " = @Phone, GradYear = @Grad, Major = @Major, Grade = @Grade, Industry = @Industry, EmploymentStatus = @Emp WHERE StudentID =" + s + ";";
 
                 sc.Parameters.Add(new SqlParameter("@FName", HttpUtility.HtmlEncode(txtFirst.Text)));
                 sc.Parameters.Add(new SqlParameter("@lName", HttpUtility.HtmlEncode(txtLast.Text)));
@@ -65,6 +66,7 @@ namespace Sprint1
                 sc.Parameters.Add(new SqlParameter("@Grad", HttpUtility.HtmlEncode(txtGrad.Text)));
                 sc.Parameters.Add(new SqlParameter("@Major", HttpUtility.HtmlEncode(txtMajor.Text)));
                 sc.Parameters.Add(new SqlParameter("@Grade", HttpUtility.HtmlEncode(txtGrade.Text)));
+                sc.Parameters.Add(new SqlParameter("@Industry", HttpUtility.HtmlEncode(txtIndustry.Text)));
                 sc.Parameters.Add(new SqlParameter("@Emp", HttpUtility.HtmlEncode(txtEmp.Text)));
                 sc.ExecuteNonQuery();
                 sqlConnect.Close();
@@ -73,6 +75,7 @@ namespace Sprint1
 
 
                 lblStatus.Text = "Info Updated";
+                Response.Redirect("adminHome.aspx");
             }
         }
 
@@ -91,5 +94,5 @@ namespace Sprint1
             ;
         }
     }
-    
+
 }

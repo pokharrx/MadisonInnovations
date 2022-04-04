@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+ <div>
     <asp:Label ID="lblOtherTitle" runat="server" Text="Enter Other Opportunity Title:"></asp:Label>
     <asp:TextBox ID="txtOtherTitle" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherTitle" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -30,3 +30,4 @@
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>
+

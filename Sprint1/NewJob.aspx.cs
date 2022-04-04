@@ -28,11 +28,12 @@ namespace Sprint1
                 sc.Connection = sqlConnect;
 
 
-                sc.CommandText = "INSERT INTO Job (JobTitle, DateStart, DateEnd, Description, ApplicationLink) VALUES ("
-                    + "@Title, @Start, @End, @Description, @ApplicationLink)";
+                sc.CommandText = "INSERT INTO Job (JobTitle, DateStart, DateEnd, Industry,  Description, ApplicationLink) VALUES ("
+                    + "@Title, @Start, @End, @Industry, @Description, @ApplicationLink)";
                 sc.Parameters.Add(new SqlParameter("@Title", HttpUtility.HtmlEncode(txtJobTitle.Text)));
                 sc.Parameters.Add(new SqlParameter("@Start", HttpUtility.HtmlEncode(txtJobStart.Text)));
                 sc.Parameters.Add(new SqlParameter("@End", HttpUtility.HtmlEncode(txtJobEnd.Text)));
+                sc.Parameters.Add(new SqlParameter("@Industry", HttpUtility.HtmlEncode(txtIndustry.Text)));
                 sc.Parameters.Add(new SqlParameter("@Description", HttpUtility.HtmlEncode(txtJobDescription.Text)));
                 sc.Parameters.Add(new SqlParameter("@ApplicationLink", HttpUtility.HtmlEncode(txtApplicationLink.Text)));
 

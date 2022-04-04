@@ -35,10 +35,10 @@
     <br />
 
     <%-- Recommended Internship Opportunities --%>
-   <%-- <div id="RecommendedInternships">
-        <h2>Recommended Internship Opportunities</h2>--%>
+    <div id="RecommendedInternships">
+        <h2>Recommended Internship Opportunities</h2>
         <%-- Gridview that shows all jobs --%>
-        <%--<asp:GridView
+        <asp:GridView
             ID="grdRecommendedInternships"
             runat="server"
             HorizontalAlign="Justify"
@@ -63,8 +63,39 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
-    <br />--%>
+    <br />
     
+
+      <%-- Recommended Other Opportunities --%>
+    <div id="RecommendedOther">
+        <h2>Recommended Other Opportunities</h2>
+        <%-- Gridview that shows all jobs --%>
+        <asp:GridView
+            ID="grdRecommendedOther"
+            runat="server"
+            HorizontalAlign="Justify"
+            AlternatingRowStyle="PowderBlue"
+            EmptyDataText="No Other Opportunities Matching Your Industry Interest"
+            AllowSorting="True"
+            AutoGenerateColumns="False"
+            CellPadding="10"
+            CssClass="gridview" DataSourceID="SqlRecOther">
+            <Columns>
+                <asp:BoundField HeaderText="OtherTitle" DataField="OtherTitle" SortExpression="OtherTitle"/>
+                <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
+                <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
+                <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
+                <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlRecOther" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [OtherTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Other] WHERE ([Industry] = @Industry)">
+            <SelectParameters>
+                <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    </div>
+    <br />
     
     
     
@@ -117,6 +148,32 @@
         </asp:GridView>
     </div>
     <br />
+     <%-- Other Opportunities --%>
+    <div id="Other">
+        <h2> All Other Opportunities</h2>
+        <%-- Gridview that shows all jobs --%>
+        <asp:GridView
+            ID="grdOther"
+            runat="server"
+            HorizontalAlign="Justify"
+            AlternatingRowStyle="PowderBlue"
+            EmptyDataText="No Other Opportunity Selected"
+            AllowSorting="true"
+            AutoGenerateColumns="false"
+            DataKeyNames="OtherID"
+            CellPadding="10"
+            CssClass="gridview">
+            <Columns>
+                <asp:BoundField HeaderText="Other Title" DataField="OtherTitle" SortExpression="OtherTitle"/>
+                <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
+                <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
+                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink" />
+            </Columns>
+        </asp:GridView>
+    </div>
+    <br />
+
     <%-- Scholarship Opportunities --%>
     <div id="Scholarships">
         <h2>All Scholarships</h2>
@@ -148,6 +205,10 @@
     <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
         SelectCommand="Select * from Job">
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="dtasrcAllOther" runat="server"
+        ConnectionString ="<%$ ConnectionStrings:SDB %>"
+        SelectCommand="Select * from Other">
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="dtasrcAllInternships" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"

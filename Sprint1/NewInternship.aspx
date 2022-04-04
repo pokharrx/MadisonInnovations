@@ -15,6 +15,9 @@
     <asp:TextBox ID="txtDateEnd" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtDateEnd" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
     <br />
+    <asp:Label ID="lblIndustry" runat="server" Text="Enter Internship Industry: "></asp:Label>
+    <asp:TextBox ID="txtIndustry" runat="server"></asp:TextBox>
+    <br />
     <asp:Label ID="lblInternshipDescription" runat="server" Text="Enter Internship Description: "></asp:Label>
     <asp:TextBox ID="txtInternshipDescription" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtInternshipDescription" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>

@@ -52,6 +52,9 @@
             float: right;
         }
     </style>
+     <script type="text/javascript">
+
+     </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -65,7 +68,7 @@
             <asp:Label ID="lblUserName" runat="server" Text="" CssClass="logOut"></asp:Label>
             <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="logOut" OnClick="btnLogout_Click" />
          </div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>

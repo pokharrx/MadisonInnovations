@@ -2,7 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <style type="text/css">
+        h2 {
+            font-weight: 600;
+        }
+        .gridview {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;
+            
+        }
+        </style>
     <asp:Label ID="lbl1" runat="server" Text="Announcements"></asp:Label>
     <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
     

@@ -1,0 +1,82 @@
+<%--      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>--%>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+ <%--   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Dashboard</a></li>
+      </ul>
+      <asp:Label ID="lblUserName" runat="server" Text="" class="nav navbar-nav navbar-right"></asp:Label>
+      <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="nav navbar-nav navbar-right" OnClick="btnLogout_Click" />--%>
+<%--    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>--%>
+            <%--SIDEBAR WORKING <div class="container-fluid">
+                <div class="row min-vh-100 flex-column flex-md-row">
+                    <aside class="col-12 col-md-3 col-xl-2 p-0 bg-light">
+                        <nav class="navbar navbar-expand-md navbar-light bd-dark flex-md-column flex-row align-items-center py-2 text-center sticky-top" id="sidebar">
+                            <div class="text-center p-3">
+                                <img src="Images/profile%20pic.png" alt="profile picture" class="img-fluid rounded-circle my-4 p-1 d-none d-md-block shadow" />
+                                <a href="#" class="navbar-brand mx-0 font-weight-bold text-nowrap">XcentPupil</a>
+                            </div>
+                            <button type="button" class="navbar-toggler border-0 order-1" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse-horizontal navbar-collapse order-last" id="nav">
+                                <ul class="navbar-nav flex-column w-100 justify-content-center">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">Edit Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">Tasks</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">User Info</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                </div>--%>
+            <%--</div>--%>
+<%--            <div class="container-nav">
+                <div class="column min-vh-100 flex-row flex-md-column">
+                    <aside class="row-12 row-md-3 row-xl-2 p-0 bg-light">
+                        <nav class="navbar navbar-expand-md navbar-light bd-dark flex-md-row flex-column align-items-center px-2 text-center sticky-top" id="topbar">
+                            <button type="button" class="navbar-toggler border-0 order-1" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse-vertical navbar-collapse order-last" id="navtop">
+                                <ul class="navbar-nav flex-row w-100 justify-content-center">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">Edit Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">Tasks</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">User Info</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                </div>
+            </div>--%>
+
+        <%--<div class="nav-container">
+            <div class="navMenu">
+                <a href="studentHome.aspx">Home</a>
+                <a href="StudentAccountProfile.aspx">My Account </a>
+                <a href="StudentAnnouncements.aspx">Dashboard </a>
+                <asp:Label ID="lblUserName" runat="server" Text="" CssClass="logOut"></asp:Label>
+                <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="logOut" OnClick="btnLogout_Click" />
+            </div>
+        </div>--%>

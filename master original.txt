@@ -1,0 +1,36 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="studentMaster.master.cs" Inherits="Sprint1.studentMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        body {
+            margin-bottom: 5%;
+        }
+        .right {
+            margin-top: 1%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="right" OnClick="btnLogout_Click"/>
+        <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>
+        <div>
+            <div id="navMenu">
+            <a href="studentHome.aspx">Home |</a>
+                 <a href="StudentAccountProfile.aspx">My Account |</a>
+                 <a href="StudentAnnouncements.aspx">Dashboard |</a>
+            
+        </div>    
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

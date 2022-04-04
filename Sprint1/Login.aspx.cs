@@ -64,6 +64,7 @@ namespace Sprint1
                             else if (persontype == "Student" & activation == "Active")
                             {
                                 Session["Username"] = txtUsername.Text;
+
                                 Response.Redirect("studentHome.aspx");
                             }
                             else if (persontype == "Admin" & activation == "Active")

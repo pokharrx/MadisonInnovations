@@ -57,7 +57,7 @@
         <asp:Button ID="bttnpdf" runat="server" Text="Click to view PDF" Font-Bold="True" OnClick="bttnpdf_Click" /> 
         <br />
         <br />
-        %-- Section Header --%>
+
 
     <h4>Edit Your Student Information</h4>
     <br />
@@ -105,8 +105,11 @@
     <asp:TextBox ID="txtEmploymentStatus" runat="server"></asp:TextBox>
         <br />
         <br />
-    <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />
+   <%-- <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />--%>
     <asp:Button ID="btnUpdate" runat="server" Text="Update" Onclick="btnUpdate_Click" />
+
+    <%--Status- lable --%>
+    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     
         
         <asp:SqlDataSource 

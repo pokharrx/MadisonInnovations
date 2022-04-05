@@ -64,6 +64,8 @@
             <a href="studentHome.aspx">Home</a>
             <a href="StudentAccountProfile.aspx">My Account </a>
             <a href="StudentAnnouncements.aspx">Dashboard </a>
+            <a href="studentOpportunityApplication.aspx">Apply for Opportunities</a>
+            <a href="StudentApplications.aspx">My Opportunities</a>
             <a href="studentMessaging.aspx">Messaging Portal</a>
             <asp:Label ID="lblUserName" runat="server" Text="" CssClass="logOut"></asp:Label>
             <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="logOut" OnClick="btnLogout_Click" />

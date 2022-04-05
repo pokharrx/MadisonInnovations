@@ -22,6 +22,35 @@ namespace Sprint1
             Session["StudentUserName"] = Session["Username"].ToString();
             updateFROMDB();
 
+            if (!IsPostBack)
+            {
+                lblStatus.Text = "";
+
+                String sqlQuery2 = "SELECT * FROM Student WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommand2 = new SqlCommand();
+                sqlCommand2.Parameters.AddWithValue("@StudentUserName", Session["StudentUserName"]);
+                sqlCommand2.Connection = sqlConnect2;
+                sqlCommand2.CommandType = CommandType.Text;
+                sqlCommand2.CommandText = sqlQuery2;
+                sqlConnect2.Open();
+                SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
+
+
+                while (queryResults2.Read())
+
+                {
+                    txtStudentFirstName.Text = queryResults2["FirstName"].ToString();
+                    txtStudentLastName.Text = queryResults2["LastName"].ToString();
+                    txtStudentEmail.Text = queryResults2["EmailAddress"].ToString();
+                    txtStudentPhoneNumber.Text = queryResults2["PhoneNumber"].ToString();
+                    txtExpectedGraduation.Text = queryResults2["GradYear"].ToString();
+                    txtMajor.Text = queryResults2["Major"].ToString();
+                    txtGrade.Text = queryResults2["Grade"].ToString();
+                    txtEmploymentStatus.Text = queryResults2["EmploymentStatus"].ToString();
+
+                }
+            }
         }
 
         protected void btnUploadFile_Click(object sender, EventArgs e)
@@ -143,38 +172,41 @@ namespace Sprint1
             // Close all related connections
             queryResults.Close();
             sqlConnect.Close();
-
             Response.Redirect("StudentAccountProfile.aspx");
 
+            lblStatus.ForeColor = Color.Green;
+            lblStatus.Font.Bold = true;
+            lblStatus.Text = "Successfully updated Student Info!";
+            System.Windows.Forms.MessageBox.Show("My message here");
         }
 
-        protected void btnPopulate_Click(object sender, EventArgs e)
-        {
-            String sqlQuery2 = "SELECT * FROM Student WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
-            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-            SqlCommand sqlCommand2 = new SqlCommand();
-            sqlCommand2.Parameters.AddWithValue("@StudentUserName", Session["StudentUserName"]);
-            sqlCommand2.Connection = sqlConnect2;
-            sqlCommand2.CommandType = CommandType.Text;
-            sqlCommand2.CommandText = sqlQuery2;
-            sqlConnect2.Open();
-            SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
+        //protected void btnPopulate_Click(object sender, EventArgs e)
+        //{
+        //    String sqlQuery2 = "SELECT * FROM Student WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
+        //    SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+        //    SqlCommand sqlCommand2 = new SqlCommand();
+        //    sqlCommand2.Parameters.AddWithValue("@StudentUserName", Session["StudentUserName"]);
+        //    sqlCommand2.Connection = sqlConnect2;
+        //    sqlCommand2.CommandType = CommandType.Text;
+        //    sqlCommand2.CommandText = sqlQuery2;
+        //    sqlConnect2.Open();
+        //    SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
 
 
-            while (queryResults2.Read())
+        //    while (queryResults2.Read())
 
-            {
-                txtStudentFirstName.Text = queryResults2["FirstName"].ToString();
-                txtStudentLastName.Text = queryResults2["LastName"].ToString();
-                txtStudentEmail.Text = queryResults2["EmailAddress"].ToString();
-                txtStudentPhoneNumber.Text = queryResults2["PhoneNumber"].ToString();
-                txtExpectedGraduation.Text = queryResults2["GradYear"].ToString();
-                txtMajor.Text = queryResults2["Major"].ToString();
-                txtGrade.Text = queryResults2["Grade"].ToString();
-                txtEmploymentStatus.Text = queryResults2["EmploymentStatus"].ToString();
+        //    {
+        //        txtStudentFirstName.Text = queryResults2["FirstName"].ToString();
+        //        txtStudentLastName.Text = queryResults2["LastName"].ToString();
+        //        txtStudentEmail.Text = queryResults2["EmailAddress"].ToString();
+        //        txtStudentPhoneNumber.Text = queryResults2["PhoneNumber"].ToString();
+        //        txtExpectedGraduation.Text = queryResults2["GradYear"].ToString();
+        //        txtMajor.Text = queryResults2["Major"].ToString();
+        //        txtGrade.Text = queryResults2["Grade"].ToString();
+        //        txtEmploymentStatus.Text = queryResults2["EmploymentStatus"].ToString();
 
-            }
-        }
+        //    }
+        //}
     }
 
 

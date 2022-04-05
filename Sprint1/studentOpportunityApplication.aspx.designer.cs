@@ -11,7 +11,7 @@ namespace Sprint1
 {
 
 
-    public partial class StudentApplications
+    public partial class studentOpportunityApplication
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.Label lblJobApplication;
 
         /// <summary>
-        /// grdJobApplication control.
+        /// drplstJob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdJobApplication;
+        protected global::System.Web.UI.WebControls.DropDownList drplstJob;
 
         /// <summary>
-        /// SqlStudentJobApps control.
+        /// btnApplyforJob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlStudentJobApps;
+        protected global::System.Web.UI.WebControls.Button btnApplyforJob;
 
         /// <summary>
         /// lblInternshipApplication control.
@@ -51,22 +51,22 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.Label lblInternshipApplication;
 
         /// <summary>
-        /// grdInternshipApplication control.
+        /// drplstInternship control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdInternshipApplication;
+        protected global::System.Web.UI.WebControls.DropDownList drplstInternship;
 
         /// <summary>
-        /// SqlStudentInternshipApps control.
+        /// btnApplyforInternship control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlStudentInternshipApps;
+        protected global::System.Web.UI.WebControls.Button btnApplyforInternship;
 
         /// <summary>
         /// lblOtherApplication control.
@@ -78,21 +78,48 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.Label lblOtherApplication;
 
         /// <summary>
-        /// grdOtherApplication control.
+        /// drplstOther control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdOtherApplication;
+        protected global::System.Web.UI.WebControls.DropDownList drplstOther;
 
         /// <summary>
-        /// SqlStudentOtherApps control.
+        /// btnApplyforOther control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlStudentOtherApps;
+        protected global::System.Web.UI.WebControls.Button btnApplyforOther;
+
+        /// <summary>
+        /// datasrcJobNames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource datasrcJobNames;
+
+        /// <summary>
+        /// datasrcInternshipNames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource datasrcInternshipNames;
+
+        /// <summary>
+        /// datasrcOtherNames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource datasrcOtherNames;
     }
 }

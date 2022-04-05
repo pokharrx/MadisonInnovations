@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.Configuration;
+using System.Drawing;
+
 namespace Sprint1
 {
     public partial class studentMaster : System.Web.UI.MasterPage

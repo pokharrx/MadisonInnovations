@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentMaster.Master" AutoEventWireup="true" CodeBehind="InternshipApplication.aspx.cs" Inherits="Sprint1.InternshipApplication" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentMaster.Master" AutoEventWireup="true" CodeBehind="OtherApplication.aspx.cs" Inherits="Sprint1.OtherApplication" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Internship Application
+  Other Opportunity Application
     <br />
     <asp:Label ID="lblOpportunityTitle" runat="server" Text=""></asp:Label>
     <br />
@@ -26,7 +26,7 @@
     <asp:CheckBox ID="chbxAcceptanceStatus" runat="server" />
     <br />
 
-<%--    <asp:Label ID="lblApplicationNotes" runat="server" Text="Enter any Notes for your Internship Application: "></asp:Label>
+<%--    <asp:Label ID="lblApplicationNotes" runat="server" Text="Enter any Notes for your Other Opportunity Application: "></asp:Label>
     <asp:TextBox ID="txtApplicationText" runat="server"></asp:TextBox>
     <br />--%>
 
@@ -35,6 +35,6 @@
     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
         <br />
     <br />
-    <asp:HyperLink ID="InternshipAppsHL" runat="server" NavigateUrl="studentOpportunityApplication.aspx">Return to the Applications Page</asp:HyperLink>
+    <asp:HyperLink ID="OtherAppsHL" runat="server" NavigateUrl="studentOpportunityApplication.aspx">Return to the Applications Page</asp:HyperLink>
     <br />
 </asp:Content>

@@ -98,6 +98,7 @@
     <Content Include="editStudent.aspx" />
     <Content Include="images\ole school group logo.png" />
     <Content Include="InternshipApplication.aspx" />
+    <Content Include="JobApplication.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="loginstyle.css" />
     <Content Include="memberAccountProfile.aspx" />
@@ -107,6 +108,7 @@
     <Content Include="MentorshipAssignment.aspx" />
     <Content Include="messagePortal.aspx" />
     <Content Include="NewOther.aspx" />
+    <Content Include="OtherApplication.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -229,227 +231,215 @@
     <Content Include="StudentApplications.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="studentMessaging.aspx" />
+    <Content Include="studentOpportunityApplication.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountRequests.aspx.cs">
       <DependentUpon>AccountRequests.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AccountRequests.aspx.designer.cs">
       <DependentUpon>AccountRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddAnnouncement.aspx.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddAnnouncement.aspx.designer.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddScholarship.aspx.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddScholarship.aspx.designer.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminHome.aspx.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminHome.aspx.designer.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminMaster.Master.cs">
       <DependentUpon>adminMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminMaster.Master.designer.cs">
       <DependentUpon>adminMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="adminMessaging.aspx.cs">
       <DependentUpon>adminMessaging.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminMessaging.aspx.designer.cs">
       <DependentUpon>adminMessaging.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CreateAccount.aspx.designer.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="editCompanies.aspx.cs">
       <DependentUpon>editCompanies.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="editCompanies.aspx.designer.cs">
       <DependentUpon>editCompanies.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditInternship.aspx.cs">
       <DependentUpon>EditInternship.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditInternship.aspx.designer.cs">
       <DependentUpon>EditInternship.aspx</DependentUpon>
     </Compile>
     <Compile Include="editJobs.aspx.cs">
       <DependentUpon>editJobs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="editJobs.aspx.designer.cs">
       <DependentUpon>editJobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="editOther.aspx.cs">
       <DependentUpon>editOther.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="editOther.aspx.designer.cs">
       <DependentUpon>editOther.aspx</DependentUpon>
     </Compile>
     <Compile Include="editStudent.aspx.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="editStudent.aspx.designer.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="InternshipApplication.aspx.cs">
       <DependentUpon>InternshipApplication.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="InternshipApplication.aspx.designer.cs">
       <DependentUpon>InternshipApplication.aspx</DependentUpon>
     </Compile>
+    <Compile Include="JobApplication.aspx.cs">
+      <DependentUpon>JobApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobApplication.aspx.designer.cs">
+      <DependentUpon>JobApplication.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="memberAccountProfile.aspx.cs">
       <DependentUpon>memberAccountProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="memberAccountProfile.aspx.designer.cs">
       <DependentUpon>memberAccountProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="memberHome.aspx.cs">
       <DependentUpon>memberHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="memberHome.aspx.designer.cs">
       <DependentUpon>memberHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="memberMaster.Master.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="memberMaster.Master.designer.cs">
       <DependentUpon>memberMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="memberMessaging.aspx.cs">
       <DependentUpon>memberMessaging.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="memberMessaging.aspx.designer.cs">
       <DependentUpon>memberMessaging.aspx</DependentUpon>
     </Compile>
     <Compile Include="MentorshipAssignment.aspx.cs">
       <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MentorshipAssignment.aspx.designer.cs">
       <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
     </Compile>
     <Compile Include="messagePortal.aspx.cs">
       <DependentUpon>messagePortal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="messagePortal.aspx.designer.cs">
       <DependentUpon>messagePortal.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewCompany.aspx.cs">
       <DependentUpon>NewCompany.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewCompany.aspx.designer.cs">
       <DependentUpon>NewCompany.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewCorporateSponsor.aspx.cs">
       <DependentUpon>NewCorporateSponsor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewCorporateSponsor.aspx.designer.cs">
       <DependentUpon>NewCorporateSponsor.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewInternship.aspx.cs">
       <DependentUpon>NewInternship.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewInternship.aspx.designer.cs">
       <DependentUpon>NewInternship.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewJob.aspx.cs">
       <DependentUpon>NewJob.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewJob.aspx.designer.cs">
       <DependentUpon>NewJob.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewOther.aspx.cs">
       <DependentUpon>NewOther.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewOther.aspx.designer.cs">
       <DependentUpon>NewOther.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherApplication.aspx.cs">
+      <DependentUpon>OtherApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherApplication.aspx.designer.cs">
+      <DependentUpon>OtherApplication.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentAccountProfile.aspx.cs">
       <DependentUpon>StudentAccountProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentAccountProfile.aspx.designer.cs">
       <DependentUpon>StudentAccountProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentAnnouncements.aspx.cs">
       <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentAnnouncements.aspx.designer.cs">
       <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentApplications.aspx.cs">
       <DependentUpon>StudentApplications.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentApplications.aspx.designer.cs">
       <DependentUpon>StudentApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="studentHome.aspx.cs">
       <DependentUpon>studentHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="studentHome.aspx.designer.cs">
       <DependentUpon>studentHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="studentMaster.Master.cs">
       <DependentUpon>studentMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="studentMaster.Master.designer.cs">
       <DependentUpon>studentMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="studentMessaging.aspx.cs">
       <DependentUpon>studentMessaging.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="studentMessaging.aspx.designer.cs">
       <DependentUpon>studentMessaging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentOpportunityApplication.aspx.cs">
+      <DependentUpon>studentOpportunityApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentOpportunityApplication.aspx.designer.cs">
+      <DependentUpon>studentOpportunityApplication.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

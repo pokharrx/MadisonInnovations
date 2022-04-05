@@ -97,6 +97,7 @@
     <Content Include="editOther.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="images\ole school group logo.png" />
+    <Content Include="InternshipApplication.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="loginstyle.css" />
     <Content Include="memberAccountProfile.aspx" />
@@ -225,6 +226,7 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="StudentAccountProfile.aspx" />
     <Content Include="StudentAnnouncements.aspx" />
+    <Content Include="StudentApplications.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="studentMessaging.aspx" />
     <Content Include="Web.config" />
@@ -313,6 +315,13 @@
     </Compile>
     <Compile Include="editStudent.aspx.designer.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InternshipApplication.aspx.cs">
+      <DependentUpon>InternshipApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InternshipApplication.aspx.designer.cs">
+      <DependentUpon>InternshipApplication.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -413,6 +422,13 @@
     </Compile>
     <Compile Include="StudentAnnouncements.aspx.designer.cs">
       <DependentUpon>StudentAnnouncements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentApplications.aspx.cs">
+      <DependentUpon>StudentApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentApplications.aspx.designer.cs">
+      <DependentUpon>StudentApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="studentHome.aspx.cs">
       <DependentUpon>studentHome.aspx</DependentUpon>

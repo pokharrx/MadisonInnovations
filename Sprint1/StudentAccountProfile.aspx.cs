@@ -177,7 +177,6 @@ namespace Sprint1
             lblStatus.ForeColor = Color.Green;
             lblStatus.Font.Bold = true;
             lblStatus.Text = "Successfully updated Student Info!";
-            System.Windows.Forms.MessageBox.Show("My message here");
         }
 
         //protected void btnPopulate_Click(object sender, EventArgs e)

@@ -201,7 +201,7 @@ namespace Sprint1
 
                     sc.ExecuteNonQuery();
                     sqlConnect.Close();
-                    Response.Redirect("memberMessaging.aspx");
+                    Response.Redirect("studentMessaging.aspx");
                 }
                 catch (Exception)
                 {

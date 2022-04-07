@@ -55,32 +55,6 @@ namespace Sprint1
                     grdStudents.DataSource = dt2;
                     grdStudents.DataBind();
                 }
-                try
-                {
-                    //Populate Inbox
-                    String inboxQuery = "select SenderUsername, Message, Subject from Messaging where ReceiverUsername = '" + Session["Username"].ToString() + "';";
-                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                    SqlDataAdapter sqlAdapter = new SqlDataAdapter(inboxQuery, sqlConnect);
-                    DataTable dtInbox = new DataTable();
-                    sqlAdapter.Fill(dtInbox);
-                    grdInbox.DataSource = dtInbox;
-                    grdInbox.DataBind();
-                    sqlConnect.Close();
-
-                    //Populate Sent
-                    String sentQuery = "select ReceiverUsername, Message, Subject from Messaging where SenderUsername = '" + Session["Username"] + "';";
-                    SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                    SqlDataAdapter sqlAdapter2 = new SqlDataAdapter(sentQuery, sqlConnect);
-                    DataTable dtSent = new DataTable();
-                    sqlAdapter2.Fill(dtSent);
-                    grdSent.DataSource = dtSent;
-                    grdSent.DataBind();
-                    sqlConnect.Close();
-                }
-                catch
-                {
-
-                }
             }
             else
             {
@@ -213,18 +187,6 @@ namespace Sprint1
             {
                 lblMessageStatus.Text = "Please Fill Out All Fields";
             }
-        }
-
-        protected void grdInbox_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            grdInbox.PageIndex = e.NewPageIndex;
-            grdInbox.DataBind();
-        }
-
-        protected void grdSent_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            grdSent.PageIndex = e.NewPageIndex;
-            grdSent.DataBind();
         }
     }
 }

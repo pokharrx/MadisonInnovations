@@ -6,77 +6,134 @@
 <head runat="server">
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.6.0.slim.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
         body {
-            margin: 3px 3px;
             font-family: Garamond,serif; 
             font-weight: 200;
+            display: inline-flex;  
+            background-color: #fdf9ff;
         }
-        .img {
-            float: left;
-            width: 15px 15px;
-            padding: 1px 1px;
-            align-items: center;
-            height: 100px;
+        .sidebar {
+            position: fixed;
+            height: 100%;
+            width: 85px;
+            align-items: stretch;
+            overflow: hidden;
+            margin-right: 1%;
+            background-color: #7f729a;
+        }
+        .sidebar hr {
+            color: white;
+            height: 5px;
         }
         .navMenu {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
             background-color: #dacce6;
             font-weight: 300;
-            height: 80px;
-            align-content: center;
-            margin: 5px 5px;
+            height: 70px;
+            width: 100%;
+            margin-bottom: 5px;           
+            position: fixed;
+            box-shadow: 0px 2px 5px #8e81a9;
         }
+        #logo {
+            height: 70px;
+        }              
         .navMenu a {
-            float: left;
-            display: grid;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
+            color: black;         
             text-decoration: none;
-        }
-        .navMenu href {
-            background-color: #dacce6;
-            text-decoration: none;
-        }
+            padding: 28px;
+        }      
         .navMenu a:hover {
             background-color: #f4efe1;
             color: black;
         }
-        .logOut button {
-            background-color: lightgrey;
+        #lblUserName {
             float: right;
+            margin-right: 15px;
+            font-weight: bold;
+            color: #3c3265;
+            margin-top: 20px;
+        }
+        #btnLogout {
+            height: 40px;
+            float: right;
+            margin-top: 12px;
+            margin-right: 10px;
+        }
+        .content {
+            padding: 2%;
+            margin-top: 75px;
+            margin-left: 100px;
+            margin-right: 2%;
+        }
+        .profile {
+            margin-top: 85px;
+            margin-left: 5px;
+            margin-bottom: -10px;
+            height: 72px;
+            width: 72px;
+            border: 1px solid white;
+            border-radius: 100%;
+        }
+        .home {
+            height: 60px;
+            width: 60px;
+            margin-left: 11px;
+            margin-top: 10px;
+        }
+        .chat {
+            height: 50px;
+            width: 50px;
+            margin-left: 15px;
+            margin-top: 20px;
         }
     </style>
-     <script type="text/javascript">
-
-     </script>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="sidebar">           
+            <asp:ImageButton 
+                ID="profile" 
+                runat="server" 
+                ImageUrl="images/blank_profilepic.png" 
+                CssClass="profile" 
+                OnClick="profile_Click" 
+                ToolTip="Edit Profile" />
+            <hr />
+            <asp:ImageButton 
+                ID="home" 
+                runat="server" 
+                ImageUrl="images/home.png" 
+                CssClass="home" 
+                OnClick="home_Click" 
+                ToolTip="Home" />
+            <asp:ImageButton 
+                ID="chat" 
+                runat="server" 
+                ImageUrl="images/favpng_communication-icon-chat-icon.png" 
+                CssClass="chat" 
+                OnClick="chat_Click" 
+                ToolTip="Chat"/>
+        </div>
         <div class="navbar-header">
-        <div class="navMenu">
-            <Image ID="logo" src="images/ole%20school%20group%20logo.png" ImageAlign="left" />
-            <a href="studentHome.aspx">Home</a>
-            <a href="StudentAccountProfile.aspx">My Account </a>
-            <a href="StudentAnnouncements.aspx">Dashboard </a>
-            <a href="studentOpportunityApplication.aspx">Apply for Opportunities</a>
-            <a href="StudentApplications.aspx">My Opportunities</a>
-            <a href="studentMessaging.aspx">Messaging Portal</a>
-            <asp:Label ID="lblUserName" runat="server" Text="" CssClass="logOut"></asp:Label>
-            <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="logOut" OnClick="btnLogout_Click" />
-         </div>
+            <div class="navMenu">
+                <Image ID="logo" src="images/ole%20school%20group%20logo.png"/>
+                <a href="StudentAnnouncements.aspx">Dashboard</a>
+                <a href="studentOpportunityApplication.aspx">Apply for Opportunities</a>
+                <a href="StudentApplications.aspx">My Opportunities</a>       
+                <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />
+                <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
+        <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
-    </form>
-        <script src="Scripts/jquery-3.6.0.slim.js"></script>
-        <script src="Scripts/esm/popper.min.js"></script>
-        <script src="Scripts/bootstrap.bundle.min.js"></script>
-
+        </div>           
+    </form>      
 </body>
 </html>

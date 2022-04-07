@@ -5,59 +5,133 @@
 <html>
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.6.0.slim.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
         body {
-            margin-bottom: 5%;
+            font-family: Garamond,serif; 
+            font-weight: 200;
+            display: inline-flex;  
+            background-color: #fdf9ff;
         }
-        .right {
-            margin-top: 1%;
-            padding: 5px;
-            float: right;
+        .sidebar {
+            position: fixed;
+            height: 100%;
+            width: 85px;
+            align-items: stretch;
+            overflow: hidden;
+            margin-right: 1%;
+            background-color: #7f729a;
         }
-        .margin-top {
-            margin-top: 1%;
+        .sidebar hr {
+            color: white;
+            height: 5px;
         }
-        .text-wrap {
-            word-break: break-all;
+        .navMenu {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #dacce6;
+            font-weight: 300;
+            height: 70px;
+            width: 100%;
+            margin-bottom: 5px;           
+            position: fixed;
+            box-shadow: 0px 2px 5px #8e81a9;
         }
-        a:link, a:visited {
-	        color: #121362;
+        #logo {
+            margin-left: -40px;
+        }              
+        .navMenu a {
+            color: black;
+            text-align: center;           
             text-decoration: none;
+            padding: 20px 20px 0px 20px;          
+        }      
+        .navMenu a:hover {
+            background-color: #f4efe1;
+            color: black;
+        }
+        #lblUserName {
             font-weight: bold;
-	    }
-        a:hover {
-            opacity: 0.5;
+            color: #3c3265;
+            margin-top: 20px;
         }
-        #navMenu {
-            padding: 1.5%;
-            margin: auto;
-            margin-top: 2%;
-            margin-bottom: 2%;
-            text-align: center;
-            border: 2px outset #cbdbff;
-            box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
-            border-radius: 50px;
-            width: max-content;
+        #btnLogout {
+            height: 40px;
+            float: right;
+            margin-top: 12px;
+            margin-right: -35px;
         }
+        .content {
+            padding: 2%;
+            margin-top: 75px;
+            margin-left: 100px;
+            margin-right: 2%;
+        }
+        .profile {
+            margin-top: 85px;
+            margin-left: 5px;
+            margin-bottom: -10px;
+            height: 72px;
+            width: 72px;
+            border: 1px solid white;
+            border-radius: 100%;
+        }
+        .home {
+            height: 60px;
+            width: 60px;
+            margin-left: 11px;
+            margin-top: 10px;
+        }
+        .chat {
+            height: 50px;
+            width: 50px;
+            margin-left: 15px;
+            margin-top: 20px;
+        }        
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">       
-        <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" CssClass="right" OnClick="btnLogout_Click"/>
-        <a href="memberAccountProfile.aspx" class="right">My Profile</a>
-        <asp:Label ID="lblUserName" runat="server" Text="" CssClass="right"></asp:Label>      
-        <div>
-        <div id="navMenu">
-            <a href="memberHome.aspx">Home |</a>
-            <a href="memberAccountProfile.aspx">My Account |</a>
-            <a href="memberMessaging.aspx">Messaging Portal</a>
-        </div>    
-            <br />
+    <form id="form1" runat="server">
+        <div class="sidebar">
+            <asp:ImageButton 
+                ID="profile" 
+                runat="server" 
+                ImageUrl="images/blank_profilepic.png" 
+                CssClass="profile" 
+                OnClick="profile_Click" 
+                ToolTip="Edit Profile" />
+            <hr />
+            <asp:ImageButton 
+                ID="home" 
+                runat="server" 
+                ImageUrl="images/home.png" 
+                CssClass="home" 
+                OnClick="home_Click" 
+                ToolTip="Home" />
+            <asp:ImageButton 
+                ID="chat" 
+                runat="server" 
+                ImageUrl="images/favpng_communication-icon-chat-icon.png" 
+                CssClass="chat" 
+                OnClick="chat_Click" 
+                ToolTip="Chat"/>
+        </div>
+        <div class="navbar-header">
+            <div class="navMenu">
+                <Image ID="logo" src="images/ole%20school%20group%20logo.png"/>
+                <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
+                <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />
+            </div>
+        </div>
+        <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
-    </form>
+        </div>           
+    </form>      
 </body>
 </html>

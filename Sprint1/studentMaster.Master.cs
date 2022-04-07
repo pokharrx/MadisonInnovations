@@ -32,5 +32,20 @@ namespace Sprint1
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }
+
+        protected void chat_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("studentMessaging.aspx");
+        }
+
+        protected void profile_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("StudentAccountProfile.aspx");
+        }
+
+        protected void home_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("studentHome.aspx");
+        }
     }
 }

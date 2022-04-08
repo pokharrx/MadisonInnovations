@@ -11,7 +11,8 @@
             padding: 16px;
             text-align: left;
             background-color: #f4efe1;
-            border: none;           
+            border: none;
+            width: 100%;
         }
         .home {
             background-color: #d0c8b5;
@@ -39,14 +40,14 @@
             ID="grdStudents"
             runat="server"
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Student Found"
             AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="StudentID"
             AutoGenerateSelectButton="true"
             OnSelectedIndexChanged="grStudents_SelectedIndexChanged"
-            CellPadding="10">    
+            CellPadding="10" 
+            CssClass="gridview">    
             <Columns>
                 <asp:TemplateField>
                     <ItemTemplate>
@@ -77,7 +78,6 @@
             ID="grdCompanies"
             runat="server" 
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Company Found"
             AllowSorting="false"
             AutoGenerateColumns="false"
@@ -85,7 +85,7 @@
             CellPadding="10"
             AutoGenerateSelectButton="true"
             OnSelectedIndexChanged="grCompanies_SelectedIndexChanged"
-            >
+            CssClass="gridview">
             <Columns>
                 <asp:TemplateField>
                     <ItemTemplate>
@@ -109,14 +109,14 @@
             ID="grdJobs" 
             runat="server"
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Job Found"
             AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="JobID"
             CellPadding="10"
             AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grJobs_SelectedIndexChanged">
+            OnSelectedIndexChanged="grJobs_SelectedIndexChanged"
+            CssClass="gridview">
             <Columns>
                   <asp:TemplateField>
                     <ItemTemplate>
@@ -143,14 +143,14 @@
             ID="grdInternships" 
             runat="server"
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Internship Found"
             AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="InternshipID"
             CellPadding="10"
             AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grInternships_SelectedIndexChanged">
+            OnSelectedIndexChanged="grInternships_SelectedIndexChanged"
+            CssClass="gridview">
             <Columns>
                   <asp:TemplateField>
                     <ItemTemplate>
@@ -178,14 +178,14 @@
             ID="grdOther" 
             runat="server"
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Other Opportunities Found"
             AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="OtherID"
             CellPadding="10"
             AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grdOther_SelectedIndexChanged">
+            OnSelectedIndexChanged="grdOther_SelectedIndexChanged"
+            CssClass="gridview">
             <Columns>
                   <asp:TemplateField>
                     <ItemTemplate>
@@ -213,14 +213,14 @@
             ID="grdScholarships" 
             runat="server"
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
             EmptyDataText="No Scholarship Found"
             AllowSorting="false"
             AutoGenerateColumns="false"
             DataKeyNames="ScholarshipID"
             CellPadding="10"
             AutoGenerateSelectButton="true"
-            OnSelectedIndexChanged="grScholarships_SelectedIndexChanged">
+            OnSelectedIndexChanged="grScholarships_SelectedIndexChanged"
+            CssClass="gridview">
             <Columns>
                   <asp:TemplateField>
                     <ItemTemplate>

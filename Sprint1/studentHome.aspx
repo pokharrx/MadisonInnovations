@@ -11,7 +11,8 @@
             padding: 16px;
             text-align: left;
             background-color: #f4efe1;
-            border: none;           
+            border: none;        
+            width: 100%;
         }
         .home {
             background-color: #d0c8b5;

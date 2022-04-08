@@ -33,21 +33,27 @@
             padding: 2%;
         }
         #news {
+            background-color: white;
             float: right;
             margin-top: 2%;
-            width: 20%;
+            width: 25%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
         #recommended {
             float: left;
-            width: 80%;
+            width: 75%;
         }
         </style>
 
     <div id="news">
         <h2>Announcements</h2>
         <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
-        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+        <asp:Calendar ID="Calendar1" runat="server">
+            <TitleStyle BackColor="#dacce6" ForeColor="#7f729a" Font-Bold="true"></TitleStyle>
+            <OtherMonthDayStyle ForeColor="LightGray"></OtherMonthDayStyle>
+            <DayStyle BackColor="white"></DayStyle>
+            <SelectedDayStyle BackColor="#d0c8b5" Font-Bold="True"></SelectedDayStyle>
+        </asp:Calendar>
     </div>
 
     <section id="recommended">

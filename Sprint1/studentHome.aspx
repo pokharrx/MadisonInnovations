@@ -11,11 +11,26 @@
             padding: 16px;
             text-align: left;
             background-color: #f4efe1;
-            border: none;
-            
+            border: none;           
+        }
+        .home {
+            background-color: #d0c8b5;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .dashboard:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .chat:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
         }
         </style>
     <asp:Label ID="lbl1" runat="server" Text="Announcements"></asp:Label>
+
     <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
     
       <%-- Recommended Job Opportunities --%>

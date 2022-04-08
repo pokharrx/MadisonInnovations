@@ -2,7 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
+   <style>
+       .dashboard {
+            background-color: #d0c8b5;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+       }
+       .home:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+       }
+        .chat:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+   </style>
       <%-- Recommended Job Opportunities --%>
     <div id="RecommendedJobs">
         <h2>Recommended Job Opportunities</h2>

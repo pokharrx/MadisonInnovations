@@ -99,6 +99,7 @@
     <Content Include="editOther.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="images\blank_profilepic.png" />
+    <Content Include="images\dashboard.png" />
     <Content Include="images\favpng_communication-icon-chat-icon.png" />
     <Content Include="images\home.png" />
     <Content Include="images\ole school group logo.png" />

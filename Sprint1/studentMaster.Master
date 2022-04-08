@@ -77,19 +77,22 @@
             margin-bottom: -10px;
             height: 72px;
             width: 72px;
-            border: 1px solid white;
+            border: 2px solid white;
             border-radius: 100%;
         }
         .home {
-            height: 60px;
-            width: 60px;
-            margin-left: 11px;
+            width: 85px;
+            height: 85px;
             margin-top: 10px;
         }
+        .dashboard {
+            width: 85px;
+            height: 85px;
+            margin-top: 20px;
+        }
         .chat {
-            height: 50px;
-            width: 50px;
-            margin-left: 15px;
+            width: 85px;
+            height: 85px;
             margin-top: 20px;
         }
     </style>
@@ -113,6 +116,13 @@
                 OnClick="home_Click" 
                 ToolTip="Home" />
             <asp:ImageButton 
+                ID="dashboard" 
+                runat="server" 
+                ImageUrl="images/dashboard.png" 
+                CssClass="dashboard" 
+                OnClick="dashboard_Click" 
+                ToolTip="Dashboard" />
+            <asp:ImageButton 
                 ID="chat" 
                 runat="server" 
                 ImageUrl="images/favpng_communication-icon-chat-icon.png" 
@@ -123,7 +133,6 @@
         <div class="navbar-header">
             <div class="navMenu">
                 <Image ID="logo" src="images/ole%20school%20group%20logo.png"/>
-                <a href="StudentAnnouncements.aspx">Dashboard</a>
                 <a href="studentOpportunityApplication.aspx">Apply for Opportunities</a>
                 <a href="StudentApplications.aspx">My Opportunities</a>       
                 <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />

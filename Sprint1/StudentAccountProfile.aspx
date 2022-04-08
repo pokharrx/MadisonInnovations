@@ -3,6 +3,23 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .dashboard:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .home:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .chat:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+    </style>
     <%-- Students --%>
     <div id="Students">
         <h2>Students</h2>

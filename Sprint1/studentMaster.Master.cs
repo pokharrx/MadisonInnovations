@@ -47,5 +47,10 @@ namespace Sprint1
         {
             Response.Redirect("studentHome.aspx");
         }
+
+        protected void dashboard_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("StudentAnnouncements.aspx");
+        }
     }
 }

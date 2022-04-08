@@ -5,8 +5,7 @@
     <style>
         #nav {
             display: flex;
-            float: right;
-            
+            float: right;            
         }
         #nav a {
             text-decoration: none;
@@ -22,8 +21,20 @@
             background-color: #f4efe1;
             color: #3c3265;
         }
-        #send {
-            float: none;
+        .chat {
+            background-color: #d0c8b5;             
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .dashboard:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .home:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
         }
     </style>
     <div id="page">

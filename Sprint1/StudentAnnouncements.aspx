@@ -3,6 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <style>
+       .gridview {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;           
+        }
        .dashboard {
             background-color: #d0c8b5;
             border-top: 2px solid white;
@@ -153,7 +160,8 @@
             AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="InternshipID"
-            CellPadding="10">
+            CellPadding="10"
+            CssClass="gridview">
             <Columns>
                 <asp:BoundField HeaderText="Internship Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
@@ -203,7 +211,8 @@
              AllowSorting="true"
              AutoGenerateColumns="false"
              DataKeyNames="ScholarshipID"
-             CellPadding="10">
+             CellPadding="10"
+             CssClass="gridview">
              <Columns>
                  <asp:BoundField HeaderText="Name" DataField="ScholarshipName" SortExpression="ScholarshipName"/>
                  <asp:BoundField HeaderText="Year" DataField="ScholarshipYear" SortExpression="ScholarshipYear"/>

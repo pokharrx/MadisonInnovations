@@ -29,11 +29,9 @@
             background-color: #dacce6;
             border-top: 2px solid white;
             border-bottom: 2px solid white;
-        }
-        #news, #recommended {
-            padding: 2%;
-        }
+        }        
         #news {
+            padding: 2%;
             background-color: white;
             float: right;
             margin-top: 2%;
@@ -42,6 +40,8 @@
             border-radius: 15px;
         }
         #recommended {
+            padding-right: 2%;
+            padding-bottom: 5%;
             float: left;
             width: 75%;
         }

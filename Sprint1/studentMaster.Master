@@ -21,7 +21,7 @@
         .sidebar {
             position: fixed;
             height: 100%;
-            width: 85px;
+            width: 80px;
             align-items: stretch;
             overflow: hidden;
             margin-right: 1%;
@@ -68,12 +68,12 @@
         .content {
             padding: 2%;
             margin-top: 75px;
-            margin-left: 100px;
+            margin-left: 80px;
             margin-right: 2%;
         }
         .profile {
             margin-top: 85px;
-            margin-left: 5px;
+            margin-left: 3.75px;
             margin-bottom: -10px;
             height: 72px;
             width: 72px;
@@ -81,18 +81,18 @@
             border-radius: 100%;
         }
         .home {
-            width: 85px;
-            height: 85px;
+            width: 80px;
+            height: 80px;
             margin-top: 10px;
         }
         .dashboard {
-            width: 85px;
-            height: 85px;
+            width: 80px;
+            height: 80px;
             margin-top: 20px;
         }
         .chat {
-            width: 85px;
-            height: 85px;
+            width: 80px;
+            height: 80px;
             margin-top: 20px;
         }
     </style>

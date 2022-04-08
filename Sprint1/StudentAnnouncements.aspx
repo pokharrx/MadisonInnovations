@@ -42,7 +42,7 @@
             CellPadding="10"
             CssClass="gridview" DataSourceID="SqlRecJobs">
             <Columns>
-                <asp:BoundField HeaderText="JobTitle" DataField="JobTitle" SortExpression="JobTitle"/>
+                <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="JobTitle" DataField="JobTitle" SortExpression="JobTitle"/>
                 <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
                 <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
@@ -73,7 +73,7 @@
             CellPadding="10"
             CssClass="gridview" DataSourceID="SqlRecInternships">
             <Columns>
-                <asp:BoundField HeaderText="InternshipTitle" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
+                <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="InternshipTitle" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
                 <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
                 <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
@@ -105,7 +105,7 @@
             CellPadding="10"
             CssClass="gridview" DataSourceID="SqlRecOther">
             <Columns>
-                <asp:BoundField HeaderText="OtherTitle" DataField="OtherTitle" SortExpression="OtherTitle"/>
+                <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="OtherTitle" DataField="OtherTitle" SortExpression="OtherTitle"/>
                 <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
                 <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
@@ -139,7 +139,7 @@
             CellPadding="10"
             CssClass="gridview">
             <Columns>
-                <asp:BoundField HeaderText="Job Title" DataField="JobTitle" SortExpression="JobTitle"/>
+                <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Job Title" DataField="JobTitle" SortExpression="JobTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
                 <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
@@ -164,7 +164,7 @@
             CellPadding="10"
             CssClass="gridview">
             <Columns>
-                <asp:BoundField HeaderText="Internship Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
+                <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Internship Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
                 <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
@@ -189,7 +189,7 @@
             CellPadding="10"
             CssClass="gridview">
             <Columns>
-                <asp:BoundField HeaderText="Other Title" DataField="OtherTitle" SortExpression="OtherTitle"/>
+                <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Other Title" DataField="OtherTitle" SortExpression="OtherTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
                 <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
@@ -215,7 +215,7 @@
              CellPadding="10"
              CssClass="gridview">
              <Columns>
-                 <asp:BoundField HeaderText="Name" DataField="ScholarshipName" SortExpression="ScholarshipName"/>
+                 <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Name" DataField="ScholarshipName" SortExpression="ScholarshipName"/>
                  <asp:BoundField HeaderText="Year" DataField="ScholarshipYear" SortExpression="ScholarshipYear"/>
                  <asp:BoundField HeaderText="Amount" DataField="ScholarshipAmount" SortExpression="ScholarshipAmount"/>
                  <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>

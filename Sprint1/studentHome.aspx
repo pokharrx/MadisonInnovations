@@ -29,104 +29,121 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        #news, #recommended {
+            padding: 2%;
+        }
+        #news {
+            float: right;
+            margin-top: 2%;
+            width: 20%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        #recommended {
+            float: left;
+            width: 80%;
+        }
         </style>
-    <asp:Label ID="lbl1" runat="server" Text="Announcements"></asp:Label>
 
-    <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
+    <div id="news">
+        <h2>Announcements</h2>
+        <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
+        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+    </div>
+
+    <section id="recommended">
+        <%-- Recommended Job Opportunities --%>
+        <div id="RecommendedJobs">
+            <h2>Recommended Job Opportunities</h2>
+            <%-- Gridview that shows all jobs --%>
+            <asp:GridView
+                ID="grdRecommendedJobs"
+                runat="server"
+                HorizontalAlign="Justify"
+                AlternatingRowStyle="PowderBlue"
+                EmptyDataText="No Job Opportunities Matching Your Industry Interest"
+                AllowSorting="True"
+                AutoGenerateColumns="False"
+                CellPadding="10"
+                CssClass="gridview" DataSourceID="SqlRecJobs">
+                <Columns>
+                    <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="JobTitle" DataField="JobTitle" SortExpression="JobTitle"/>
+                    <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
+                    <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
+                    <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
+                    <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
+                    <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlRecJobs" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [JobTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Job] WHERE ([Industry] = @Industry)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
+        <br />
+
+        <%-- Recommended Internship Opportunities --%>
+        <div id="RecommendedInternships">
+            <h2>Recommended Internship Opportunities</h2>
+            <%-- Gridview that shows all jobs --%>
+            <asp:GridView
+                ID="grdRecommendedInternships"
+                runat="server"
+                HorizontalAlign="Justify"
+                AlternatingRowStyle="PowderBlue"
+                EmptyDataText="No Internship Opportunities Matching Your Industry Interest"
+                AllowSorting="True"
+                AutoGenerateColumns="False"
+                CellPadding="10"
+                CssClass="gridview" DataSourceID="SqlRecInternships">
+                <Columns>
+                    <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="InternshipTitle" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
+                    <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
+                    <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
+                    <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
+                    <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
+                    <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlRecInternships" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [InternshipTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Internship] WHERE ([Industry] = @Industry)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
+        <br />
     
-      <%-- Recommended Job Opportunities --%>
-    <div id="RecommendedJobs">
-        <h2>Recommended Job Opportunities</h2>
-        <%-- Gridview that shows all jobs --%>
-        <asp:GridView
-            ID="grdRecommendedJobs"
-            runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle="PowderBlue"
-            EmptyDataText="No Job Opportunities Matching Your Industry Interest"
-            AllowSorting="True"
-            AutoGenerateColumns="False"
-            CellPadding="10"
-            CssClass="gridview" DataSourceID="SqlRecJobs">
-            <Columns>
-                <asp:BoundField HeaderText="JobTitle" DataField="JobTitle" SortExpression="JobTitle"/>
-                <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
-                <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
-                <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlRecJobs" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [JobTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Job] WHERE ([Industry] = @Industry)">
-            <SelectParameters>
-                <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
-    </div>
-    <br />
-
-    <%-- Recommended Internship Opportunities --%>
-    <div id="RecommendedInternships">
-        <h2>Recommended Internship Opportunities</h2>
-        <%-- Gridview that shows all jobs --%>
-        <asp:GridView
-            ID="grdRecommendedInternships"
-            runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle="PowderBlue"
-            EmptyDataText="No Internship Opportunities Matching Your Industry Interest"
-            AllowSorting="True"
-            AutoGenerateColumns="False"
-            CellPadding="10"
-            CssClass="gridview" DataSourceID="SqlRecInternships">
-            <Columns>
-                <asp:BoundField HeaderText="InternshipTitle" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
-                <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
-                <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
-                <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlRecInternships" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [InternshipTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Internship] WHERE ([Industry] = @Industry)">
-            <SelectParameters>
-                <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
-    </div>
-    <br />
+        <%-- Recommended Other Opportunities --%>
+        <div id="RecommendedOther">
+            <h2>Recommended Other Opportunities</h2>
+            <%-- Gridview that shows all jobs --%>
+            <asp:GridView
+                ID="grdRecommendedOther"
+                runat="server"
+                HorizontalAlign="Justify"
+                AlternatingRowStyle="PowderBlue"
+                EmptyDataText="No Other Opportunities Matching Your Industry Interest"
+                AllowSorting="True"
+                AutoGenerateColumns="False"
+                CellPadding="10"
+                CssClass="gridview" DataSourceID="SqlRecOther">
+                <Columns>
+                    <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="OtherTitle" DataField="OtherTitle" SortExpression="OtherTitle"/>
+                    <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
+                    <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
+                    <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
+                    <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
+                    <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlRecOther" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [OtherTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Other] WHERE ([Industry] = @Industry)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
+    </section>
     
-
-      <%-- Recommended Other Opportunities --%>
-    <div id="RecommendedOther">
-        <h2>Recommended Other Opportunities</h2>
-        <%-- Gridview that shows all jobs --%>
-        <asp:GridView
-            ID="grdRecommendedOther"
-            runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle="PowderBlue"
-            EmptyDataText="No Other Opportunities Matching Your Industry Interest"
-            AllowSorting="True"
-            AutoGenerateColumns="False"
-            CellPadding="10"
-            CssClass="gridview" DataSourceID="SqlRecOther">
-            <Columns>
-                <asp:BoundField HeaderText="OtherTitle" DataField="OtherTitle" SortExpression="OtherTitle"/>
-                <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
-                <asp:BoundField HeaderText="DateEnd" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Industry" DataField="Industry" SortExpression="Industry"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" />
-                <asp:BoundField DataField="ApplicationLink" HeaderText="ApplicationLink" SortExpression="ApplicationLink" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlRecOther" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" SelectCommand="SELECT [OtherTitle], [DateStart], [DateEnd], [Industry], [Description], [ApplicationLink] FROM [Other] WHERE ([Industry] = @Industry)">
-            <SelectParameters>
-                <asp:SessionParameter Name="Industry" SessionField="StudentIndustry" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
-    </div>
-    <br />
        
     <%-- Data Sources for the gridviews --%>
     <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"

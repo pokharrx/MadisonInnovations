@@ -52,7 +52,8 @@
             <TitleStyle BackColor="#dacce6" ForeColor="#7f729a" Font-Bold="true"></TitleStyle>
             <OtherMonthDayStyle ForeColor="LightGray"></OtherMonthDayStyle>
             <DayStyle BackColor="white"></DayStyle>
-            <SelectedDayStyle BackColor="#d0c8b5" Font-Bold="True"></SelectedDayStyle>
+            <SelectedDayStyle BackColor="#7f729a" Font-Bold="True"></SelectedDayStyle>
+            <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
         </asp:Calendar>
     </div>
 

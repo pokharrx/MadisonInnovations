@@ -35,7 +35,7 @@
             background-color: white;
             float: right;
             margin-top: 2%;
-            width: 25%;
+            width: 300px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 15px;
         }

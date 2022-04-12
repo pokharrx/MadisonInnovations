@@ -25,20 +25,16 @@ namespace Sprint1
                 {
                     //use a datatable for storing all the data
                     DataTable dt1 = new DataTable();
-                    string memberQuery = "SELECT * from Member";
-                    DataTable dt2 = new DataTable();
-                    string studentQuery = "SELECT * from Student";
-
+                    string personQuery = "SELECT * from PersonMessage";
+                   
                     //using automatically closes the connection when its done being used
                     using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString))
-                    using (SqlDataAdapter memberAdapter = new SqlDataAdapter(memberQuery, connection))
-                    using (SqlDataAdapter studentAdapter = new SqlDataAdapter(studentQuery, connection))
+                    using (SqlDataAdapter personAdapter = new SqlDataAdapter(personQuery, connection))
                     {
                         try
                         {
                             //database fills the datatable
-                            memberAdapter.Fill(dt1);
-                            studentAdapter.Fill(dt2);
+                            personAdapter.Fill(dt1);
                         }
                         catch
                         {
@@ -46,14 +42,11 @@ namespace Sprint1
                     }
 
                     //save the datatable into a viewstate for later use
-                    ViewState["grdMembers"] = dt1;
-                    ViewState["grdStudents"] = dt2;
+                    ViewState["grdPersons"] = dt1;
 
                     //bind the datasource to the gridview
-                    grdMembers.DataSource = dt1;
-                    grdMembers.DataBind();
-                    grdStudents.DataSource = dt2;
-                    grdStudents.DataBind();
+                    grdPersons.DataSource = dt1;
+                    grdPersons.DataBind();
                 }
             }
             else
@@ -65,116 +58,73 @@ namespace Sprint1
 
         protected void btnRecipientSearch_Click(object sender, EventArgs e)
         {
-            if (ddlRecipientType.SelectedItem.Value == "Member" || ddlRecipientType.SelectedItem.Value == "Student")
+            string searchPerson = txtRecipientSearch.Text.ToLower();
+
+            // check if the student search is at least 1 characters
+            if (searchPerson.Length >= 1)
             {
-                if (ddlRecipientType.SelectedItem.Value == "Member")
+                if (ViewState["grdPersons"] == null)
+                return;
+
+                DataTable dt = ViewState["grdPersons"] as DataTable;
+
+                // making a clone of datatable
+                DataTable dtNew = dt.Clone();
+
+                // loop through table for correct fields
+                foreach (DataRow row in dt.Rows)
                 {
-                    grdStudents.Visible = false;
-                    lblMissingTypeAlert.Visible = false;
-
-                    string searchMember = txtRecipientSearch.Text.ToLower();
-
-                    // check if the student search is at least 1 characters
-                    if (searchMember.Length >= 1)
+                    if (row["FirstName"].ToString().ToLower().Contains(searchPerson) || row["LastName"].ToString().ToLower().Contains(searchPerson) || row["UserName"].ToString().ToLower().Contains(searchPerson))
                     {
-                        if (ViewState["grdMembers"] == null)
-                            return;
-
-                        DataTable dt = ViewState["grdMembers"] as DataTable;
-
-                        // making a clone of datatable
-                        DataTable dtNew = dt.Clone();
-
-                        // loop through table for correct fields
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            if (row["FirstName"].ToString().ToLower().Contains(searchMember) || row["LastName"].ToString().ToLower().Contains(searchMember) || row["MemberUserName"].ToString().ToLower().Contains(searchMember))
-                            {
-                                //finding copy and add to new table
-                                dtNew.Rows.Add(row.ItemArray);
-                            }
-                        }
-
-                        // rebind the grid
-                        grdMembers.DataSource = dtNew;
-                        grdMembers.DataBind();
-                        grdMembers.Visible = true;
+                        //finding copy and add to new table
+                        dtNew.Rows.Add(row.ItemArray);
                     }
                 }
-                if (ddlRecipientType.SelectedItem.Value == "Student")
-                {
-                    grdMembers.Visible = false;
-                    lblMissingTypeAlert.Visible = false;
-
-                    string searchStudent = txtRecipientSearch.Text.ToLower();
-
-                    // check if the student search is at least 1 characters
-                    if (searchStudent.Length >= 1)
-                    {
-                        if (ViewState["grdStudents"] == null)
-                            return;
-
-                        DataTable dt = ViewState["grdStudents"] as DataTable;
-
-                        // making a clone of datatable
-                        DataTable dtNew = dt.Clone();
-
-                        // loop through table for correct fields
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            if (row["FirstName"].ToString().ToLower().Contains(searchStudent) || row["LastName"].ToString().ToLower().Contains(searchStudent) || row["StudentUserName"].ToString().ToLower().Contains(searchStudent))
-                            {
-                                //finding copy and add to new table
-                                dtNew.Rows.Add(row.ItemArray);
-                            }
-                        }
-
-                        // rebind the grid
-                        grdStudents.DataSource = dtNew;
-                        grdStudents.DataBind();
-                        grdStudents.Visible = true;
-                    }
-                }
-            }
-            else
-            {
-                lblMissingTypeAlert.Visible = true;
+                
+                // rebind the grid
+                grdPersons.DataSource = dtNew;
+                grdPersons.DataBind();
+                grdPersons.Visible = true;              
             }
         }
 
-        protected void grdStudents_SelectedIndexChanged(object sender, EventArgs e)
+        protected void grdPersons_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtRecipientSearch.Text = grdStudents.SelectedRow.Cells[1].Text;
-            grdStudents.Visible = false;
+            lstboxRecipients.Items.Add(grdPersons.SelectedRow.Cells[1].Text);
+            grdPersons.Visible = false;
         }
 
-        protected void grdMembers_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnRemoveRecipient_Click(object sender, EventArgs e)
         {
-            txtRecipientSearch.Text = grdMembers.SelectedRow.Cells[1].Text;
-            grdMembers.Visible = false;
+            lstboxRecipients.Items.Remove(lstboxRecipients.SelectedItem);
         }
 
         protected void btnSendMessage_Click(object sender, EventArgs e)
         {
-            if (txtRecipientSearch.Text != "" && txtSendMessage.Text != "" && txtSubject.Text != "" && ddlRecipientType.SelectedItem.Value != "Nothing")
+            if (lstboxRecipients.Items.Count > 0 && txtSendMessage.Text != "" && txtSubject.Text != "")
             {
                 try
-                {
-                    System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                    sqlConnect.Open();
-                    SqlCommand sc = new SqlCommand();
-                    sc.Connection = sqlConnect;
+                {                    
+                    foreach (var listBoxItem in lstboxRecipients.Items)
+                    {
+                        System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                        sqlConnect.Open();
+                        SqlCommand sc = new SqlCommand();
+                        sc.Connection = sqlConnect;
 
-                    String messageSender = Session["Username"].ToString();
+                        String messageSender = Session["Username"].ToString();
 
-                    sc.CommandText = "INSERT INTO Messaging (SenderUsername, ReceiverUsername, Message, Subject) VALUES ('"
-                        + messageSender + "', @Recipient, @Message, @Subject)";
-                    sc.Parameters.Add(new SqlParameter("@Recipient", HttpUtility.HtmlEncode(txtRecipientSearch.Text)));
-                    sc.Parameters.Add(new SqlParameter("@Message", HttpUtility.HtmlEncode(txtSendMessage.Text)));
-                    sc.Parameters.Add(new SqlParameter("@Subject", HttpUtility.HtmlEncode(txtSubject.Text)));
+                        sc.CommandText = "INSERT INTO Messaging (SenderUsername, ReceiverUsername, Message, Subject) VALUES ('"
+                            + messageSender + "', @Recipient, @Message, @Subject)";
 
-                    sc.ExecuteNonQuery();
-                    sqlConnect.Close();
+                        sc.Parameters.Add(new SqlParameter("@Recipient", HttpUtility.HtmlEncode(listBoxItem)));
+                        sc.Parameters.Add(new SqlParameter("@Message", HttpUtility.HtmlEncode(txtSendMessage.Text)));
+                        sc.Parameters.Add(new SqlParameter("@Subject", HttpUtility.HtmlEncode(txtSubject.Text)));
+
+                        sc.ExecuteNonQuery();
+                        sqlConnect.Close();
+                    }
+                                                      
                     Response.Redirect("studentMessaging.aspx");
                 }
                 catch (Exception)
@@ -187,6 +137,6 @@ namespace Sprint1
             {
                 lblMessageStatus.Text = "Please Fill Out All Fields";
             }
-        }       
+        }
     }
 }

@@ -36,6 +36,9 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .margin-top {
+            margin-top: 5px;
+        }
     </style>
     <div id="page">
         <div id="nav">
@@ -46,66 +49,42 @@
         <div id="send">
             <h2>Send Message</h2>
             <hr/>
-            <asp:Label ID="lblSelectRecipient" runat="server" Text="To: (Recipient Username)"></asp:Label>
-            <asp:TextBox ID="txtRecipientSearch" runat="server" Width="25%"></asp:TextBox>
-            <asp:DropDownList ID="ddlRecipientType" runat="server">
-                <asp:ListItem Value="Nothing">Choose Recipient Type</asp:ListItem>
-                <asp:ListItem Value="Member">Member</asp:ListItem>
-                <asp:ListItem Value="Student">Student</asp:ListItem>
-            </asp:DropDownList>
+            <asp:Label ID="lblSelectRecipient" runat="server" Text="To: "></asp:Label>
+            <asp:TextBox ID="txtRecipientSearch" runat="server" Width="32%"></asp:TextBox>           
             <asp:Button ID="btnRecipientSearch" runat="server" Text="Search" OnClick="btnRecipientSearch_Click" />
-            <asp:Label ID="lblMissingTypeAlert" runat="server" Text="Please Choose Recipient Type" Visible="false" ForeColor="Red"></asp:Label>
             <br />
             <asp:GridView 
-                ID="grdMembers" 
+                ID="grdPersons" 
                 runat="server" 
                 AlternatingRowStyle-BackColor="#d0c8b5" 
                 EmptyDataText="No User Found" 
                 AutoGenerateColumns="false"
-                DataKeyNames="MemberID"
+                DataKeyNames="PersonMessageID"
                 AutoGenerateSelectButton="true" 
-                OnSelectedIndexChanged="grdMembers_SelectedIndexChanged" 
+                OnSelectedIndexChanged="grdPersons_SelectedIndexChanged" 
                 CellPadding="10" 
                 Visible="false" 
                 CssClass="margin-top"
                 BorderColor="White"
                 HeaderStyle-HorizontalAlign="Left"
-                Width="75%" 
+                Width="40%" 
                 HeaderStyle-Font-Size="Large" 
                 HeaderStyle-BackColor="#bcaac1">
                 <Columns>
-                    <asp:BoundField HeaderText="Username" DataField="MemberUserName" />
+                    <asp:BoundField HeaderText="Username" DataField="UserName" />
                     <asp:BoundField HeaderText="First Name" DataField="FirstName" />
                     <asp:BoundField HeaderText="Last Name" DataField="LastName" />
                 </Columns>
-            </asp:GridView>
-            <asp:GridView 
-                ID="grdStudents" 
-                runat="server" 
-                AlternatingRowStyle-BackColor="#d0c8b5" 
-                EmptyDataText="No User Found"
-                AutoGenerateColumns="false"
-                DataKeyNames="StudentID"
-                AutoGenerateSelectButton="true" 
-                OnSelectedIndexChanged="grdStudents_SelectedIndexChanged" 
-                CellPadding="10" 
-                Visible="false" 
-                CssClass="margin-top"
-                BorderColor="White"
-                HeaderStyle-HorizontalAlign="Left"
-                Width="75%" 
-                HeaderStyle-Font-Size="Large" 
-                HeaderStyle-BackColor="#bcaac1">
-                <Columns>
-                    <asp:BoundField HeaderText="Username" DataField="StudentUserName" />
-                    <asp:BoundField HeaderText="First Name" DataField="FirstName" SortExpression="FirstName"/>
-                    <asp:BoundField HeaderText="Last Name" DataField="LastName" SortExpression="LastName"/>       
-                </Columns>
-            </asp:GridView>
+            </asp:GridView>           
+            <asp:ListBox ID="lstboxRecipients" runat="server" Height="75px" Width="40%" CssClass="margin-top"></asp:ListBox>
             <br />
+            <asp:Button ID="btnRemoveRecipient" runat="server" Text="Remove Recipient" OnClick="btnRemoveRecipient_Click"/>
+            <br /><br />
             <asp:Label ID="lblSubject" runat="server" Text="Subject:"></asp:Label>           
             <asp:TextBox ID="txtSubject" runat="server" Width="75%"></asp:TextBox>
             <br /><br />
+            <asp:Label ID="lblMessage" runat="server" Text="Message:"></asp:Label>
+            <br />
             <asp:TextBox ID="txtSendMessage" runat="server" TextMode="MultiLine" Rows="10" Columns="150"></asp:TextBox>
             <br />
             <asp:Button ID="btnSendMessage" runat="server" Text="Send" OnClick="btnSendMessage_Click"/>

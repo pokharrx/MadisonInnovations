@@ -33,15 +33,6 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.TextBox txtRecipientSearch;
 
         /// <summary>
-        /// ddlRecipientType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlRecipientType;
-
-        /// <summary>
         /// btnRecipientSearch control.
         /// </summary>
         /// <remarks>
@@ -51,31 +42,31 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.Button btnRecipientSearch;
 
         /// <summary>
-        /// lblMissingTypeAlert control.
+        /// grdPersons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMissingTypeAlert;
+        protected global::System.Web.UI.WebControls.GridView grdPersons;
 
         /// <summary>
-        /// grdMembers control.
+        /// lstboxRecipients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMembers;
+        protected global::System.Web.UI.WebControls.ListBox lstboxRecipients;
 
         /// <summary>
-        /// grdStudents control.
+        /// btnRemoveRecipient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdStudents;
+        protected global::System.Web.UI.WebControls.Button btnRemoveRecipient;
 
         /// <summary>
         /// lblSubject control.
@@ -94,6 +85,15 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSubject;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// txtSendMessage control.

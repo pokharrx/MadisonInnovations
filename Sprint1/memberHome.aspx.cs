@@ -21,7 +21,16 @@ namespace Sprint1
         {
             if (!IsPostBack)
             {
-
+                //obtain member ID on login
+                String sqlQuerySID = "select MemberID from Member Where MemberUserName=@MemberUserName";
+                SqlConnection sqlConnectSID = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommandSID = new SqlCommand(sqlQuerySID, sqlConnectSID);
+                sqlCommandSID.Parameters.AddWithValue("@MemberUserName", Session["UserName"].ToString());
+                sqlConnectSID.Open();
+                sqlCommandSID.ExecuteScalar();
+                int MemberID = int.Parse(sqlCommandSID.ExecuteScalar().ToString());
+                Session["MemberID"] = MemberID;
+                sqlConnectSID.Close();
 
 
                 System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);

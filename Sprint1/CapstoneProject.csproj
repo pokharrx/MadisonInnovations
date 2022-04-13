@@ -76,6 +76,7 @@
     <Content Include="adminInbox.aspx" />
     <Content Include="adminMessaging.aspx" />
     <Content Include="adminOutbox.aspx" />
+    <Content Include="AdminPrivileges.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -299,6 +300,13 @@
     </Compile>
     <Compile Include="adminOutbox.aspx.designer.cs">
       <DependentUpon>adminOutbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPrivileges.aspx.cs">
+      <DependentUpon>AdminPrivileges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPrivileges.aspx.designer.cs">
+      <DependentUpon>AdminPrivileges.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>

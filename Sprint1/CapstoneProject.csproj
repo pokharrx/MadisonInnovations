@@ -113,6 +113,7 @@
     <Content Include="memberInbox.aspx" />
     <Content Include="memberMessaging.aspx" />
     <Content Include="memberOutbox.aspx" />
+    <Content Include="MentorMentorship.aspx" />
     <Content Include="MentorshipAssignment.aspx" />
     <Content Include="NewOther.aspx" />
     <Content Include="OtherApplication.aspx" />
@@ -238,6 +239,7 @@
     <Content Include="StudentApplications.aspx" />
     <Content Include="studentHome.aspx" />
     <Content Include="studentInbox.aspx" />
+    <Content Include="StudentMentorship.aspx" />
     <Content Include="studentMessaging.aspx" />
     <Content Include="studentOpportunityApplication.aspx" />
     <Content Include="studentOutbox.aspx" />
@@ -405,6 +407,13 @@
     <Compile Include="memberOutbox.aspx.designer.cs">
       <DependentUpon>memberOutbox.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MentorMentorship.aspx.cs">
+      <DependentUpon>MentorMentorship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorMentorship.aspx.designer.cs">
+      <DependentUpon>MentorMentorship.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MentorshipAssignment.aspx.cs">
       <DependentUpon>MentorshipAssignment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -497,6 +506,13 @@
     </Compile>
     <Compile Include="studentMaster.Master.designer.cs">
       <DependentUpon>studentMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMentorship.aspx.cs">
+      <DependentUpon>StudentMentorship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentMentorship.aspx.designer.cs">
+      <DependentUpon>StudentMentorship.aspx</DependentUpon>
     </Compile>
     <Compile Include="studentMessaging.aspx.cs">
       <DependentUpon>studentMessaging.aspx</DependentUpon>

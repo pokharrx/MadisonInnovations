@@ -47,16 +47,10 @@ namespace Sprint1
                 AcceptanceStatus = "Yes";
             }
 
-            //obtain logged in user industry of interest for student to see only their indusrty recommendations
-            String sqlQuery = "select StudentID from Student Where StudentUserName=@StudentUserName";
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-            SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnect);
-            sqlCommand.Parameters.AddWithValue("@StudentUserName", Session["UserName"].ToString());
-            sqlConnect.Open();
-            sqlCommand.ExecuteScalar();
-            int studentId = int.Parse(sqlCommand.ExecuteScalar().ToString());
-            Session["StudentID"] = studentId;
-            sqlConnect.Close();
+            //obtain logged in user StudentID
+           
+            int studentId = int.Parse(Session["StudentID"].ToString());
+           
 
             int InternshipID = int.Parse(Session["InternshipID"].ToString());
 

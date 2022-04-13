@@ -23,7 +23,16 @@ namespace Sprint1
             if (!IsPostBack)
             {
 
-
+                //obtain logged in user StudentID
+                String sqlQuerySID = "select StudentID from Student Where StudentUserName=@StudentUserName";
+                SqlConnection sqlConnectSID = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommandSID = new SqlCommand(sqlQuerySID, sqlConnectSID);
+                sqlCommandSID.Parameters.AddWithValue("@StudentUserName", Session["UserName"].ToString());
+                sqlConnectSID.Open();
+                sqlCommandSID.ExecuteScalar();
+                int studentId = int.Parse(sqlCommandSID.ExecuteScalar().ToString());
+                Session["StudentID"] = studentId;
+                sqlConnectSID.Close();
 
                 System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 sqlConnect.Open();

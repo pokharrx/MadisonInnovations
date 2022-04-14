@@ -31,6 +31,15 @@
             color: white;
             height: 5px;
         }
+        .addBar {
+            position: fixed;
+            height: 100%;
+            width: 200px;
+            background-color: white;
+            overflow: scroll;
+            margin-top: 70px;
+            margin-left: 85px;
+        }
         .navMenu {
             background-color: #dacce6;
             font-weight: 300;
@@ -101,6 +110,27 @@
             padding: 10px;
             margin-top: 20px;
         }
+        .icon {
+            height: 75px;
+            width: 75px;
+            background-color: #f1ece0;
+            border-radius: 20px;
+            padding: 15px;
+        }
+        .icon:hover {
+            background-color: #e9e1ef;
+        }
+        h3 {
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .margin-bottom {
+            margin-bottom: 100px;
+        }
     </style>
 </head>
 <body>
@@ -129,6 +159,68 @@
                 CssClass="chat" 
                 OnClick="chat_Click" 
                 ToolTip="Chat"/>           
+        </div>
+        <div id="addBar" runat="server" visible="false" class="addBar">
+            <div class="container">      
+                <asp:ImageButton 
+                    ID="addJjob" 
+                    runat="server" 
+                    ImageUrl="images/job.png" 
+                    CssClass="icon" 
+                    OnClick="addJjob_Click" 
+                    ToolTip="Add Job" />
+                <h3>Add Job</h3>
+            </div>
+            <div class="container">       
+                <asp:ImageButton 
+                    ID="addInternship" 
+                    runat="server" 
+                    ImageUrl="images/internship.png" 
+                    CssClass="icon" 
+                    OnClick="addInternship_Click" 
+                    ToolTip="Add Internship" />
+                <h3>Add Internship</h3>
+            </div>
+            <div class="container">
+                <asp:ImageButton 
+                    ID="addCompany" 
+                    runat="server" 
+                    ImageUrl="images/company.png" 
+                    CssClass="icon" 
+                    OnClick="addCompany_Click" 
+                    ToolTip="Add Company" />
+                <h3>Add Company</h3>
+            </div>
+            <div class="container">
+                <asp:ImageButton 
+                    ID="addSponsor" 
+                    runat="server" 
+                    ImageUrl="images/sponsor.png" 
+                    CssClass="icon" 
+                    OnClick="addSponsor_Click" 
+                    ToolTip="Add Corporate Sponsor" />
+                <h3>Add Sponsor</h3>
+            </div>
+            <div class="container">
+                <asp:ImageButton 
+                    ID="addOther" 
+                    runat="server" 
+                    ImageUrl="images/opportunity.png" 
+                    CssClass="icon" 
+                    OnClick="addOther_Click" 
+                    ToolTip="Add Other Opportunity" />
+                <h3>Add Opportunity</h3>
+            </div>
+            <div class="container margin-bottom">
+                <asp:ImageButton 
+                    ID="addAnnouncement" 
+                    runat="server" 
+                    ImageUrl="images/announcement.png" 
+                    CssClass="icon" 
+                    OnClick="addAnnouncement_Click" 
+                    ToolTip="Add Announcement" />
+                <h3>Add Announcement</h3>
+            </div>
         </div>
         <div class="navbar-header">
             <div class="navMenu">

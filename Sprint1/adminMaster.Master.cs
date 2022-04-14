@@ -40,7 +40,44 @@ namespace Sprint1
 
         protected void add_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("adminAddEntity.aspx");
+            if (addBar.Visible == false)
+            {
+                addBar.Visible = true;
+            }
+            else
+            {
+                addBar.Visible = false;
+            }          
+        }
+
+        protected void addJjob_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("NewJob.aspx");
+        }
+
+        protected void addInternship_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("NewInternship.aspx");
+        }
+
+        protected void addCompany_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("NewCompany.aspx");
+        }
+
+        protected void addSponsor_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("NewCorporateSponsor.aspx");
+        }
+
+        protected void addOther_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("NewOther.aspx");
+        }
+
+        protected void addAnnouncement_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("AddAnnouncement.aspx");
         }
     }
 }

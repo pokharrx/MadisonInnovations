@@ -36,6 +36,11 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .add:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
     </style>
     <div id="nav">
         <a href="adminMessaging.aspx">Back</a>

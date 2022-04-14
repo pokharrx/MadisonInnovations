@@ -18,6 +18,14 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .gridview {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;
+            width: 100%;
+        }
     </style>
     <%-- Section Header --%>
     <h4>View All your Internship, Job, and Other Opportunity Applications</h4>
@@ -28,7 +36,7 @@
     <br />
 
       <%-- Job view --%>
-    <asp:GridView ID="grdJobApplication" runat="server" DataKeyNames="JobApplicationID" AutoGenerateColumns="False" DataSourceID="SqlStudentJobApps" AllowSorting="True" AutoGenerateEditButton="true" >
+    <asp:GridView ID="grdJobApplication" runat="server" CssClass="gridview" DataKeyNames="JobApplicationID" AutoGenerateColumns="False" DataSourceID="SqlStudentJobApps" AllowSorting="True" AutoGenerateEditButton="true" >
         <Columns>
              <asp:BoundField DataField="JobApplicationID" HeaderText="JobApplicationID" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="JobApplicationID" />
              <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="JobTitle"  ReadOnly="True" />
@@ -62,7 +70,7 @@
     <br />
 
       <%-- Internship view --%>
-    <asp:GridView ID="grdInternshipApplication" runat="server" DataKeyNames="InternshipApplicationID" AutoGenerateColumns="False" DataSourceID="SqlStudentInternshipApps" AllowSorting="True" AutoGenerateEditButton="true" >
+    <asp:GridView ID="grdInternshipApplication" runat="server" CssClass="gridview" DataKeyNames="InternshipApplicationID" AutoGenerateColumns="False" DataSourceID="SqlStudentInternshipApps" AllowSorting="True" AutoGenerateEditButton="true" >
         <Columns>
              <asp:BoundField DataField="InternshipApplicationID" HeaderText="InternshipApplicationID" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="InternshipApplicationID" />
              <asp:BoundField DataField="InternshipTitle" HeaderText="InternshipTitle" SortExpression="InternshipTitle"  ReadOnly="True" />
@@ -96,7 +104,7 @@
     <br />
 
       <%-- Other Opportunity view --%>
-    <asp:GridView ID="grdOtherApplication" runat="server" DataKeyNames="OtherApplicationID" AutoGenerateColumns="False" DataSourceID="SqlStudentOtherApps" AllowSorting="True" AutoGenerateEditButton="true" >
+    <asp:GridView ID="grdOtherApplication" runat="server" CssClass="gridview" DataKeyNames="OtherApplicationID" AutoGenerateColumns="False" DataSourceID="SqlStudentOtherApps" AllowSorting="True" AutoGenerateEditButton="true" >
         <Columns>
              <asp:BoundField DataField="OtherApplicationID" HeaderText="OtherApplicationID" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="OtherApplicationID" />
              <asp:BoundField DataField="OtherTitle" HeaderText="OtherTitle" SortExpression="OtherTitle"  ReadOnly="True" />

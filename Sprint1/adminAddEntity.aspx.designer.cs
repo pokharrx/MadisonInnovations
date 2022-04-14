@@ -11,61 +11,70 @@ namespace Sprint1
 {
 
 
-    public partial class StudentAnnouncements
+    public partial class adminAddEntity
     {
 
         /// <summary>
-        /// grdJob control.
+        /// addJjob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdJob;
+        protected global::System.Web.UI.WebControls.ImageButton addJjob;
 
         /// <summary>
-        /// grdInternship control.
+        /// addInternship control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdInternship;
+        protected global::System.Web.UI.WebControls.ImageButton addInternship;
 
         /// <summary>
-        /// grdOther control.
+        /// addScholarship control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdOther;
+        protected global::System.Web.UI.WebControls.ImageButton addScholarship;
 
         /// <summary>
-        /// dtasrcAllJobs control.
+        /// addCompany control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllJobs;
+        protected global::System.Web.UI.WebControls.ImageButton addCompany;
 
         /// <summary>
-        /// dtasrcAllOther control.
+        /// addSponsor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllOther;
+        protected global::System.Web.UI.WebControls.ImageButton addSponsor;
 
         /// <summary>
-        /// dtasrcAllInternships control.
+        /// addOther control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcAllInternships;
+        protected global::System.Web.UI.WebControls.ImageButton addOther;
+
+        /// <summary>
+        /// addAnnouncement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton addAnnouncement;
     }
 }

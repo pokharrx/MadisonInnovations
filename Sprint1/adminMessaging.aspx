@@ -39,6 +39,11 @@
         .margin-top {
             margin-top: 5px;
         }
+        .add:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
     </style>
     <div id="page">
         <div id="nav">

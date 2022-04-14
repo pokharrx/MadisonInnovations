@@ -32,7 +32,6 @@
             height: 5px;
         }
         .navMenu {
-            display: flex;
             background-color: #dacce6;
             font-weight: 300;
             height: 70px;
@@ -96,6 +95,12 @@
             height: 85px;
             margin-top: 20px;
         }
+        .add {
+            width: 85px;
+            height: 85px;
+            padding: 10px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -111,25 +116,27 @@
                 OnClick="home_Click" 
                 ToolTip="Home" />
             <asp:ImageButton 
+                ID="add" 
+                runat="server" 
+                ImageUrl="images/add.png" 
+                CssClass="add" 
+                OnClick="add_Click" 
+                ToolTip="Add Entity"/>
+            <asp:ImageButton 
                 ID="chat" 
                 runat="server" 
                 ImageUrl="images/favpng_communication-icon-chat-icon.png" 
                 CssClass="chat" 
                 OnClick="chat_Click" 
-                ToolTip="Chat"/>
+                ToolTip="Chat"/>           
         </div>
         <div class="navbar-header">
             <div class="navMenu">
-                <Image ID="logo" src="images/ole%20school%20group%20logo.png"/>
-                <a href="AddScholarship.aspx">Add Scholarship</a>
-                <a href="NewCompany.aspx">Add Company</a>
-                <a href="NewCorporateSponsor.aspx">Add Corporate Sponsor</a>
-                <a href="NewInternship.aspx">Add Internship</a>
-                <a href="NewJob.aspx">Add Job</a>
-                <a href="NewOther.aspx">Add Other Opportunity</a>
+                <Image ID="logo" src="images/ole%20school%20group%20logo.png"/>               
                 <a href="AccountRequests.aspx">Authorize Accounts</a>
                 <a href="MentorshipAssignment.aspx">Assign Mentorships</a>
-                <a href="GeneralReport.aspx">GeneralReport.aspx</a>
+                <a href="AdminPrivileges.aspx">Account Privileges</a>
+                <a href="GeneralReport.aspx">General Report</a>
                 <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
                 <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />
             </div>

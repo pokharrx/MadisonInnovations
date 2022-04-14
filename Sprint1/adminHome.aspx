@@ -29,6 +29,11 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .add:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
         </style>
     <%-- Students --%>
     <div id="Students">
@@ -234,7 +239,6 @@
                 <asp:BoundField HeaderText="Status" DataField="Status" SortExpression="Status"/>
             </Columns>
         </asp:GridView>
-        <br />
-        <asp:Button ID="btnAdd" runat="server" Text="Add Announcement" OnClick="btnAdd_Click" />
+        <br />       
     </div>
 </asp:Content>

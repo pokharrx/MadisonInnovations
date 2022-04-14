@@ -26,12 +26,6 @@ namespace Sprint1
             grdOther.DataSourceID = "dtasrcAllOther";
             grdOther.DataBind();
 
-            // data source bind for the scholarship gridview
-            grdScholarship.DataSourceID = "dtasrcAllScholarships";
-            grdScholarship.DataBind();
-
-
-
             //obtain logged in user industry of interest for student to see only their indusrty recommendations
             String sqlQuery = "select Industry from Student Where StudentUserName=@StudentUserName";
             SqlConnection sqlConnect1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);

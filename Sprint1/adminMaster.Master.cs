@@ -37,5 +37,10 @@ namespace Sprint1
         {
             Response.Redirect("adminHome.aspx");
         }
+
+        protected void add_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("adminAddEntity.aspx");
+        }
     }
 }

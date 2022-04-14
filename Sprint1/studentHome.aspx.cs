@@ -14,12 +14,9 @@ using System.Drawing;
 namespace Sprint1
 {
     public partial class studentHome : System.Web.UI.Page
-    {
-       
-
+    {    
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
 

@@ -508,11 +508,6 @@ namespace Sprint1
             Response.Redirect("editScholarships.aspx");
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddAnnouncement.aspx");
-        }
-
         protected void btnOtherSearch_Click(object sender, EventArgs e)
         {
             string searchOther = txtOtherSearch.Text.ToLower();

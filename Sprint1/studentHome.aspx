@@ -62,7 +62,7 @@
     <section id="recommended">
         <%-- Recommended Job Opportunities --%>
         <div id="RecommendedJobs">
-            <h2>Recommended Job Opportunities</h2>
+            <h2>Recommended Jobs</h2>
             <%-- Gridview that shows all jobs --%>
             <asp:GridView
                 ID="grdRecommendedJobs"
@@ -93,7 +93,7 @@
 
         <%-- Recommended Internship Opportunities --%>
         <div id="RecommendedInternships">
-            <h2>Recommended Internship Opportunities</h2>
+            <h2>Recommended Internships</h2>
             <%-- Gridview that shows all jobs --%>
             <asp:GridView
                 ID="grdRecommendedInternships"
@@ -151,9 +151,7 @@
                 </SelectParameters>
             </asp:SqlDataSource>
         </div>
-    </section>
-    
-       
+    </section>        
     <%-- Data Sources for the gridviews --%>
     <asp:SqlDataSource ID="dtasrcAllJobs" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
@@ -166,9 +164,5 @@
     <asp:SqlDataSource ID="dtasrcAllInternships" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
         SelectCommand="Select * from Internship">
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="dtasrcAllScholarships" runat="server"
-        ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="Select * from Scholarship">
     </asp:SqlDataSource>
 </asp:Content>

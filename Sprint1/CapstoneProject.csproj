@@ -72,6 +72,7 @@
     <Content Include="AccountRequests.aspx" />
     <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddScholarship.aspx" />
+    <Content Include="adminAddEntity.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="adminInbox.aspx" />
     <Content Include="adminMessaging.aspx" />
@@ -100,11 +101,19 @@
     <Content Include="editOther.aspx" />
     <Content Include="editStudent.aspx" />
     <Content Include="GeneralReport.aspx" />
+    <Content Include="images\add.png" />
+    <Content Include="images\announcement.png" />
     <Content Include="images\blank_profilepic.png" />
+    <Content Include="images\company.png" />
     <Content Include="images\dashboard.png" />
     <Content Include="images\favpng_communication-icon-chat-icon.png" />
     <Content Include="images\home.png" />
+    <Content Include="images\internship.png" />
+    <Content Include="images\job.png" />
     <Content Include="images\ole school group logo.png" />
+    <Content Include="images\opportunity.png" />
+    <Content Include="images\scholarship.png" />
+    <Content Include="images\sponsor.png" />
     <Content Include="InternshipApplication.aspx" />
     <Content Include="JobApplication.aspx" />
     <Content Include="Login.aspx" />
@@ -268,6 +277,13 @@
     </Compile>
     <Compile Include="AddScholarship.aspx.designer.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminAddEntity.aspx.cs">
+      <DependentUpon>adminAddEntity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminAddEntity.aspx.designer.cs">
+      <DependentUpon>adminAddEntity.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminHome.aspx.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>

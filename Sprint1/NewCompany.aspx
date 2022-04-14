@@ -2,6 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .add {
+            background-color: #d0c8b5;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .home:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .chat:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }        
+    </style>
      <div>
     <asp:Label ID="lblCompanyName" runat="server" Text="Enter Company Name:"></asp:Label>
     <asp:TextBox ID="txtCompanyName" runat="server"></asp:TextBox>

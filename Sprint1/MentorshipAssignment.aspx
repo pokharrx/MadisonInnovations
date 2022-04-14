@@ -20,14 +20,21 @@
         }
     </style>
     <h3>Mentorship Assignment:</h3>
-    <div style="margin-left: auto; margin-right: auto; text-align: center;">
+    <div style="margin-left: auto; margin-right: auto; ">
         <h3>Choose a student:</h3>
         <br />
-        <asp:DropDownList ID="ddlStudent" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="ddlStudent" runat="server" OnSelectedIndexChanged="ddlStudent_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+        <asp:Label ID="lblInfo" runat="server" Text="" ></asp:Label>
         <br />
         <h3>Select mentor:</h3>
         <br />
-        <asp:DropDownList ID="ddlMember" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="ddlMember" runat="server" OnSelectedIndexChanged="ddlMember_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Current Mentees"></asp:Label>
+        <asp:Label ID="lblCurrent" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Label ID="Label1" runat="server" Text="Max Mentees:"></asp:Label>
+        <asp:Label ID="lblMax" runat="server" Text=""></asp:Label>
         <br />
         <br />
         <asp:Button ID="btnMentorshipAssign" runat="server" Text="Assign Mentor" OnClick="btnMentorshipAssign_Click"/>

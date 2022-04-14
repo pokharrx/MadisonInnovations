@@ -16,19 +16,39 @@ namespace Sprint1
         protected void Page_Load(object sender, EventArgs e)
         {
             MaintainScrollPositionOnPostBack = true;
+            
 
-
-            if (!IsPostBack)
+            if (!IsPostBack)//change it so that the queries populate from new tables
             {
                 //Sql Query for Student Drop Down List
+                String s = ddlStudent.SelectedValue.ToString();
+                String membersQuery = "SELECT reason FROM studentMentorshipApp WHERE studentID ='" + s + "';";
 
+                SqlConnection sqlConnect1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommand1 = new SqlCommand();
+                sqlCommand1.Connection = sqlConnect1;
+                sqlCommand1.CommandType = CommandType.Text;
+                sqlCommand1.CommandText = membersQuery;
+
+                sqlConnect1.Open();
+                SqlDataReader queryResults1 = sqlCommand1.ExecuteReader();
+                while (queryResults1.Read())
+                {
+                    //pull the reason they want a mentor as a reminder
+                    lblInfo.Text = queryResults1["reason"].ToString();
+
+                }
+
+
+                sqlConnect1.Close();
+                queryResults1.Close();
 
                 // Define Connection to DB
                 SqlConnection sqlConnect = new SqlConnection
                     (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
 
                 // Create Query
-                String sqlQuery = "SELECT FirstName + ' ' + LastName AS Name, StudentID FROM Student";
+                String sqlQuery = "SELECT prefName, studentID FROM studentMentorshipApp";
                 // Create SQL Command (Sends query to the DB
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnect;
@@ -42,7 +62,7 @@ namespace Sprint1
                 while (queryResults.Read())
                 {
                     ListItem item = new ListItem();
-                    item.Text = queryResults["Name"].ToString();
+                    item.Text = queryResults["prefName"].ToString();
                     item.Value = queryResults["StudentID"].ToString();
                     ddlStudent.Items.Add(item);
                 }
@@ -59,7 +79,7 @@ namespace Sprint1
                     (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
 
                 // Create Query
-                String sqlQuery2 = "SELECT FirstName + ' ' + LastName AS Name, MemberID FROM Member";
+                String sqlQuery2 = "SELECT prefName, MemberID FROM memberMentorPref";
                 // Create SQL Command (Sends query to the DB
                 SqlCommand sqlCommand2 = new SqlCommand();
                 sqlCommand2.Connection = sqlConnect2;
@@ -73,7 +93,7 @@ namespace Sprint1
                 while (queryResults2.Read())
                 {
                     ListItem item2 = new ListItem();
-                    item2.Text = queryResults2["Name"].ToString();
+                    item2.Text = queryResults2["prefName"].ToString();
                     item2.Value = queryResults2["MemberID"].ToString();
                     ddlMember.Items.Add(item2);
                 }
@@ -178,6 +198,89 @@ namespace Sprint1
                 return true;
             }
 
+        }
+
+        protected void ddlStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String s = ddlStudent.SelectedValue.ToString();
+            String membersQuery = "SELECT reason FROM studentMentorshipApp WHERE studentID =" + s + ";";
+
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                //pull the reason they want a mentor as a reminder
+                lblInfo.Text = queryResults["reason"].ToString();
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+        }
+
+        protected void ddlMember_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String s = ddlMember.SelectedValue.ToString();
+            String membersQuery = "SELECT numMentees FROM memberMentorPref WHERE memberID =" + s + ";";
+
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = membersQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+            while (queryResults.Read())
+            {
+                //pull the max
+                lblMax.Text = queryResults["numMentees"].ToString();
+
+
+            }
+
+
+            sqlConnect.Close();
+            queryResults.Close();
+
+
+            //String membersQuery2 = "SELECT COUNT(StudentID) FROM StudentMentor WHERE MemberID =" + s + ";";
+
+            //SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            //SqlCommand sqlCommand2 = new SqlCommand();
+            //sqlCommand.Connection = sqlConnect2;
+            //sqlCommand.CommandType = CommandType.Text;
+            //sqlCommand.CommandText = membersQuery2;
+
+            //sqlConnect2.Open();
+            //SqlDataReader queryResults2 = sqlCommand.ExecuteReader();
+            //while (queryResults2.Read())
+            //{
+            //    //need max, will need another query for current
+            //    lblCurrent.Text = queryResults2["StudentID"].ToString();
+
+
+            //}
+
+
+            //sqlConnect2.Close();
+            //queryResults2.Close();
+
+            System.Data.SqlClient.SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            sqlConnect2.Open();
+            SqlCommand sc = new SqlCommand();
+            sc.Connection = sqlConnect2;
+            sc.CommandText = "SELECT COUNT(StudentID) FROM StudentMentor WHERE MemberID =" + s + ";";
+            string x = Convert.ToString(sc.ExecuteScalar());
+            sqlConnect2.Close();
+            lblCurrent.Text = x;
         }
     }
 }

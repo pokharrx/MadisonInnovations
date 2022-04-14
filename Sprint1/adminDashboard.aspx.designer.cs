@@ -11,151 +11,187 @@ namespace Sprint1
 {
 
 
-    public partial class adminMaster
+    public partial class adminDashboard
     {
 
         /// <summary>
-        /// head control.
+        /// txtStudentSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox txtStudentSearch;
 
         /// <summary>
-        /// form1 control.
+        /// btnStudentSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnStudentSearch;
 
         /// <summary>
-        /// home control.
+        /// btnAllStudents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton home;
+        protected global::System.Web.UI.WebControls.Button btnAllStudents;
 
         /// <summary>
-        /// dashboard control.
+        /// grdStudents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton dashboard;
+        protected global::System.Web.UI.WebControls.GridView grdStudents;
 
         /// <summary>
-        /// add control.
+        /// txtCompanySearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton add;
+        protected global::System.Web.UI.WebControls.TextBox txtCompanySearch;
 
         /// <summary>
-        /// chat control.
+        /// btnCompanySearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton chat;
+        protected global::System.Web.UI.WebControls.Button btnCompanySearch;
 
         /// <summary>
-        /// addBar control.
+        /// btnAllCompanies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addBar;
+        protected global::System.Web.UI.WebControls.Button btnAllCompanies;
 
         /// <summary>
-        /// addJjob control.
+        /// grdCompanies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addJjob;
+        protected global::System.Web.UI.WebControls.GridView grdCompanies;
 
         /// <summary>
-        /// addInternship control.
+        /// txtJobSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addInternship;
+        protected global::System.Web.UI.WebControls.TextBox txtJobSearch;
 
         /// <summary>
-        /// addCompany control.
+        /// btnJobSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addCompany;
+        protected global::System.Web.UI.WebControls.Button btnJobSearch;
 
         /// <summary>
-        /// addSponsor control.
+        /// btnAllJobs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addSponsor;
+        protected global::System.Web.UI.WebControls.Button btnAllJobs;
 
         /// <summary>
-        /// addOther control.
+        /// grdJobs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addOther;
+        protected global::System.Web.UI.WebControls.GridView grdJobs;
 
         /// <summary>
-        /// addAnnouncement control.
+        /// txtInternshipSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addAnnouncement;
+        protected global::System.Web.UI.WebControls.TextBox txtInternshipSearch;
 
         /// <summary>
-        /// lblUserName control.
+        /// btnInternshipSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
+        protected global::System.Web.UI.WebControls.Button btnInternshipSearch;
 
         /// <summary>
-        /// btnLogout control.
+        /// btnAllInternships control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
+        protected global::System.Web.UI.WebControls.Button btnAllInternships;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// grdInternships control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.GridView grdInternships;
+
+        /// <summary>
+        /// txtOtherSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOtherSearch;
+
+        /// <summary>
+        /// btnOtherSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOtherSearch;
+
+        /// <summary>
+        /// btnAllOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllOther;
+
+        /// <summary>
+        /// grdOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdOther;
     }
 }

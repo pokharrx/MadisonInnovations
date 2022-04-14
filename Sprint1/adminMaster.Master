@@ -147,6 +147,13 @@
                 ToolTip="Home" 
                 CausesValidation="false"/>
             <asp:ImageButton 
+                ID="dashboard" 
+                runat="server" 
+                ImageUrl="images/dashboard.png" 
+                CssClass="dashboard" 
+                OnClick="dashboard_Click" 
+                ToolTip="Dashboard" />
+            <asp:ImageButton 
                 ID="add" 
                 runat="server" 
                 ImageUrl="images/add.png" 

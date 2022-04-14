@@ -13,6 +13,11 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .dashboard:hover {
+            background-color: #dacce6;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
         .chat:hover {
             background-color: #dacce6;
             border-top: 2px solid white;

@@ -79,5 +79,10 @@ namespace Sprint1
         {
             Response.Redirect("AddAnnouncement.aspx");
         }
+
+        protected void dashboard_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("adminDashboard.aspx");
+        }
     }
 }

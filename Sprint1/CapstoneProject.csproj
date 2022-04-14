@@ -72,6 +72,7 @@
     <Content Include="AccountRequests.aspx" />
     <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddScholarship.aspx" />
+    <Content Include="adminDashboard.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="adminInbox.aspx" />
     <Content Include="adminMessaging.aspx" />
@@ -275,6 +276,13 @@
     </Compile>
     <Compile Include="AddScholarship.aspx.designer.cs">
       <DependentUpon>AddScholarship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDashboard.aspx.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDashboard.aspx.designer.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminHome.aspx.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>

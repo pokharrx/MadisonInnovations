@@ -28,7 +28,26 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        #news {
+            padding: 5%;
+            margin-left: 100px;
+            background-color: white;
+            float: right;
+            margin-top: 2%;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
         </style>
-    <asp:Label ID="lbl1" runat="server" Text="Announcements"></asp:Label>
-    <asp:BulletedList ID="blAnnouncements" runat="server" BorderWidth="2" BackColor="#cc33ff" Width="500" ForeColor="Black" BorderColor="Gold"></asp:BulletedList>
+        <div id="news">
+            <h2>Announcements</h2>
+            <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
+            <asp:Calendar ID="Calendar1" runat="server">
+                <TitleStyle BackColor="#dacce6" ForeColor="#7f729a" Font-Bold="true"></TitleStyle>
+                <OtherMonthDayStyle ForeColor="LightGray"></OtherMonthDayStyle>
+                <DayStyle BackColor="white"></DayStyle>
+                <SelectedDayStyle BackColor="#7f729a" Font-Bold="True"></SelectedDayStyle>
+                <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
+            </asp:Calendar>
+        </div>
 </asp:Content>

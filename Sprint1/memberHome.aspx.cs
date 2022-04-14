@@ -41,9 +41,6 @@ namespace Sprint1
                 int x = Convert.ToInt32(sc.ExecuteScalar());
                 sqlConnect.Close();
 
-
-
-
                 String querystring = "select announcement from notifications;";
                 SqlDataAdapter DataAdapter = new SqlDataAdapter(querystring, sqlConnect);
                 DataSet ds = new DataSet();

@@ -43,13 +43,6 @@
         OnClick="addInternship_Click" 
         ToolTip="Add Internship" />
     <asp:ImageButton 
-        ID="addScholarship" 
-        runat="server" 
-        ImageUrl="images/scholarship.png" 
-        CssClass="home" 
-        OnClick="addScholarship_Click" 
-        ToolTip="Add Scholarship" />
-    <asp:ImageButton 
         ID="addCompany" 
         runat="server" 
         ImageUrl="images/company.png" 

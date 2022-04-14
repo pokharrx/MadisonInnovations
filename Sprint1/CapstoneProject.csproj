@@ -112,7 +112,6 @@
     <Content Include="images\job.png" />
     <Content Include="images\ole school group logo.png" />
     <Content Include="images\opportunity.png" />
-    <Content Include="images\scholarship.png" />
     <Content Include="images\sponsor.png" />
     <Content Include="InternshipApplication.aspx" />
     <Content Include="JobApplication.aspx" />

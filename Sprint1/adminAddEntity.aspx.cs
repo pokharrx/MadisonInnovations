@@ -24,11 +24,6 @@ namespace Sprint1
             Response.Redirect("NewInternship.aspx");
         }
 
-        protected void addScholarship_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("AddScholarship.aspx");
-        }
-
         protected void addCompany_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("NewCompany.aspx");

@@ -127,8 +127,8 @@
             <div class="navMenu">
                 <Image ID="logo" src="images/ole%20school%20group%20logo.png"/>
                 <a href="MentorMentorship.aspx">Apply for Mentees</a> 
-                <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
                 <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />
+                <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>               
             </div>
         </div>
         <div class="content">

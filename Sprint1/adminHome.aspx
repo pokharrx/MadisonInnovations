@@ -6,14 +6,6 @@
         h2 {
             font-weight: 600;
         }
-        .gridview {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            text-align: left;
-            background-color: #f4efe1;
-            border: none;
-            width: 100%;
-        }
         .home {
             background-color: #d0c8b5;
             border-top: 2px solid white;

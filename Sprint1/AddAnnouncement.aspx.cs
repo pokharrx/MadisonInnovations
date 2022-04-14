@@ -27,16 +27,13 @@ namespace Sprint1
                 SqlCommand sc = new SqlCommand();
                 sc.Connection = sqlConnect;
 
-
                 sc.CommandText = "INSERT INTO Notifications (Announcement) VALUES ("
                     + "@Announcement)";
-                sc.Parameters.Add(new SqlParameter("@Announcement", HttpUtility.HtmlEncode(txtAnnounce.Text)));
-              
-
-
+                sc.Parameters.Add(new SqlParameter("@Announcement", HttpUtility.HtmlEncode(txtAnnounce.Text)));            
 
                 sc.ExecuteNonQuery();
                 sqlConnect.Close();
+                txtAnnounce.Text = "";
                 lblStatus1.Text = "Successfully Posted!";
             }
             catch (Exception)
@@ -60,7 +57,7 @@ namespace Sprint1
             sqlConnect.Open();
             sqlCommand.ExecuteScalar();
             sqlConnect.Close();
-            lblStatus2.Text = "Announcement Deleted";
+            Response.Redirect("AddAnnouncement.aspx");
         }
     }
 }

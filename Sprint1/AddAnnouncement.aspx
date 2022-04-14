@@ -23,19 +23,32 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }        
-    </style>s
-    <asp:Label runat="server" Text="Enter Announcement Here"></asp:Label>
-    <asp:TextBox ID="txtAnnounce" runat="server"></asp:TextBox>
-    <asp:Label ID="lblStatus1" runat="server" Text=""></asp:Label>
-    <br />
-    <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
-    <br />
-    <br />
-    <asp:DropDownList ID="ddlAnnouncements"  runat="server"  DataSourceID="sqlAnnouncements" DataTextField="Announcement" DataValueField="notifID"></asp:DropDownList>
-    <asp:Label ID="lblStatus2" runat="server" Text=""></asp:Label>
-    <br />
-    <asp:Button ID="Button2" runat="server" Text="Remove" OnClick="Button2_Click" />
-
+        #new, #remove {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 30px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;        
+        }
+    </style>
+    <div id="new">
+        <h2>New Announcement</h2>
+        <asp:Label runat="server" Text="Enter Announcement Here"></asp:Label>
+        <br />
+        <asp:TextBox ID="txtAnnounce" runat="server" TextMode="MultiLine" Rows="5" Columns="50"></asp:TextBox>
+        <br />        
+        <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
+        <asp:Label ID="lblStatus1" runat="server" Text=""></asp:Label>
+    </div>
+    <div id="remove">
+        <h2>Remove Announcement</h2>
+        <asp:Label runat="server" Text="Select Announcement to Remove"></asp:Label>
+        <asp:DropDownList ID="ddlAnnouncements"  runat="server"  DataSourceID="sqlAnnouncements" DataTextField="Announcement" DataValueField="notifID"></asp:DropDownList>
+        <br />
+        <asp:Button ID="Button2" runat="server" Text="Remove" OnClick="Button2_Click" />
+    </div>
     <asp:SqlDataSource ID="sqlAnnouncements" runat="server" ConnectionString="<%$ ConnectionStrings:SDB%>"
        SelectCommand ="SELECT notifID, Announcement from Notifications"></asp:SqlDataSource>
 </asp:Content>

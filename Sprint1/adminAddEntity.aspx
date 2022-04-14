@@ -27,47 +27,82 @@
             color: black;         
             text-decoration: none;
         }
-    </style>
-    <asp:ImageButton 
-        ID="addJjob" 
-        runat="server" 
-        ImageUrl="images/job.png" 
-        CssClass="home" 
-        OnClick="addJjob_Click" 
-        ToolTip="Add Job" />
-    <asp:ImageButton 
-        ID="addInternship" 
-        runat="server" 
-        ImageUrl="images/internship.png" 
-        CssClass="home" 
-        OnClick="addInternship_Click" 
-        ToolTip="Add Internship" />
-    <asp:ImageButton 
-        ID="addCompany" 
-        runat="server" 
-        ImageUrl="images/company.png" 
-        CssClass="home" 
-        OnClick="addCompany_Click" 
-        ToolTip="Add Company" />
-    <asp:ImageButton 
-        ID="addSponsor" 
-        runat="server" 
-        ImageUrl="images/sponsor.png" 
-        CssClass="home" 
-        OnClick="addSponsor_Click" 
-        ToolTip="Add Corporate Sponsor" />
-    <asp:ImageButton 
-        ID="addOther" 
-        runat="server" 
-        ImageUrl="images/opportunity.png" 
-        CssClass="home" 
-        OnClick="addOther_Click" 
-        ToolTip="Add Other Opportunity" />
-    <asp:ImageButton 
-        ID="addAnnouncement" 
-        runat="server" 
-        ImageUrl="images/announcement.png" 
-        CssClass="home" 
-        OnClick="addAnnouncement_Click" 
-        ToolTip="Add Announcement" />    
+        .icon {
+            height: 120px;
+            width: 120px;
+            background-color: #f1ece0;
+            border-radius: 20px;
+            padding: 15px;
+        }
+        .icon:hover {
+            background-color: #e9e1ef;
+        }
+        h3 {
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .container {
+            text-align: center;
+        }
+    </style> 
+    <div class="container">      
+        <asp:ImageButton 
+            ID="addJjob" 
+            runat="server" 
+            ImageUrl="images/job.png" 
+            CssClass="icon" 
+            OnClick="addJjob_Click" 
+            ToolTip="Add Job" />
+        <h3>Add Job</h3>
+    </div>
+    <div class="container">       
+        <asp:ImageButton 
+            ID="addInternship" 
+            runat="server" 
+            ImageUrl="images/internship.png" 
+            CssClass="icon" 
+            OnClick="addInternship_Click" 
+            ToolTip="Add Internship" />
+        <h3>Add Internship</h3>
+    </div>
+    <div class="container">
+        <asp:ImageButton 
+            ID="addCompany" 
+            runat="server" 
+            ImageUrl="images/company.png" 
+            CssClass="icon" 
+            OnClick="addCompany_Click" 
+            ToolTip="Add Company" />
+        <h3>Add Company</h3>
+    </div>
+    <div class="container">
+        <asp:ImageButton 
+            ID="addSponsor" 
+            runat="server" 
+            ImageUrl="images/sponsor.png" 
+            CssClass="icon" 
+            OnClick="addSponsor_Click" 
+            ToolTip="Add Corporate Sponsor" />
+        <h3>Add Sponsor</h3>
+    </div>
+    <div class="container">
+        <asp:ImageButton 
+            ID="addOther" 
+            runat="server" 
+            ImageUrl="images/opportunity.png" 
+            CssClass="icon" 
+            OnClick="addOther_Click" 
+            ToolTip="Add Other Opportunity" />
+        <h3>Add Opportunity</h3>
+    </div>
+    <div class="container">
+        <asp:ImageButton 
+            ID="addAnnouncement" 
+            runat="server" 
+            ImageUrl="images/announcement.png" 
+            CssClass="icon" 
+            OnClick="addAnnouncement_Click" 
+            ToolTip="Add Announcement" />
+        <h3>Add Announcement</h3>
+    </div>
 </asp:Content>

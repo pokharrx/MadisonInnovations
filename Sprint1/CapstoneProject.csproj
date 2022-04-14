@@ -99,6 +99,7 @@
     <Content Include="editJobs.aspx" />
     <Content Include="editOther.aspx" />
     <Content Include="editStudent.aspx" />
+    <Content Include="GeneralReport.aspx" />
     <Content Include="images\blank_profilepic.png" />
     <Content Include="images\dashboard.png" />
     <Content Include="images\favpng_communication-icon-chat-icon.png" />
@@ -351,6 +352,13 @@
     </Compile>
     <Compile Include="editStudent.aspx.designer.cs">
       <DependentUpon>editStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralReport.aspx.cs">
+      <DependentUpon>GeneralReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralReport.aspx.designer.cs">
+      <DependentUpon>GeneralReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="InternshipApplication.aspx.cs">
       <DependentUpon>InternshipApplication.aspx</DependentUpon>

@@ -129,6 +129,7 @@
                 <a href="NewOther.aspx">Add Other Opportunity</a>
                 <a href="AccountRequests.aspx">Authorize Accounts</a>
                 <a href="MentorshipAssignment.aspx">Assign Mentorships</a>
+                <a href="GeneralReport.aspx">GeneralReport.aspx</a>
                 <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
                 <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />
             </div>

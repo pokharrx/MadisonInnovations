@@ -33,20 +33,22 @@
             border: none;        
         }
     </style>
+    <h1>Add Announcement</h1>
+    <hr />
     <div id="new">
         <h2>New Announcement</h2>
         <asp:Label runat="server" Text="Enter Announcement Here"></asp:Label>
         <br />
         <asp:TextBox ID="txtAnnounce" runat="server" TextMode="MultiLine" Rows="5" Columns="50"></asp:TextBox>
         <br />        
-        <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" Text="Add Announcement" OnClick="Button1_Click" />
         <asp:Label ID="lblStatus1" runat="server" Text=""></asp:Label>
     </div>
     <div id="remove">
         <h2>Remove Announcement</h2>
         <asp:Label runat="server" Text="Select Announcement to Remove"></asp:Label>
         <asp:DropDownList ID="ddlAnnouncements"  runat="server"  DataSourceID="sqlAnnouncements" DataTextField="Announcement" DataValueField="notifID"></asp:DropDownList>
-        <br />
+        <br /><br />
         <asp:Button ID="Button2" runat="server" Text="Remove" OnClick="Button2_Click" />
     </div>
     <asp:SqlDataSource ID="sqlAnnouncements" runat="server" ConnectionString="<%$ ConnectionStrings:SDB%>"

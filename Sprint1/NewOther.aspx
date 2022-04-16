@@ -23,33 +23,41 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 30px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;  
+            width: 350px;
+        }
     </style>
- <div>
-    <asp:Label ID="lblOtherTitle" runat="server" Text="Enter Other Opportunity Title:"></asp:Label>
-    <asp:TextBox ID="txtOtherTitle" runat="server"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherTitle" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
-    <br />
-    <asp:Label ID="lblOtherStart" runat="server" Text="Enter Other Opportunity Application Start Date:"></asp:Label>
-    <asp:TextBox ID="txtOtherStart" runat="server"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherStart" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
-    <br />
-    <asp:Label ID="lblOtherEnd" runat="server" Text="Enter Other Opportunity Application End Date:"></asp:Label>
-    <asp:TextBox ID="txtOtherEnd" runat="server"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherEnd" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
-    <br />
-    <asp:Label ID="lblIndustry" runat="server" Text="Enter Other Opportunity Industry: "></asp:Label>
-    <asp:TextBox ID="txtIndustry" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="lblOtherDescription" runat="server" Text="Enter Other Opportunity Description: "></asp:Label>
-    <asp:TextBox ID="txtOtherDescription" runat="server"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherDescription" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
-    <br />
-    <asp:Label ID="lblApplicationLink" runat="server" Text="Enter Other Opportunity Application Link: "></asp:Label>
-    <asp:TextBox ID="txtApplicationLink" runat="server"></asp:TextBox>
-    <br />
-    <asp:Button ID="btnSave" runat="server" Text="Save Other Opportunity" OnClick="btnSave_Click" />
-    <br />
-    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+    <h1>Add Other Opportunity</h1>
+    <hr />
+    <div class="card">
+        <asp:Label ID="lblOtherTitle" runat="server" Text="Enter Other Opportunity Title:"></asp:Label>
+        <asp:TextBox ID="txtOtherTitle" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherTitle" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblOtherStart" runat="server" Text="Enter Other Opportunity Application Start Date:"></asp:Label>
+        <asp:TextBox ID="txtOtherStart" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherStart" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblOtherEnd" runat="server" Text="Enter Other Opportunity Application End Date:"></asp:Label>
+        <asp:TextBox ID="txtOtherEnd" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherEnd" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblIndustry" runat="server" Text="Enter Other Opportunity Industry: "></asp:Label>
+        <asp:TextBox ID="txtIndustry" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblOtherDescription" runat="server" Text="Enter Other Opportunity Description: "></asp:Label>
+        <asp:TextBox ID="txtOtherDescription" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtOtherDescription" Text="Required Field" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblApplicationLink" runat="server" Text="Enter Other Opportunity Application Link: "></asp:Label>
+        <asp:TextBox ID="txtApplicationLink" runat="server"></asp:TextBox>
+        <br />
+        <asp:Button ID="btnSave" runat="server" Text="Add Opportunity" OnClick="btnSave_Click" />
+        <br />
+        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>
 

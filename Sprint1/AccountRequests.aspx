@@ -18,23 +18,36 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 30px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;  
+            width: 500px;
+            display: inline-block;
+            text-align: center;
+        }
     </style>
-    <div>
+    <h1>Authorize Accounts</h1>
+    <hr />
+    <div class="card">
         <h3>Review the following account requests.</h3>
         <br />
         <asp:DetailsView ID="dvUnauthorizedUsers"
             runat="server" 
             Height="50px" 
-            Width="125px"
+            Width="100%"
+            AlternatingRowStyle-BackColor="#dacce6"
             DataSourceID="dtsUnauthorizedUsers"
             AutoGenerateRows="false"
             EmptyDataText="No Unauthorized Members"
             DataKeyNames="UserID"
             AllowPaging="true"
             AlternatingRowStyle-Width="100%">
-            <HeaderStyle BackColor="Navy" ForeColor="White" />
             <RowStyle BackColor="White" />
-            <AlternatingRowStyle BackColor="PowderBlue" />
             <Fields>
                 <asp:BoundField DataField="FirstName" HeaderText="First Name" ReadOnly="true" />
                 <asp:BoundField DataField="LastName" HeaderText="Last Name" ReadOnly="true" />
@@ -44,8 +57,8 @@
             </Fields>
         </asp:DetailsView>
         <br />
-        <asp:Button ID="btnAuthorizeAccount" runat="server" Text="Authorize Account" OnClick="btnAuthorizeAccount_Click" OnClientClick="return confirm('Are you sure you want to authorize this account?')"/>
-        <asp:Button ID="btnUnAuthorizeAccount" runat="server" Text="Decline Account" OnClick="btnUnAuthorizeAccount_Click" OnClientClick="return confirm('Are you sure you want to decline this account?')"/>
+        <asp:Button Width="45%" CssClass="left" ID="btnAuthorizeAccount" runat="server" Text="Authorize Account" OnClick="btnAuthorizeAccount_Click" OnClientClick="return confirm('Are you sure you want to authorize this account?')"/>
+        <asp:Button Width="45%" CssClass="right" ID="btnUnAuthorizeAccount" runat="server" Text="Decline Account" OnClick="btnUnAuthorizeAccount_Click" OnClientClick="return confirm('Are you sure you want to decline this account?')"/>
         <br />
         <br />
         <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>

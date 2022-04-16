@@ -19,17 +19,37 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .right {
+            float: right;
+        }
+        .Card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 30px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;  
+        }
+        .gridview {
+            border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
     </style>
     <%-- Students --%>
     <div id="Students">
-        <h2>Students</h2>
+        <h2>My Account</h2>
+        <hr />
+        <div class="Card">
+        <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="right" OnClick="btnEdit_Click" />
+        <br /><br />
         <asp:GridView
             ID="grdvLoggedInStudent"
             DataSourceID="SqlLoggedinStudent"
             runat="server"
-            HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
-            AllowSorting="true"
+            HorizontalAlign="Justify" 
+            BackColor="White" CssClass="gridview"
             AutoGenerateColumns="false"
             DataKeyNames="StudentID"
             CellPadding="10">    
@@ -45,13 +65,67 @@
                 <asp:BoundField HeaderText="Major" DataField="Major" SortExpression="Major"/>
                 <asp:BoundField HeaderText="Grade" DataField="Grade" SortExpression="Grade"/>
                 <asp:BoundField HeaderText="Employment Status" DataField="EmploymentStatus" SortExpression="EmploymentStatus"/>
-
             </Columns>
         </asp:GridView>
+        </div>
     </div>
+    <div id="edit" runat="server" visible="false">
+        <h4>Edit Your Student Information</h4>
+        <br />
+      <%--FirstName --%>
+        <asp:Label ID="lblStudentFirstName" runat="server" Text="Enter Your First Name"></asp:Label>
+        <asp:TextBox ID="txtStudentFirstName" runat="server"></asp:TextBox>
 
+        <br />
+
+        <%--LastName--%>
+        <asp:Label ID="lblStudentLastName" runat="server" Text="Enter Your Last Name"></asp:Label>
+        <asp:TextBox ID="txtStudentLastName" runat="server"></asp:TextBox>
+ 
+        <br />
+
+        <%--Email--%>
+        <asp:Label ID="lblStudentEmail" runat="server" Text="Enter Your Email"></asp:Label>
+        <asp:TextBox ID="txtStudentEmail" runat="server"></asp:TextBox>
+ 
+        <br />
+
+        <%--PhoneNumber --%>
+        <asp:Label ID="lblStudentPhoneNumber" runat="server" Text="Enter Your Phone Number (Without Country Code)"></asp:Label>
+        <asp:TextBox ID="txtStudentPhoneNumber" runat="server"></asp:TextBox>
+   
+        <br />
+
+            <%--GraduationYear--%>
+        <asp:Label ID="lblExpectedGraduation" runat="server" Text="Enter Your Expected Graduation Year"></asp:Label>
+        <asp:TextBox ID="txtExpectedGraduation" runat="server"></asp:TextBox>
+  
+        <br />
+             <%--Major--%>
+        <asp:Label ID="lblMajor" runat="server" Text="Enter Your Major"></asp:Label>
+             <asp:TextBox ID="txtMajor" runat="server"></asp:TextBox>
+
+             <br />
+
+             <%--UniversityYear --%>
+        <asp:Label ID="lblGrade" runat="server" Text="Enter Your University Year"></asp:Label>
+        <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
+
+        <%--Employment Status --%>
+        <asp:Label ID="lblEmploymentStatus" runat="server" Text="Enter Your EmploymentStatus"></asp:Label>
+        <asp:TextBox ID="txtEmploymentStatus" runat="server"></asp:TextBox>
+            <br />
+            <br />
+       <%-- <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />--%>
+        <asp:Button ID="btnUpdate" runat="server" Text="Update" Onclick="btnUpdate_Click" />
+
+        <%--Status- lable --%>
+        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+    </div>
     <div>
         <br />
+        <h1>My Files</h1>
+        <hr />
             <asp:Label ID="Label1" runat="server" Text="Choose PDF File to
             Upload. Uploading a file will also replace the file you have attached to your account."></asp:Label>
                         <asp:FileUpload ID="fileUploadText" runat="server" />
@@ -75,58 +149,6 @@
         <br />
         <br />
 
-
-    <h4>Edit Your Student Information</h4>
-    <br />
-  <%--FirstName --%>
-    <asp:Label ID="lblStudentFirstName" runat="server" Text="Enter Your First Name"></asp:Label>
-    <asp:TextBox ID="txtStudentFirstName" runat="server"></asp:TextBox>
-
-    <br />
-
-    <%--LastName--%>
-    <asp:Label ID="lblStudentLastName" runat="server" Text="Enter Your Last Name"></asp:Label>
-    <asp:TextBox ID="txtStudentLastName" runat="server"></asp:TextBox>
- 
-    <br />
-
-    <%--Email--%>
-    <asp:Label ID="lblStudentEmail" runat="server" Text="Enter Your Email"></asp:Label>
-    <asp:TextBox ID="txtStudentEmail" runat="server"></asp:TextBox>
- 
-    <br />
-
-    <%--PhoneNumber --%>
-    <asp:Label ID="lblStudentPhoneNumber" runat="server" Text="Enter Your Phone Number (Without Country Code)"></asp:Label>
-    <asp:TextBox ID="txtStudentPhoneNumber" runat="server"></asp:TextBox>
-   
-    <br />
-
-        <%--GraduationYear--%>
-    <asp:Label ID="lblExpectedGraduation" runat="server" Text="Enter Your Expected Graduation Year"></asp:Label>
-    <asp:TextBox ID="txtExpectedGraduation" runat="server"></asp:TextBox>
-  
-    <br />
-         <%--Major--%>
-    <asp:Label ID="lblMajor" runat="server" Text="Enter Your Major"></asp:Label>
-         <asp:TextBox ID="txtMajor" runat="server"></asp:TextBox>
-
-         <br />
-
-         <%--UniversityYear --%>
-    <asp:Label ID="lblGrade" runat="server" Text="Enter Your University Year"></asp:Label>
-    <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
-
-    <%--Employment Status --%>
-    <asp:Label ID="lblEmploymentStatus" runat="server" Text="Enter Your EmploymentStatus"></asp:Label>
-    <asp:TextBox ID="txtEmploymentStatus" runat="server"></asp:TextBox>
-        <br />
-        <br />
-   <%-- <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />--%>
-    <asp:Button ID="btnUpdate" runat="server" Text="Update" Onclick="btnUpdate_Click" />
-
-    <%--Status- lable --%>
-    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
     
         
         <asp:SqlDataSource 

@@ -177,6 +177,21 @@ namespace Sprint1
             lblStatus.ForeColor = Color.Green;
             lblStatus.Font.Bold = true;
             lblStatus.Text = "Successfully updated Student Info!";
+
+            edit.Visible = false;
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (edit.Visible == false)
+            {
+                edit.Visible = true;
+            }
+            else
+            {
+                edit.Visible = false;
+            }
+            
         }
 
         //protected void btnPopulate_Click(object sender, EventArgs e)

@@ -11,9 +11,9 @@
             border-radius: 10px;
             padding: 16px;
             text-align: left;
-            background-color: #f4efe1;
+            background-color: #f4efe1;           
             border: none;        
-            width: 100%;
+            width: 75%;
         }
         .home {
             background-color: #d0c8b5;
@@ -34,16 +34,20 @@
             padding: 2%;
             background-color: white;
             float: right;
-            margin-top: 2%;
             width: 300px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 15px;
         }
-        #recommended {
-            padding-right: 2%;
-            padding-bottom: 5%;
+        #recommended {           
             float: left;
             width: 75%;
+            margin-bottom: 5%;
+        }
+        .gridcard {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 3%;
         }
         </style>
 
@@ -61,7 +65,7 @@
 
     <section id="recommended">
         <%-- Recommended Job Opportunities --%>
-        <div id="RecommendedJobs">
+        <div id="RecommendedJobs" class="gridcard">
             <h2>Recommended Jobs</h2>
             <%-- Gridview that shows all jobs --%>
             <asp:GridView
@@ -70,10 +74,11 @@
                 HorizontalAlign="Justify"
                 AlternatingRowStyle="PowderBlue"
                 EmptyDataText="No Job Opportunities Matching Your Industry Interest"
-                AllowSorting="True"
                 AutoGenerateColumns="False"
                 CellPadding="10"
-                CssClass="gridview" DataSourceID="SqlRecJobs">
+                CssClass="gridview" 
+                DataSourceID="SqlRecJobs" 
+                HeaderStyle-Font-Size="Large">
                 <Columns>
                     <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="JobTitle" DataField="JobTitle" SortExpression="JobTitle"/>
                     <asp:BoundField HeaderText="DateStart" DataField="DateStart" SortExpression="DateStart"/>
@@ -92,7 +97,7 @@
         <br />
 
         <%-- Recommended Internship Opportunities --%>
-        <div id="RecommendedInternships">
+        <div id="RecommendedInternships" class="gridcard">
             <h2>Recommended Internships</h2>
             <%-- Gridview that shows all jobs --%>
             <asp:GridView
@@ -101,7 +106,6 @@
                 HorizontalAlign="Justify"
                 AlternatingRowStyle="PowderBlue"
                 EmptyDataText="No Internship Opportunities Matching Your Industry Interest"
-                AllowSorting="True"
                 AutoGenerateColumns="False"
                 CellPadding="10"
                 CssClass="gridview" DataSourceID="SqlRecInternships">
@@ -123,7 +127,7 @@
         <br />
     
         <%-- Recommended Other Opportunities --%>
-        <div id="RecommendedOther">
+        <div id="RecommendedOther" class="gridcard">
             <h2>Recommended Other Opportunities</h2>
             <%-- Gridview that shows all jobs --%>
             <asp:GridView
@@ -132,7 +136,6 @@
                 HorizontalAlign="Justify"
                 AlternatingRowStyle="PowderBlue"
                 EmptyDataText="No Other Opportunities Matching Your Industry Interest"
-                AllowSorting="True"
                 AutoGenerateColumns="False"
                 CellPadding="10"
                 CssClass="gridview" DataSourceID="SqlRecOther">

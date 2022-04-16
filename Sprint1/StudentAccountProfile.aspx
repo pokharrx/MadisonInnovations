@@ -39,17 +39,16 @@
     </style>
     <%-- Students --%>
     <div id="Students">
-        <h2>My Account</h2>
-        <hr />
-        <div class="Card">
+        <div class="Card">       
         <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="right" OnClick="btnEdit_Click" />
-        <br /><br />
+        <h2>My Account</h2>
         <asp:GridView
             ID="grdvLoggedInStudent"
             DataSourceID="SqlLoggedinStudent"
             runat="server"
             HorizontalAlign="Justify" 
-            BackColor="White" CssClass="gridview"
+            BackColor="White" 
+            CssClass="gridview"
             AutoGenerateColumns="false"
             DataKeyNames="StudentID"
             CellPadding="10">    

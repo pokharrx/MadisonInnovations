@@ -18,17 +18,35 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .right {
+            float: right;
+        }
+        .Card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 30px;
+            text-align: left;
+            background-color: #f4efe1;
+            border: none;  
+        }
+        .gridview {
+            border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
     </style>
         <%-- Members --%>
-    <div id="memberInfo">
-        <h2>Members</h2>
+    <div id="memberInfo" class="Card">
+        <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="right" OnClick="btnEdit_Click" />
+        <h2>My Account</h2>
         <asp:GridView
             ID="grdLoggedInMember"
             DataSourceID="SqlLoggedinMember"
             runat="server"
             HorizontalAlign="Justify"
-            AlternatingRowStyle-BackColor="PowderBlue"
-            AllowSorting="true"
+            BackColor="White" 
+            CssClass="gridview"
             EmptyDataText="No Member Selected"
             AutoGenerateColumns="false"
             DataKeyNames="MemberID"
@@ -46,39 +64,40 @@
                 <asp:BoundField HeaderText="Account Type" DataField="AccountType" SortExpression="AccountType"/>
             </Columns>
         </asp:GridView>
-
-        <%--FirstName --%>
-    <asp:Label ID="lblMemberFirstName" runat="server" Text="Enter Your First Name"></asp:Label>
-    <asp:TextBox ID="txtMemberFirstName" runat="server"></asp:TextBox>
-
-    <br />
-
-    <%--LastName--%>
-    <asp:Label ID="lblMemberLastName" runat="server" Text="Enter Your Last Name"></asp:Label>
-    <asp:TextBox ID="txtMemberLastName" runat="server"></asp:TextBox>
- 
-    <br />
-
-    <%--Email--%>
-    <asp:Label ID="lblMemberEmail" runat="server" Text="Enter Your Email"></asp:Label>
-    <asp:TextBox ID="txtMemberEmail" runat="server"></asp:TextBox>
- 
-    <br />
-
-    <%--PhoneNumber --%>
-    <asp:Label ID="lblMemberPhoneNumber" runat="server" Text="Enter Your Phone Number (Without Country Code)"></asp:Label>
-    <asp:TextBox ID="txtMemberPhoneNumber" runat="server"></asp:TextBox>
-   
-    <br />
-
-        <%--GraduationYear--%>
-    <asp:Label ID="lblMemberTitle" runat="server" Text="Enter Your Expected Graduation Year"></asp:Label>
-    <asp:TextBox ID="txtMemberTitle" runat="server"></asp:TextBox>
-        <br />
-        <br />
-    <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />
-    <asp:Button ID="btnUpdate" runat="server" Text="Update" Onclick="btnUpdate_Click" />
     </div>
+        <div id="edit" runat="server" visible="false">
+                <%--FirstName --%>
+            <asp:Label ID="lblMemberFirstName" runat="server" Text="Enter Your First Name"></asp:Label>
+            <asp:TextBox ID="txtMemberFirstName" runat="server"></asp:TextBox>
+
+            <br />
+
+            <%--LastName--%>
+            <asp:Label ID="lblMemberLastName" runat="server" Text="Enter Your Last Name"></asp:Label>
+            <asp:TextBox ID="txtMemberLastName" runat="server"></asp:TextBox>
+ 
+            <br />
+
+            <%--Email--%>
+            <asp:Label ID="lblMemberEmail" runat="server" Text="Enter Your Email"></asp:Label>
+            <asp:TextBox ID="txtMemberEmail" runat="server"></asp:TextBox>
+ 
+            <br />
+
+            <%--PhoneNumber --%>
+            <asp:Label ID="lblMemberPhoneNumber" runat="server" Text="Enter Your Phone Number (Without Country Code)"></asp:Label>
+            <asp:TextBox ID="txtMemberPhoneNumber" runat="server"></asp:TextBox>
+   
+            <br />
+
+                <%--GraduationYear--%>
+            <asp:Label ID="lblMemberTitle" runat="server" Text="Enter Your Expected Graduation Year"></asp:Label>
+            <asp:TextBox ID="txtMemberTitle" runat="server"></asp:TextBox>
+                <br />
+                <br />
+            <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />
+            <asp:Button ID="btnUpdate" runat="server" Text="Update" Onclick="btnUpdate_Click" />
+        </div>
 
     <div>
          <asp:SqlDataSource 

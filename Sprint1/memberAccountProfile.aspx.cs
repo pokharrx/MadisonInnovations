@@ -77,6 +77,17 @@ namespace Sprint1
             }
         }
 
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (edit.Visible == false)
+            {
+                edit.Visible = true;
+            }
+            else
+            {
+                edit.Visible = false;
+            }
 
+        }
     }
 }

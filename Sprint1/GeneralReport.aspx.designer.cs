@@ -24,6 +24,33 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.FormView fvStudentMemberCount;
 
         /// <summary>
+        /// grdJobInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdJobInformation;
+
+        /// <summary>
+        /// grdInternshipInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdInternshipInformation;
+
+        /// <summary>
+        /// grdOtherInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdOtherInformation;
+
+        /// <summary>
         /// dtasrcStudentMemberCount control.
         /// </summary>
         /// <remarks>
@@ -31,5 +58,32 @@ namespace Sprint1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dtasrcStudentMemberCount;
+
+        /// <summary>
+        /// dtasrcJobInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcJobInformation;
+
+        /// <summary>
+        /// dtasrcInternshipInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcInternshipInformation;
+
+        /// <summary>
+        /// dtasrcOtherInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcOtherInformation;
     }
 }

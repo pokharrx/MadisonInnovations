@@ -12,6 +12,13 @@ namespace Sprint1
         protected void Page_Load(object sender, EventArgs e)
         {
             fvStudentMemberCount.DataBind();
+            grdJobInformation.DataSourceID = "dtasrcJobInformation";
+            grdJobInformation.DataBind();
+            grdInternshipInformation.DataSourceID = "dtasrcInternshipInformation";
+            grdInternshipInformation.DataBind();
+            grdOtherInformation.DataSourceID = "dtasrcOtherInformation";
+            grdOtherInformation.DataBind();
+
         }
     }
 }

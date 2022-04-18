@@ -50,9 +50,10 @@ namespace Sprint1
                 {
                     while (reader.Read()) // this will read the single record that matches the entered username
                     {
-                        string storedHash = reader["PasswordHash"].ToString(); // store the database password into this variable
                         string persontype = reader["PersonType"].ToString(); // store the database PersonType into this variable
+                        string username = reader["Username"].ToString(); // store the database username into this variable
                         string activation = reader["Activation"].ToString(); // store the database Activation Status into this variable
+                        string storedHash = reader["PasswordHash"].ToString(); // store the database password into this variable
 
                         if (PasswordHash.ValidatePassword(txtPassword.Text, storedHash)) // if the entered password matches what is stored, it will show success
                         {
@@ -68,6 +69,11 @@ namespace Sprint1
                                 Response.Redirect("studentHome.aspx");
                             }
                             else if (persontype == "Admin" & activation == "Active")
+                            {
+                                Session["Username"] = txtUsername.Text;
+                                Response.Redirect("adminHome.aspx");
+                            }
+                            else if (persontype == "Master" & activation == "Active")
                             {
                                 Session["Username"] = txtUsername.Text;
                                 Response.Redirect("adminHome.aspx");

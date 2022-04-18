@@ -36,6 +36,33 @@
             border-bottom: 2px solid white;
         }
     </style>
+    <%-- Members --%>
+    <div id="Members">
+        <h2>Members</h2>
+        <asp:TextBox ID="txtMemberSearch" runat="server"></asp:TextBox>
+        <asp:Button ID="btnMemberSearch" runat="server" Text="Search" OnClick="btnMemberSearch_Click" />
+        <asp:Button ID="btnAllMembers" runat="server" Text="View All" OnClick="btnAllMembers_Click"/>
+        <asp:GridView
+            ID="grdMembers"
+            runat="server"
+            HorizontalAlign="Justify"
+            EmptyDataText="No Members Found"
+            AllowSorting="false"
+            AutoGenerateColumns="false"
+            DataKeyNames="MemberID"
+            AutoGenerateSelectButton="false"
+            CellPadding="10" 
+            CssClass="gridview">    
+            <Columns>
+                <asp:BoundField HeaderText="First Name" DataField="FirstName" SortExpression="FirstName"/>
+                <asp:BoundField HeaderText="Last Name" DataField="LastName" SortExpression="LastName"/>
+                <asp:BoundField HeaderText="Email" DataField="EmailAddress" SortExpression="EmailAddress"/>
+                <asp:BoundField HeaderText="Phone Number" DataField="PhoneNumber" SortExpression="PhoneNumber"/>
+                <asp:BoundField HeaderText="Title" DataField="Title"/>          
+            </Columns>
+        </asp:GridView>
+    </div>
+    <br />
     <%-- Students --%>
     <div id="Students">
         <h2>Students</h2>

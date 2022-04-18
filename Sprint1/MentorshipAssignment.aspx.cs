@@ -134,6 +134,18 @@ namespace Sprint1
 
                     lblStatus.ForeColor = Color.Green;
                     lblStatus.Text = "Mentorship Created.";
+
+                    System.Data.SqlClient.SqlConnection sqlConnect1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    sqlConnect1.Open();
+                    SqlCommand sc = new SqlCommand();
+                    sc.Connection = sqlConnect1;
+                    sc.CommandType = CommandType.Text;
+                    String s = ddlStudent.SelectedValue.ToString();
+
+                    sc.CommandText = "DELETE FROM studentMentorshipApp WHERE StudentID  = " + s + ";";
+                    sc.ExecuteScalar();
+                    sqlConnect.Close();
+
                 }
 
                 catch (Exception ex)

@@ -24,55 +24,111 @@ namespace Sprint1
             {
                 if (txtFirstName.Text != "" && txtLastName.Text != "" && txtEmail.Text != "" && txtPassword.Text != "" && txtUsername.Text != "") // all fields must be filled out
                 {
-                    // COMMIT VALUES
-                    try
+                    if(cbxWantMentor.Enabled==true || cbxWantToMentor.Enabled == true)
                     {
-                        System.Data.SqlClient.SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
-                        lblStatus.Text = "Database Connection Successful";
+                        // COMMIT VALUES
+                        try
+                        {
+                            System.Data.SqlClient.SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
+                            lblStatus.Text = "Database Connection Successful";
 
-                        sc.Open();
+                            sc.Open();
 
-                        System.Data.SqlClient.SqlCommand createUser = new System.Data.SqlClient.SqlCommand();
-                        createUser.Connection = sc;
+                            System.Data.SqlClient.SqlCommand createUser = new System.Data.SqlClient.SqlCommand();
+                            createUser.Connection = sc;
 
-                        // INSERT USER RECORD
-                        createUser.CommandText = "INSERT INTO Person (FirstName, LastName, Email, PersonType, Username) VALUES (@FName, @LName, @Email, " +
-                            "@PType, @Username)";
-                        createUser.Parameters.Add(new SqlParameter("@FName", txtFirstName.Text));
-                        createUser.Parameters.Add(new SqlParameter("@LName", txtLastName.Text));
-                        createUser.Parameters.Add(new SqlParameter("@Email", txtEmail.Text));
-                        createUser.Parameters.Add(new SqlParameter("@PType", ddlPersonType.Text));
-                        createUser.Parameters.Add(new SqlParameter("@Username", txtUsername.Text));
-                        createUser.ExecuteNonQuery();
+                            // INSERT USER RECORD
+                            createUser.CommandText = "INSERT INTO Person (FirstName, LastName, Email, PersonType, Username, WantsMentorship) VALUES (@FName, @LName, @Email, " +
+                                "@PType, @Username, 1)";
+                            createUser.Parameters.Add(new SqlParameter("@FName", txtFirstName.Text));
+                            createUser.Parameters.Add(new SqlParameter("@LName", txtLastName.Text));
+                            createUser.Parameters.Add(new SqlParameter("@Email", txtEmail.Text));
+                            createUser.Parameters.Add(new SqlParameter("@PType", ddlPersonType.Text));
+                            createUser.Parameters.Add(new SqlParameter("@Username", txtUsername.Text));
+                            createUser.ExecuteNonQuery();
 
 
-                        System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();
-                        setPass.Connection = sc;
-                        // INSERT PASSWORD RECORD AND CONNECT TO USER
-                        setPass.CommandText = "INSERT INTO Pass (UserID, Username, PasswordHash, Activation) VALUES ((select max(userid) from person), " +
-                            "@Username, @Password, 'Inactive')";
-                        setPass.Parameters.Add(new SqlParameter("@Username", txtUsername.Text));
-                        setPass.Parameters.Add(new SqlParameter("@Password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
-                        setPass.ExecuteNonQuery();
+                            System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();
+                            setPass.Connection = sc;
+                            // INSERT PASSWORD RECORD AND CONNECT TO USER
+                            setPass.CommandText = "INSERT INTO Pass (UserID, Username, PasswordHash, Activation) VALUES ((select max(userid) from person), " +
+                                "@Username, @Password, 'Inactive')";
+                            setPass.Parameters.Add(new SqlParameter("@Username", txtUsername.Text));
+                            setPass.Parameters.Add(new SqlParameter("@Password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
+                            setPass.ExecuteNonQuery();
 
-                        sc.Close();
+                            sc.Close();
 
-                        // GREY OUT TEXT BOXES
-                        lblStatus.Text = "Account Request Submitted! You will be emailed soon with your verification.";
-                        txtFirstName.Enabled = false;
-                        txtLastName.Enabled = false;
-                        txtEmail.Enabled = false;
-                        ddlPersonType.Enabled = false;
-                        txtUsername.Enabled = false;
-                        txtPassword.Enabled = false;
-                        btnCreateUser.Enabled = false;
-                        lnkAnother.Visible = true;
+                            // GREY OUT TEXT BOXES
+                            lblStatus.Text = "Account Request Submitted! You will be emailed soon with your verification.";
+                            txtFirstName.Enabled = false;
+                            txtLastName.Enabled = false;
+                            txtEmail.Enabled = false;
+                            ddlPersonType.Enabled = false;
+                            txtUsername.Enabled = false;
+                            txtPassword.Enabled = false;
+                            btnCreateUser.Enabled = false;
+                            lnkAnother.Visible = true;
+                        }
+                        catch
+                        {
+                            // ERROR MESSAGE
+                            lblStatus.Text = "Database Error - Account Request Not Submitted.";
+                        }
                     }
-                    catch
+                    else
                     {
-                        // ERROR MESSAGE
-                        lblStatus.Text = "Database Error - Account Request Not Submitted.";
+                        // COMMIT VALUES
+                        try
+                        {
+                            System.Data.SqlClient.SqlConnection sc = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString.ToString());
+                            lblStatus.Text = "Database Connection Successful";
+
+                            sc.Open();
+
+                            System.Data.SqlClient.SqlCommand createUser = new System.Data.SqlClient.SqlCommand();
+                            createUser.Connection = sc;
+
+                            // INSERT USER RECORD
+                            createUser.CommandText = "INSERT INTO Person (FirstName, LastName, Email, PersonType, Username) VALUES (@FName, @LName, @Email, " +
+                                "@PType, @Username)";
+                            createUser.Parameters.Add(new SqlParameter("@FName", txtFirstName.Text));
+                            createUser.Parameters.Add(new SqlParameter("@LName", txtLastName.Text));
+                            createUser.Parameters.Add(new SqlParameter("@Email", txtEmail.Text));
+                            createUser.Parameters.Add(new SqlParameter("@PType", ddlPersonType.Text));
+                            createUser.Parameters.Add(new SqlParameter("@Username", txtUsername.Text));
+                            createUser.ExecuteNonQuery();
+
+
+                            System.Data.SqlClient.SqlCommand setPass = new System.Data.SqlClient.SqlCommand();
+                            setPass.Connection = sc;
+                            // INSERT PASSWORD RECORD AND CONNECT TO USER
+                            setPass.CommandText = "INSERT INTO Pass (UserID, Username, PasswordHash, Activation) VALUES ((select max(userid) from person), " +
+                                "@Username, @Password, 'Inactive')";
+                            setPass.Parameters.Add(new SqlParameter("@Username", txtUsername.Text));
+                            setPass.Parameters.Add(new SqlParameter("@Password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
+                            setPass.ExecuteNonQuery();
+
+                            sc.Close();
+
+                            // GREY OUT TEXT BOXES
+                            lblStatus.Text = "Account Request Submitted! You will be emailed soon with your verification.";
+                            txtFirstName.Enabled = false;
+                            txtLastName.Enabled = false;
+                            txtEmail.Enabled = false;
+                            ddlPersonType.Enabled = false;
+                            txtUsername.Enabled = false;
+                            txtPassword.Enabled = false;
+                            btnCreateUser.Enabled = false;
+                            lnkAnother.Visible = true;
+                        }
+                        catch
+                        {
+                            // ERROR MESSAGE
+                            lblStatus.Text = "Database Error - Account Request Not Submitted.";
+                        }
                     }
+                    
                 }
                 else
                 {
@@ -155,6 +211,24 @@ namespace Sprint1
             {
 
                 throw;
+            }
+        }
+
+        protected void ddlPersonType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlPersonType.SelectedItem.ToString() == "Student")
+            {
+                lblWantMentor.Visible = true;
+                cbxWantMentor.Visible = true;
+                lblWantToMentor.Visible = false;
+                cbxWantToMentor.Visible = false;
+            }
+            else
+            {
+                lblWantMentor.Visible = false;
+                cbxWantMentor.Visible = false;
+                lblWantToMentor.Visible = true;
+                cbxWantToMentor.Visible = true;
             }
         }
     }

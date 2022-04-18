@@ -52,13 +52,19 @@
                 <td class="auto-style2">Student or Member:</td>
                 <td>
                     <%--PERSON TYPE TB--%>
-                    <asp:DropDownList ID="ddlPersonType" runat="server">
+                    <asp:DropDownList ID="ddlPersonType" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlPersonType_SelectedIndexChanged">
                         <asp:ListItem>Student</asp:ListItem>
                         <asp:ListItem>Member</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
         </table>
+            <asp:Label ID="lblWantMentor" runat="server" Text="Check if you would like a mentor:"></asp:Label>
+            <asp:CheckBox ID="cbxWantMentor" runat="server" />
+            <asp:Label ID="lblWantToMentor" runat="server" Text="Check if you would like to mentor students:" Visible="false"></asp:Label>
+            <asp:CheckBox ID="cbxWantToMentor" runat="server" Visible="false"/>
+            <br />
+            
             <%--CREATE USER BUTTON--%>
         <asp:Button ID="btnCreateUser" runat="server" Text="Create Account" OnClick="btnCreateUser_Click"/>
         <br />

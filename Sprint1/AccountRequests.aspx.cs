@@ -18,6 +18,7 @@ namespace Sprint1
         static string email = "";
         static string persontype = "";
         static string username = "";
+        static int wantsmentorship = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -45,48 +46,101 @@ namespace Sprint1
                 sqlCommand.ExecuteScalar();
                 sqlConnect.Close();
 
+                // Calls method to get data from the user requesting access to web app
                 getUserData();
 
-                if (persontype == "Student")
+                // Code for if they want to participate in the mentorship process
+                if (wantsmentorship == 1)
                 {
-                    // create Query
-                    String sqlInsertStudent = "INSERT INTO Student (FirstName, LastName, EmailAddress, StudentUserName) VALUES ('" + firstname + "','" + lastname + "','" + email + "','" + username + "')";
+                    // Code for if the user is signing up to be a student
+                    if (persontype == "Student")
+                    {
+                        // create Query
+                        String sqlInsertStudent = "INSERT INTO Student (FirstName, LastName, EmailAddress, PhoneNumber, GradYear, Major, Grade, Industry, StudentUserName, WantMentor) VALUES ('" + firstname + "','" + lastname + "','" + email + "','N/A', 'N/A', 'N/A', 'N/A', 'N/A', '" + username + "', 1)";
 
-                    // Define Connection to DB
-                    SqlConnection sqlConnect2 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                        // Define Connection to DB
+                        SqlConnection sqlConnect2 = new SqlConnection
+                            (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
 
-                    // Create SQL Command (Sends query to the DB
-                    SqlCommand sqlCommand2 = new SqlCommand();
-                    sqlCommand2.Connection = sqlConnect2;
-                    sqlCommand2.CommandType = CommandType.Text;
-                    sqlCommand2.CommandText = sqlInsertStudent;
+                        // Create SQL Command (Sends query to the DB
+                        SqlCommand sqlCommand2 = new SqlCommand();
+                        sqlCommand2.Connection = sqlConnect2;
+                        sqlCommand2.CommandType = CommandType.Text;
+                        sqlCommand2.CommandText = sqlInsertStudent;
 
-                    // Issue the query and retrieve the results
-                    sqlConnect2.Open();
-                    SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
-                    sqlConnect2.Close();
+                        // Issue the query and retrieve the results
+                        sqlConnect2.Open();
+                        SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
+                        sqlConnect2.Close();
+                    }
+                    // Code for if the user is signing up to be a member
+                    else if (persontype == "Member")
+                    {
+                        // create Query
+                        String sqlInsertMember = "INSERT INTO Member (FirstName, LastName, EmailAddress, PhoneNumber, Title, MemberUserName, WantsToMentor) VALUES ('" + firstname + "','" + lastname + "','" + email + "', 'N/A', 'N/A', '" + username + "', 1)";
+
+                        // Define Connection to DB
+                        SqlConnection sqlConnect3 = new SqlConnection
+                            (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+
+                        // Create SQL Command (Sends query to the DB
+                        SqlCommand sqlCommand3 = new SqlCommand();
+                        sqlCommand3.Connection = sqlConnect3;
+                        sqlCommand3.CommandType = CommandType.Text;
+                        sqlCommand3.CommandText = sqlInsertMember;
+
+                        // Issue the query and retrieve the results
+                        sqlConnect3.Open();
+                        SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
+                        sqlConnect3.Close();
+                    }
                 }
 
-                else if (persontype == "Member")
+                // Code for if the user signing up does NOT want to participate in the mentorship process
+                else
                 {
-                    // create Query
-                    String sqlInsertMember = "INSERT INTO Member (FirstName, LastName, EmailAddress, MemberUserName) VALUES ('" + firstname + "','" + lastname + "','" + email + "','" + username + "')";
+                    // Code for if the user is signing up to be a student
+                    if (persontype == "Student")
+                    {
+                        // create Query
+                        String sqlInsertStudent = "INSERT INTO Student (FirstName, LastName, EmailAddress, PhoneNumber, GradYear, Major, Grade, Industry, StudentUserName) VALUES ('" + firstname + "','" + lastname + "','" + email + "','N/A', 'N/A', 'N/A', 'N/A', 'N/A', '" + username + "')";
 
-                    // Define Connection to DB
-                    SqlConnection sqlConnect3 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                        // Define Connection to DB
+                        SqlConnection sqlConnect2 = new SqlConnection
+                            (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
 
-                    // Create SQL Command (Sends query to the DB
-                    SqlCommand sqlCommand3 = new SqlCommand();
-                    sqlCommand3.Connection = sqlConnect3;
-                    sqlCommand3.CommandType = CommandType.Text;
-                    sqlCommand3.CommandText = sqlInsertMember;
+                        // Create SQL Command (Sends query to the DB
+                        SqlCommand sqlCommand2 = new SqlCommand();
+                        sqlCommand2.Connection = sqlConnect2;
+                        sqlCommand2.CommandType = CommandType.Text;
+                        sqlCommand2.CommandText = sqlInsertStudent;
 
-                    // Issue the query and retrieve the results
-                    sqlConnect3.Open();
-                    SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
-                    sqlConnect3.Close();
+                        // Issue the query and retrieve the results
+                        sqlConnect2.Open();
+                        SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
+                        sqlConnect2.Close();
+                    }
+                    // Code for if the user is signing up to be a member
+                    else if (persontype == "Member")
+                    {
+                        // create Query
+                        String sqlInsertMember = "INSERT INTO Member (FirstName, LastName, EmailAddress, PhoneNumber, Title, MemberUserName) VALUES ('" + firstname + "','" + lastname + "','" + email + "', 'N/A', 'N/A', '" + username + "')";
+
+                        // Define Connection to DB
+                        SqlConnection sqlConnect3 = new SqlConnection
+                            (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+
+                        // Create SQL Command (Sends query to the DB
+                        SqlCommand sqlCommand3 = new SqlCommand();
+                        sqlCommand3.Connection = sqlConnect3;
+                        sqlCommand3.CommandType = CommandType.Text;
+                        sqlCommand3.CommandText = sqlInsertMember;
+
+                        // Issue the query and retrieve the results
+                        sqlConnect3.Open();
+                        SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
+                        sqlConnect3.Close();
+                    }
                 }
 
                 Response.Redirect("AccountRequests.aspx");
@@ -94,9 +148,10 @@ namespace Sprint1
                 lblStatus.Text = firstname + " " + lastname + "'s account has been activated!";
 
             }
-            catch (Exception)
+            catch (Exception args2)
             {
-
+                lblStatus.Text = "Unable to activate account. " + args2.ToString();
+                throw;
             }
         }
 
@@ -150,7 +205,7 @@ namespace Sprint1
         protected void getUserData()
         {
             // create Query
-            String sqlGetInfo = "SELECT FirstName, LastName, Email, PersonType, Username FROM Person WHERE UserID='" + dvUnauthorizedUsers.SelectedValue + "'";
+            String sqlGetInfo = "SELECT FirstName, LastName, Email, PersonType, Username, WantsMentorship FROM Person WHERE UserID='" + dvUnauthorizedUsers.SelectedValue + "'";
 
             // Define Connection to DB
             SqlConnection sqlConnect2 = new SqlConnection
@@ -166,6 +221,7 @@ namespace Sprint1
             sqlConnect2.Open();
             SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
 
+            // Code for successful read
             if (queryResults2.Read())
             {
                 firstname = queryResults2["FirstName"].ToString();
@@ -173,14 +229,61 @@ namespace Sprint1
                 email = queryResults2["Email"].ToString();
                 persontype = queryResults2["PersonType"].ToString();
                 username = queryResults2["Username"].ToString();
+                wantsmentorship = Int32.Parse(queryResults2["WantsMentorship"].ToString());
 
             }
-
+            // Close database connection
             sqlConnect2.Close();
 
         }
 
+        protected Boolean wantsMentorship(object sender, EventArgs e)
+        {
+            try
+            {
+                // create Query
+                String sqlGetInfo = "SELECT WantsMentorship FROM Person WHERE Username = '" + username + "' AND WantsMentorship=1";
 
+                // Define Connection to DB
+                SqlConnection sqlConnect2 = new SqlConnection
+                    (WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString);
+
+                // Create SQL Command (Sends query to the DB
+                SqlCommand sqlCommand2 = new SqlCommand();
+                sqlCommand2.Connection = sqlConnect2;
+                sqlCommand2.CommandType = CommandType.Text;
+                sqlCommand2.CommandText = sqlGetInfo;
+
+                // Issue the query and retrieve the results
+                sqlConnect2.Open();
+                SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
+
+                if (queryResults2.Read())
+                {
+                    // Close database connection
+                    sqlConnect2.Close();
+                    queryResults2.Close();
+
+                    // Return true
+                    return true;
+                }
+                else
+                {
+                    // Close database connection
+                    sqlConnect2.Close();
+                    queryResults2.Close();
+
+                    // Return false
+                    return false;
+                }
+                
+            }
+            catch(Exception args)
+            {
+                lblStatus.Text = "There was a database issue with this request. " + args.ToString();
+                throw;
+            }
+        }
 
     }
 }

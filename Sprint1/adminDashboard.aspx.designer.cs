@@ -15,6 +15,42 @@ namespace Sprint1
     {
 
         /// <summary>
+        /// txtMemberSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMemberSearch;
+
+        /// <summary>
+        /// btnMemberSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMemberSearch;
+
+        /// <summary>
+        /// btnAllMembers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllMembers;
+
+        /// <summary>
+        /// grdMembers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdMembers;
+
+        /// <summary>
         /// txtStudentSearch control.
         /// </summary>
         /// <remarks>

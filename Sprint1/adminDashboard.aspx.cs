@@ -34,6 +34,8 @@ namespace Sprint1
                 string scholarshipQuery = "SELECT * FROM Scholarship";
                 string otherQuery = "SELECT * FROM Other";
                 DataTable dt6 = new DataTable();
+                string memberQuery = "SELECT * FROM Member";
+                DataTable dt7 = new DataTable();
 
                 //using automatically closes the connection when its done being used
                 using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString))
@@ -43,6 +45,7 @@ namespace Sprint1
                 using (SqlDataAdapter internshipAdapter = new SqlDataAdapter(internshipQuery, connection))
                 using (SqlDataAdapter scholarshipAdapter = new SqlDataAdapter(scholarshipQuery, connection))
                 using (SqlDataAdapter otherAdapter = new SqlDataAdapter(otherQuery, connection))
+                using (SqlDataAdapter memberAdapter = new SqlDataAdapter(memberQuery, connection))
                 {
                     try
                     {
@@ -53,6 +56,7 @@ namespace Sprint1
                         internshipAdapter.Fill(dt4);
                         scholarshipAdapter.Fill(dt5);
                         otherAdapter.Fill(dt6);
+                        memberAdapter.Fill(dt7);
                     }
                     catch
                     {
@@ -66,6 +70,7 @@ namespace Sprint1
                 ViewState["grdInternships"] = dt4;
                 ViewState["grdScholarships"] = dt5;
                 ViewState["grdOther"] = dt6;
+                ViewState["grdMembers"] = dt7;
 
                 //bind the datasource to the gridview
                 grdStudents.DataSource = dt1;
@@ -78,6 +83,8 @@ namespace Sprint1
                 grdInternships.DataBind();
                 grdOther.DataSource = dt6;
                 grdOther.DataBind();
+                grdMembers.DataSource = dt7;
+                grdMembers.DataBind();
             }
         }
 
@@ -506,6 +513,65 @@ namespace Sprint1
         protected void btnEditOther_Click(object sender, EventArgs e)
         {
             Response.Redirect("editOther.aspx");
+        }
+
+        protected void btnMemberSearch_Click(object sender, EventArgs e)
+        {
+            string searchMember = txtMemberSearch.Text.ToLower();
+
+            // check if the student search is at least 1 characters
+            if (searchMember.Length >= 1)
+            {
+                if (ViewState["grdMembers"] == null)
+                    return;
+
+                DataTable dt = ViewState["grdMembers"] as DataTable;
+
+                // making a clone of datatable
+                DataTable dtNew = dt.Clone();
+
+                // loop through table for correct fields
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["FirstName"].ToString().ToLower().Contains(searchMember) || row["LastName"].ToString().ToLower().Contains(searchMember))
+                    {
+                        //finding copy and add to new table
+                        dtNew.Rows.Add(row.ItemArray);
+                    }
+                }
+
+                // rebind the grid
+                grdMembers.DataSource = dtNew;
+                grdMembers.DataBind();
+            }
+        }
+
+        protected void btnAllMembers_Click(object sender, EventArgs e)
+        {
+            //use a datatable for storing all the data
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Member";
+
+            //using automatically closes the connection when its done being used
+            using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+            {
+                try
+                {
+                    //database fills the datatable
+                    adapter.Fill(dt);
+                }
+                catch
+                {
+                }
+            }
+
+            //save the datatable into a viewstate for later use
+            ViewState["grdMember"] = dt;
+
+            //bind the datasource to the gridview
+            grdMembers.DataSource = dt;
+            grdMembers.DataBind();
         }
     }
 }

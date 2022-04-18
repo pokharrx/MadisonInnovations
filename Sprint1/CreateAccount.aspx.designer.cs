@@ -78,6 +78,42 @@ namespace Sprint1
         protected global::System.Web.UI.WebControls.DropDownList ddlPersonType;
 
         /// <summary>
+        /// lblWantMentor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWantMentor;
+
+        /// <summary>
+        /// cbxWantMentor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbxWantMentor;
+
+        /// <summary>
+        /// lblWantToMentor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWantToMentor;
+
+        /// <summary>
+        /// cbxWantToMentor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbxWantToMentor;
+
+        /// <summary>
         /// btnCreateUser control.
         /// </summary>
         /// <remarks>

@@ -18,7 +18,6 @@ namespace Sprint1
             grdInternshipInformation.DataBind();
             grdOtherInformation.DataSourceID = "dtasrcOtherInformation";
             grdOtherInformation.DataBind();
-
         }
     }
 }

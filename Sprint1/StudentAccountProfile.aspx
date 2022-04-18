@@ -104,11 +104,13 @@
         <asp:Label ID="lblMajor" runat="server" Text="Enter Your Major"></asp:Label>
              <asp:TextBox ID="txtMajor" runat="server"></asp:TextBox>
 
-             <br />
+        <br />
 
              <%--UniversityYear --%>
         <asp:Label ID="lblGrade" runat="server" Text="Enter Your University Year"></asp:Label>
         <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
+
+        <br />
 
         <%--Employment Status --%>
         <asp:Label ID="lblEmploymentStatus" runat="server" Text="Enter Your EmploymentStatus"></asp:Label>

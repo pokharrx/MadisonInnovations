@@ -29,7 +29,7 @@
     <br />
     <asp:TextBox ID="txtMentees" runat="server"></asp:TextBox>
     <br />
-    <asp:Label ID="lblInfo" runat="server" Text="Describe what you are looking for from your mentor:"></asp:Label>
+    <asp:Label ID="lblInfo" runat="server" Text="Describe what you can offer as a mentor:"></asp:Label>
     <br />
     <asp:TextBox ID="txtReason" runat="server" Height="129px" Width="496px" TextMode="MultiLine"></asp:TextBox>
     <br />

@@ -22,8 +22,8 @@ namespace Sprint1
             {
                 //Sql Query for Student Drop Down List
                 String s = ddlStudent.SelectedValue.ToString();
-                String membersQuery = "SELECT reason FROM studentMentorshipApp WHERE studentID ='" + s + "';";
-
+                String membersQuery = "SELECT TOP 1 reason FROM studentMentorshipApp;";
+                //String membersQuery = "SELECT TOP 1 reason FROM studentMentorshipApp WHERE studentID ='" + s + "';";
                 SqlConnection sqlConnect1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
@@ -38,10 +38,41 @@ namespace Sprint1
                     lblInfo.Text = queryResults1["reason"].ToString();
 
                 }
+                String mentees = "SELECT top 1 numMentees, memberID FROM memberMentorPref;";
+
+                SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommand3 = new SqlCommand();
+                sqlCommand3.Connection = sqlConnect3;
+                sqlCommand3.CommandType = CommandType.Text;
+                sqlCommand3.CommandText = mentees;
+
+                sqlConnect3.Open();
+                SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
+                while (queryResults3.Read())
+                {
+                    //pull the max
+                    lblMax.Text = queryResults3["numMentees"].ToString();
+                    Session["load"] = queryResults3["memberID"].ToString();
+
+                }
+
+
+                sqlConnect3.Close();
+                queryResults3.Close();
 
 
                 sqlConnect1.Close();
                 queryResults1.Close();
+
+                System.Data.SqlClient.SqlConnection sqlConnect4 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                sqlConnect4.Open();
+                SqlCommand sc = new SqlCommand();
+                sc.Connection = sqlConnect4;
+                String z = Session["load"].ToString();
+                sc.CommandText = "SELECT COUNT(StudentID) FROM StudentMentor WHERE MemberID =" + z + ";";
+                string x = Convert.ToString(sc.ExecuteScalar());
+                sqlConnect4.Close();
+                lblCurrent.Text = x;
 
                 // Define Connection to DB
                 SqlConnection sqlConnect = new SqlConnection

@@ -30,6 +30,14 @@
             border-top: 2px solid white;
             border-bottom: 2px solid white;
         }
+        .gv-head {
+            color: rebeccapurple;
+            border-bottom: 0.5px solid black;
+            text-align: center;
+        }
+        .gv-row {
+            text-align: center;
+        }
    </style>    
     <%-- Job Opportunities --%>
     <div id="Jobs">
@@ -41,17 +49,21 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle="PowderBlue"
             EmptyDataText="No Company Selected"
-            AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="JobID"
             CellPadding="10"
-            CssClass="gridview">
+            CssClass="gridview" HeaderStyle-CssClass="gv-head" RowStyle-CssClass="gv-row" 
+            OnRowCommand="grdJob_RowCommand" >
             <Columns>
                 <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Job Title" DataField="JobTitle" SortExpression="JobTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink" />
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" ItemStyle-HorizontalAlign="Justify"/>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnApp" runat="server" Text="Apply Here" CommandName="JobTitle" CommandArgument='<%# Eval("JobTitle") %>' OnClientClick="target='_blank';" />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
     </div>
@@ -66,17 +78,21 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle="PowderBlue"
             EmptyDataText="No Company Selected"
-            AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="InternshipID"
             CellPadding="10"
-            CssClass="gridview">
+            CssClass="gridview"  HeaderStyle-CssClass="gv-head" RowStyle-CssClass="gv-row" 
+            OnRowCommand="grdJob_RowCommand">
             <Columns>
                 <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Internship Title" DataField="InternshipTitle" SortExpression="InternshipTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink"/>
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" ItemStyle-HorizontalAlign="Justify"/>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnApp" runat="server" Text="Apply Here" CommandName="InternshipTitle" CommandArgument='<%# Eval("InternshipTitle") %>' OnClientClick="target='_blank';" />
+                    </ItemTemplate>
+                </asp:TemplateField> 
             </Columns>
         </asp:GridView>
     </div>
@@ -91,17 +107,20 @@
             HorizontalAlign="Justify"
             AlternatingRowStyle="PowderBlue"
             EmptyDataText="No Other Opportunity Selected"
-            AllowSorting="true"
             AutoGenerateColumns="false"
             DataKeyNames="OtherID"
             CellPadding="10"
-            CssClass="gridview">
+            CssClass="gridview" HeaderStyle-CssClass="gv-head" RowStyle-CssClass="gv-row" OnRowCommand="grdJob_RowCommand" >
             <Columns>
                 <asp:BoundField ItemStyle-Font-Bold="true" HeaderText="Other Title" DataField="OtherTitle" SortExpression="OtherTitle"/>
                 <asp:BoundField HeaderText="Date Start" DataField="DateStart" SortExpression="DateStart"/>
                 <asp:BoundField HeaderText="Date End" DataField="DateEnd" SortExpression="DateEnd"/>
-                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description"/>
-                <asp:BoundField HeaderText="Apply Here" DataField="ApplicationLink" SortExpression="ApplicationLink" />
+                <asp:BoundField HeaderText="Description" DataField="Description" SortExpression="Description" ItemStyle-HorizontalAlign="Justify" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnApp" runat="server" Text="Apply Here" CommandName="OtherTitle" CommandArgument='<%# Eval("OtherTitle") %>' OnClientClick="target='_blank';" />
+                    </ItemTemplate>
+                </asp:TemplateField> 
             </Columns>
         </asp:GridView>
     </div>

@@ -37,5 +37,40 @@ namespace Sprint1
             Session["StudentIndustry"] = studentIndustry;
             sqlConnect1.Close();
         }
+
+        protected void grdJob_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            String selected = (string)e.CommandArgument;
+            SqlConnection connect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand getapp = new SqlCommand();
+            getapp.Connection = connect;
+            if (e.CommandName.Equals("JobTitle"))
+            {
+                getapp.CommandText = "SELECT ApplicationLink FROM Job WHERE JobTitle = @JobTitle";
+                getapp.Parameters.AddWithValue("@JobTitle", selected);
+                connect.Open();
+                String appLink = Convert.ToString(getapp.ExecuteScalar());
+                Response.Redirect(appLink);
+                connect.Close();
+            }
+            else if (e.CommandName.Equals("InternshipTitle"))
+            {
+                getapp.CommandText = "SELECT ApplicationLink FROM Internship WHERE InternshipTitle = @InternshipTitle";
+                getapp.Parameters.AddWithValue("@InternshipTitle", selected);
+                connect.Open();
+                String appLink = Convert.ToString(getapp.ExecuteScalar());
+                Response.Redirect(appLink);
+                connect.Close();
+            }
+            else if (e.CommandName.Equals("OtherTitle"))
+            {
+                getapp.CommandText = "SELECT ApplicationLink FROM Other WHERE OtherTitle = @OtherTitle";
+                getapp.Parameters.AddWithValue("@OtherTitle", selected);
+                connect.Open();
+                String appLink = Convert.ToString(getapp.ExecuteScalar());
+                Response.Redirect(appLink);
+                connect.Close();
+            }
+        }
     }
 }

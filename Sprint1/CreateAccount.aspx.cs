@@ -68,7 +68,7 @@ namespace Sprint1
                             txtUsername.Enabled = false;
                             txtPassword.Enabled = false;
                             btnCreateUser.Enabled = false;
-                            lnkAnother.Visible = true;
+                            //lnkAnother.Visible = true;
                         }
                         catch
                         {
@@ -120,7 +120,7 @@ namespace Sprint1
                             txtUsername.Enabled = false;
                             txtPassword.Enabled = false;
                             btnCreateUser.Enabled = false;
-                            lnkAnother.Visible = true;
+                            //lnkAnother.Visible = true;
                         }
                         catch
                         {
@@ -154,7 +154,7 @@ namespace Sprint1
             txtUsername.Enabled = true;
             txtPassword.Enabled = true;
             btnCreateUser.Enabled = true;
-            lnkAnother.Visible = false;
+            //lnkAnother.Visible = false;
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtEmail.Text = "";

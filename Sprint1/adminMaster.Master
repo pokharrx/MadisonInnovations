@@ -137,7 +137,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="sidebar">
-            <img class="profile" src="images/blank_profilepic.png" />
+            <img class="profile" src="images/admin.jpg" />
             <hr />
             <asp:ImageButton 
                 ID="home" 
@@ -246,7 +246,7 @@
                 <a href="MentorshipAssignment.aspx">Assign Mentorships</a>
                 <a href="AdminPrivileges.aspx">Account Privileges</a>
                 <a href="GeneralReport.aspx">General Report</a>
-                <asp:Button ID="btnLogout" runat="server" CausesValidation="false" Text="Log Out" OnClick="btnLogout_Click" />
+                <asp:Button ID="btnLogout" runat="server" CausesValidation="false" class="btn" style="background-color:#ede2c4"  Text="Log Out" OnClick="btnLogout_Click" />
                 <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
             </div>
         </div>

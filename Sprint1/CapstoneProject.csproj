@@ -94,7 +94,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\login.jpg" />
     <Content Include="CreateAccount.aspx" />
+    <Content Include="createaccountstyle.css" />
     <Content Include="editCompanies.aspx" />
     <Content Include="EditInternship.aspx" />
     <Content Include="editJobs.aspx" />
@@ -102,6 +104,7 @@
     <Content Include="editStudent.aspx" />
     <Content Include="GeneralReport.aspx" />
     <Content Include="images\add.png" />
+    <Content Include="images\admin.jpg" />
     <Content Include="images\announcement.png" />
     <Content Include="images\blank_profilepic.png" />
     <Content Include="images\company.png" />
@@ -110,7 +113,9 @@
     <Content Include="images\home.png" />
     <Content Include="images\internship.png" />
     <Content Include="images\job.png" />
+    <Content Include="images\member.png" />
     <Content Include="images\ole school group logo.png" />
+    <Content Include="images\olivia.jpg" />
     <Content Include="images\opportunity.png" />
     <Content Include="images\sponsor.png" />
     <Content Include="InternshipApplication.aspx" />

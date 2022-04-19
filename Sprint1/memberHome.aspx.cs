@@ -32,7 +32,21 @@ namespace Sprint1
                 Session["MemberID"] = MemberID;
                 sqlConnectSID.Close();
 
+                String l = Session["MemberID"].ToString();
+                DataTable dt1 = new DataTable();
+                string studentQuery = "select s.FirstName,s.LastName, s.EmailAddress from Student s, StudentMentor sm where sm.MemberID ='" + l + "';";
+                using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString))
+                using (SqlDataAdapter studentAdapter = new SqlDataAdapter(studentQuery, connection))
+                    try
+                    {
+                        studentAdapter.Fill(dt1);
+                    }
+                    catch
+                    {
 
+                    }
+                grV.DataSource = dt1;
+                grV.DataBind();
                 System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 sqlConnect.Open();
                 SqlCommand sc = new SqlCommand();

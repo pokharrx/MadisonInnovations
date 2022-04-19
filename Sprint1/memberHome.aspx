@@ -49,5 +49,6 @@
                 <SelectedDayStyle BackColor="#7f729a" Font-Bold="True"></SelectedDayStyle>
                 <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
             </asp:Calendar>
+            <asp:GridView ID="grV" runat="server"></asp:GridView>
         </div>
 </asp:Content>

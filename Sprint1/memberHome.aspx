@@ -34,6 +34,7 @@
             background-color: white;
             float: right;
             margin-top: 2%;
+            margin-bottom: 5%;
             width: 300px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 15px;
@@ -50,4 +51,5 @@
                 <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
             </asp:Calendar>
         </div>
+    <asp:GridView ID="grV" runat="server" Width="250%"></asp:GridView>
 </asp:Content>

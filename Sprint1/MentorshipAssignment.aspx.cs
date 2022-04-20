@@ -16,123 +16,138 @@ namespace Sprint1
         protected void Page_Load(object sender, EventArgs e)
         {
             MaintainScrollPositionOnPostBack = true;
-            
+
 
             if (!IsPostBack)//change it so that the queries populate from new tables
             {
-                //Sql Query for Student Drop Down List
-                String s = ddlStudent.SelectedValue.ToString();
-                String membersQuery = "SELECT TOP 1 reason FROM studentMentorshipApp;";
-                //String membersQuery = "SELECT TOP 1 reason FROM studentMentorshipApp WHERE studentID ='" + s + "';";
-                SqlConnection sqlConnect1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                SqlCommand sqlCommand1 = new SqlCommand();
-                sqlCommand1.Connection = sqlConnect1;
-                sqlCommand1.CommandType = CommandType.Text;
-                sqlCommand1.CommandText = membersQuery;
+                try {
+                    //Sql Query for Student Drop Down List
+                    String s = ddlStudent.SelectedValue.ToString();
+                    String membersQuery = "SELECT TOP 1 reason FROM studentMentorshipApp;";
+                    //String membersQuery = "SELECT TOP 1 reason FROM studentMentorshipApp WHERE studentID ='" + s + "';";
+                    SqlConnection sqlConnect1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    SqlCommand sqlCommand1 = new SqlCommand();
+                    sqlCommand1.Connection = sqlConnect1;
+                    sqlCommand1.CommandType = CommandType.Text;
+                    sqlCommand1.CommandText = membersQuery;
 
-                sqlConnect1.Open();
-                SqlDataReader queryResults1 = sqlCommand1.ExecuteReader();
-                while (queryResults1.Read())
-                {
-                    //pull the reason they want a mentor as a reminder
-                    lblInfo.Text = queryResults1["reason"].ToString();
+                    sqlConnect1.Open();
+                    SqlDataReader queryResults1 = sqlCommand1.ExecuteReader();
+                    while (queryResults1.Read())
+                    {
+                        //pull the reason they want a mentor as a reminder
+                        lblInfo.Text = queryResults1["reason"].ToString();
 
+                    }
+                    String mentees = "SELECT top 1 numMentees, memberID FROM memberMentorPref;";
+
+                    SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    SqlCommand sqlCommand3 = new SqlCommand();
+                    sqlCommand3.Connection = sqlConnect3;
+                    sqlCommand3.CommandType = CommandType.Text;
+                    sqlCommand3.CommandText = mentees;
+
+                    sqlConnect3.Open();
+                    SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
+                    while (queryResults3.Read())
+                    {
+                        //pull the max
+                        lblMax.Text = queryResults3["numMentees"].ToString();
+                        Session["load"] = queryResults3["memberID"].ToString();
+
+                    }
+
+
+                    sqlConnect3.Close();
+                    queryResults3.Close();
+
+
+                    sqlConnect1.Close();
+                    queryResults1.Close();
+
+                    System.Data.SqlClient.SqlConnection sqlConnect4 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                    sqlConnect4.Open();
+                    SqlCommand sc = new SqlCommand();
+                    sc.Connection = sqlConnect4;
+                    String z = Session["load"].ToString();
+                    sc.CommandText = "SELECT COUNT(StudentID) FROM StudentMentor WHERE MemberID =" + z + ";";
+                    string x = Convert.ToString(sc.ExecuteScalar());
+                    sqlConnect4.Close();
+                    lblCurrent.Text = x;
+
+                    // Define Connection to DB
+                    SqlConnection sqlConnect = new SqlConnection
+                        (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+
+                    // Create Query
+                    String sqlQuery = "SELECT prefName, studentID FROM studentMentorshipApp";
+                    // Create SQL Command (Sends query to the DB
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.Connection = sqlConnect;
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.CommandText = sqlQuery;
+
+                    // Issue the query and retrieve the results
+                    sqlConnect.Open();
+                    SqlDataReader queryResults = sqlCommand.ExecuteReader();
+
+                    while (queryResults.Read())
+                    {
+                        ListItem item = new ListItem();
+                        item.Text = queryResults["prefName"].ToString();
+                        item.Value = queryResults["StudentID"].ToString();
+                        ddlStudent.Items.Add(item);
+                    }
+
+                    //Close DB Connection
+                    sqlConnect.Close();
+                    queryResults.Close();
+
+
+                    //Sql Query for Member Drop Down List
+
+                    // Define Connection to DB
+                    SqlConnection sqlConnect2 = new SqlConnection
+                        (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+
+                    // Create Query
+                    String sqlQuery2 = "SELECT prefName, MemberID FROM memberMentorPref";
+                    // Create SQL Command (Sends query to the DB
+                    SqlCommand sqlCommand2 = new SqlCommand();
+                    sqlCommand2.Connection = sqlConnect2;
+                    sqlCommand2.CommandType = CommandType.Text;
+                    sqlCommand2.CommandText = sqlQuery2;
+
+                    // Issue the query and retrieve the results
+                    sqlConnect2.Open();
+                    SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
+
+                    while (queryResults2.Read())
+                    {
+                        ListItem item2 = new ListItem();
+                        item2.Text = queryResults2["prefName"].ToString();
+                        item2.Value = queryResults2["MemberID"].ToString();
+                        ddlMember.Items.Add(item2);
+                    }
+
+                    //Close DB Connection
+                    sqlConnect.Close();
+                    queryResults.Close();
                 }
-                String mentees = "SELECT top 1 numMentees, memberID FROM memberMentorPref;";
-
-                SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                SqlCommand sqlCommand3 = new SqlCommand();
-                sqlCommand3.Connection = sqlConnect3;
-                sqlCommand3.CommandType = CommandType.Text;
-                sqlCommand3.CommandText = mentees;
-
-                sqlConnect3.Open();
-                SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
-                while (queryResults3.Read())
+                catch
                 {
-                    //pull the max
-                    lblMax.Text = queryResults3["numMentees"].ToString();
-                    Session["load"] = queryResults3["memberID"].ToString();
-
+                    ddlMember.Visible = false;
+                    ddlStudent.Visible = false;
+                    lblCurrent.Visible = false;
+                    lblMax.Visible = false;
+                    lblInfo.Visible = false;
+                    lblStatus.Visible = false;
+                    Label1.Visible = false;
+                    Label2.Visible = false;
+                    lblError.Text = "No current students looking for mentor";
                 }
-
-
-                sqlConnect3.Close();
-                queryResults3.Close();
-
-
-                sqlConnect1.Close();
-                queryResults1.Close();
-
-                System.Data.SqlClient.SqlConnection sqlConnect4 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                sqlConnect4.Open();
-                SqlCommand sc = new SqlCommand();
-                sc.Connection = sqlConnect4;
-                String z = Session["load"].ToString();
-                sc.CommandText = "SELECT COUNT(StudentID) FROM StudentMentor WHERE MemberID =" + z + ";";
-                string x = Convert.ToString(sc.ExecuteScalar());
-                sqlConnect4.Close();
-                lblCurrent.Text = x;
-
-                // Define Connection to DB
-                SqlConnection sqlConnect = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-
-                // Create Query
-                String sqlQuery = "SELECT prefName, studentID FROM studentMentorshipApp";
-                // Create SQL Command (Sends query to the DB
-                SqlCommand sqlCommand = new SqlCommand();
-                sqlCommand.Connection = sqlConnect;
-                sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.CommandText = sqlQuery;
-
-                // Issue the query and retrieve the results
-                sqlConnect.Open();
-                SqlDataReader queryResults = sqlCommand.ExecuteReader();
-
-                while (queryResults.Read())
-                {
-                    ListItem item = new ListItem();
-                    item.Text = queryResults["prefName"].ToString();
-                    item.Value = queryResults["StudentID"].ToString();
-                    ddlStudent.Items.Add(item);
-                }
-
-                //Close DB Connection
-                sqlConnect.Close();
-                queryResults.Close();
-
-
-                //Sql Query for Member Drop Down List
-
-                // Define Connection to DB
-                SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-
-                // Create Query
-                String sqlQuery2 = "SELECT prefName, MemberID FROM memberMentorPref";
-                // Create SQL Command (Sends query to the DB
-                SqlCommand sqlCommand2 = new SqlCommand();
-                sqlCommand2.Connection = sqlConnect2;
-                sqlCommand2.CommandType = CommandType.Text;
-                sqlCommand2.CommandText = sqlQuery2;
-
-                // Issue the query and retrieve the results
-                sqlConnect2.Open();
-                SqlDataReader queryResults2 = sqlCommand2.ExecuteReader();
-
-                while (queryResults2.Read())
-                {
-                    ListItem item2 = new ListItem();
-                    item2.Text = queryResults2["prefName"].ToString();
-                    item2.Value = queryResults2["MemberID"].ToString();
-                    ddlMember.Items.Add(item2);
-                }
-
-                //Close DB Connection
-                sqlConnect.Close();
-                queryResults.Close();
             }
+            
         }
 
         protected void btnMentorshipAssign_Click(object sender, EventArgs e)

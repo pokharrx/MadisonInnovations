@@ -85,6 +85,7 @@
                                 <asp:BoundField HeaderText="Number Applied" DataField="Applied" />
                                 <asp:BoundField HeaderText="Number Interviewed" DataField="Interviewed" />
                                 <asp:BoundField HeaderText="Number of Offers" DataField="Offer" />
+                                <asp:BoundField HeaderText="Accepted Offers" DataField="Acceptance" />
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -102,6 +103,7 @@
                                 <asp:BoundField HeaderText="Number Applied" DataField="Applied" />
                                 <asp:BoundField HeaderText="Number Interviewed" DataField="Interviewed" />
                                 <asp:BoundField HeaderText="Number of Offers" DataField="Offer" />
+                                <asp:BoundField HeaderText="Accepted Offers" DataField="Acceptance" />
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -119,6 +121,7 @@
                                 <asp:BoundField HeaderText="Number Applied" DataField="Applied" />
                                 <asp:BoundField HeaderText="Number Interviewed" DataField="Interviewed" />
                                 <asp:BoundField HeaderText="Number of Offers" DataField="Offer" />
+                                <asp:BoundField HeaderText="Accepted Offers" DataField="Acceptance" />
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -134,17 +137,32 @@
 
      <asp:SqlDataSource ID="dtasrcJobInformation" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="SELECT c.CompanyName, COUNT(ja.ApplicationStatus) AS Applied, COUNT(ja.InterviewStatus) AS Interviewed, COUNT(ja.OfferStatus) AS Offer, COUNT(ja.AcceptedStatus) AS Acceptance FROM Company c, CorporateSponsor cs, Job j, JobApplication ja WHERE (c.CompanyID=cs.CompanyID AND cs.ContactID=j.ContactID AND j.JobID=ja.JobID) AND (ja.ApplicationStatus = 'Yes' OR ja.InterviewStatus = 'Yes' OR ja.OfferStatus = 'Yes' OR ja.AcceptedStatus = 'Yes') GROUP BY c.CompanyName;  ">
+        SelectCommand="SELECT c.CompanyName, (SELECT COUNT(ja.ApplicationStatus) FROM JobApplication as ja WHERE ApplicationStatus ='yes') AS Applied, (SELECT COUNT(ja.InterviewStatus) FROM JobApplication as ja WHERE ja.InterviewStatus ='yes') AS Interviewed, (SELECT COUNT(ja.OfferStatus) FROM JobApplication as ja WHERE ja.OfferStatus='yes') AS Offer, (SELECT COUNT(ja.AcceptedStatus) FROM JobApplication as ja WHERE ja.AcceptedStatus='yes') AS Acceptance
+                        FROM  Job as j INNER JOIN
+                        JobApplication as ja ON j.JobID = ja.JobID INNER JOIN
+                         CorporateSponsor as cs ON j.ContactID = cs.ContactID INNER JOIN
+                         Company as c ON cs.CompanyID = c.CompanyID
+                         GROUP BY c.CompanyName;  ">
     </asp:SqlDataSource>
 
        <asp:SqlDataSource ID="dtasrcInternshipInformation" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="SELECT c.CompanyName, COUNT(ia.ApplicationStatus) AS Applied, COUNT(ia.InterviewStatus) AS Interviewed, COUNT(ia.OfferStatus) AS Offer, COUNT(ia.AcceptedStatus) AS Acceptance FROM Company c, CorporateSponsor cs, Internship i, InternshipApplication ia WHERE (c.CompanyID=cs.CompanyID AND cs.ContactID=i.ContactID AND i.InternshipID=ia.InternshipID) AND (ia.ApplicationStatus = 'Yes' OR ia.InterviewStatus = 'Yes' OR ia.OfferStatus = 'Yes' OR ia.AcceptedStatus = 'Yes') GROUP BY c.CompanyName; ">
+        SelectCommand="SELECT c.CompanyName, (SELECT COUNT(ja.ApplicationStatus) FROM InternshipApplication as ja WHERE ApplicationStatus ='yes') AS Applied, (SELECT COUNT(ja.InterviewStatus) FROM InternshipApplication as ja WHERE ja.InterviewStatus ='yes') AS Interviewed, (SELECT COUNT(ja.OfferStatus) FROM InternshipApplication as ja WHERE ja.OfferStatus='yes') AS Offer, (SELECT COUNT(ja.AcceptedStatus) FROM InternshipApplication as ja WHERE ja.AcceptedStatus='yes') AS Acceptance
+                       FROM  Internship as j INNER JOIN
+                       InternshipApplication as ja ON j.InternshipID = ja.InternshipID INNER JOIN
+                       CorporateSponsor as cs ON j.ContactID = cs.ContactID INNER JOIN
+                       Company as c ON cs.CompanyID = c.CompanyID
+                       GROUP BY c.CompanyName;  ">
     </asp:SqlDataSource>
 
        <asp:SqlDataSource ID="dtasrcOtherInformation" runat="server"
         ConnectionString ="<%$ ConnectionStrings:SDB %>"
-        SelectCommand="SELECT c.CompanyName, COUNT(oa.ApplicationStatus) AS Applied, COUNT(oa.InterviewStatus) AS Interviewed, COUNT(oa.OfferStatus) AS Offer, COUNT(oa.AcceptedStatus) AS Acceptance FROM Company c, CorporateSponsor cs, Other o, OtherApplication oa WHERE (c.CompanyID=cs.CompanyID AND cs.ContactID=o.ContactID AND o.OtherID=oa.OtherID) AND (oa.ApplicationStatus = 'Yes' OR oa.InterviewStatus = 'Yes' OR oa.OfferStatus = 'Yes' OR oa.AcceptedStatus = 'Yes') GROUP BY c.CompanyName; ">
+        SelectCommand="SELECT c.CompanyName, (SELECT COUNT(ja.ApplicationStatus) FROM OtherApplication as ja WHERE ApplicationStatus ='yes') AS Applied, (SELECT COUNT(ja.InterviewStatus) FROM OtherApplication as ja WHERE ja.InterviewStatus ='yes') AS Interviewed, (SELECT COUNT(ja.OfferStatus) FROM OtherApplication as ja WHERE ja.OfferStatus='yes') AS Offer, (SELECT COUNT(ja.AcceptedStatus) FROM OtherApplication as ja WHERE ja.AcceptedStatus='yes') AS Acceptance
+                    FROM  Other as j INNER JOIN
+                    OtherApplication as ja ON j.OtherID = ja.OtherID INNER JOIN
+                     CorporateSponsor as cs ON j.ContactID = cs.ContactID INNER JOIN
+                    Company as c ON cs.CompanyID = c.CompanyID
+                    GROUP BY c.CompanyName; ">
     </asp:SqlDataSource>
 
 </asp:Content>

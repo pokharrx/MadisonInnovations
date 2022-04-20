@@ -30,23 +30,34 @@
             padding: 5%;
             margin-left: 100px;
             background-color: white;
-            float: right;
+            float: left;
             margin-top: 2%;
-            width: 300px;
+            width: 1000px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 15px;
         }
+        #announcements {
+            float: left;
+            font-size: x-large;
+        }
+        #calendar {
+            float: right;
+        }
         </style>
     <div id="news">
-        <h2>Announcements</h2>
-        <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
-        <asp:Calendar ID="Calendar1" runat="server">
-            <TitleStyle BackColor="#dacce6" ForeColor="#7f729a" Font-Bold="true"></TitleStyle>
-            <OtherMonthDayStyle ForeColor="LightGray"></OtherMonthDayStyle>
-            <DayStyle BackColor="white"></DayStyle>
-            <SelectedDayStyle BackColor="#7f729a" Font-Bold="True"></SelectedDayStyle>
-            <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
-        </asp:Calendar>
+        <div id="announcements">
+            <h2>Announcements</h2>
+            <asp:BulletedList ID="blAnnouncements" runat="server"></asp:BulletedList>
+        </div>
+        <div id="calendar">
+            <asp:Calendar ID="Calendar1" runat="server" Width="350px">
+                <TitleStyle BackColor="#dacce6" ForeColor="#7f729a" Font-Bold="true"></TitleStyle>
+                <OtherMonthDayStyle ForeColor="LightGray"></OtherMonthDayStyle>
+                <DayStyle BackColor="white"></DayStyle>
+                <SelectedDayStyle BackColor="#7f729a" Font-Bold="True"></SelectedDayStyle>
+                <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
+            </asp:Calendar>
+        </div>
     </div>
     
 </asp:Content>

@@ -11,9 +11,12 @@ namespace Sprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            grdInternshipApplication.DataBind();
-            grdJobApplication.DataBind();
-            grdOtherApplication.DataBind();
+            if (!IsPostBack)
+            {
+                grdInternshipApplication.DataBind();
+                grdJobApplication.DataBind();
+                grdOtherApplication.DataBind();
+            }
         }
 
     }

@@ -21,11 +21,9 @@
     </style>
     <asp:Label ID="lblHeader" runat="server" Text="Additional Mentorship Application" Font-Bold="True"></asp:Label>
     <br />
-    <asp:Label ID="lblPName" runat="server" Text="Enter your preferred name:"></asp:Label>
+    <asp:Label ID="lblInfo" runat="server" Text="Describe what you are looking for from your mentor"></asp:Label>
     <br />
-    <asp:TextBox ID="txtPName" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="lblInfo" runat="server" Text="Describe what you are looking for from your mentor:"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="(or state your preferred mentor if you have one):"></asp:Label>
     <br />
     <asp:TextBox ID="txtReason" runat="server" Height="129px" Width="496px" TextMode="MultiLine" ></asp:TextBox>
     <br />

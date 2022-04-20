@@ -19,6 +19,32 @@ namespace Sprint1
         {
             if (!IsPostBack)
             {
+                //obtain logged in user firstname
+                String sqlQueryFirstName = "select FirstName from Student Where StudentUserName=@StudentUserName";
+                SqlConnection sqlConnectFirstName = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommandFirstName = new SqlCommand(sqlQueryFirstName, sqlConnectFirstName);
+                sqlCommandFirstName.Parameters.AddWithValue("@StudentUserName", Session["UserName"].ToString());
+                sqlConnectFirstName.Open();
+                sqlCommandFirstName.ExecuteScalar();
+                String studentFirstName = sqlCommandFirstName.ExecuteScalar().ToString();
+                sqlConnectFirstName.Close();
+
+
+
+                //obtain logged in user lastname
+                String sqlQueryLastName = "select LastName from Student Where StudentUserName=@StudentUserName";
+                SqlConnection sqlConnectLastName = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+                SqlCommand sqlCommandLastName = new SqlCommand(sqlQueryLastName, sqlConnectLastName);
+                sqlCommandLastName.Parameters.AddWithValue("@StudentUserName", Session["UserName"].ToString());
+                sqlConnectLastName.Open();
+                sqlCommandLastName.ExecuteScalar();
+                String studentLastName = sqlCommandLastName.ExecuteScalar().ToString();
+                sqlConnectLastName.Close();
+
+
+
+                String studentFullName = studentFirstName + " " + studentLastName;
+                Session["studentFullName"] = studentFullName;
 
                 //obtain logged in user StudentID
                 String sqlQuerySID = "select StudentID from Student Where StudentUserName=@StudentUserName";

@@ -24,13 +24,15 @@
         <h3>Choose a student:</h3>
         <br />
         <asp:DropDownList ID="ddlStudent" runat="server" OnSelectedIndexChanged="ddlStudent_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-        <asp:Label ID="lblInfo" runat="server" Text="" ></asp:Label>
+        <asp:Label ID="reason" runat="server" Text="Reason:"></asp:Label>
+        <br />
+        <asp:Label ID="lblInfo" runat="server" textmode="multiline"  BorderColor="Black" BorderStyle="Solid"  AutoSize="true" ></asp:Label>
         <br />
         <h3>Select mentor:</h3>
         <br />
         <asp:DropDownList ID="ddlMember" runat="server" OnSelectedIndexChanged="ddlMember_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Current Mentees"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="Current Mentees:"></asp:Label>
         <asp:Label ID="lblCurrent" runat="server" Text=""></asp:Label>
         <br />
         <asp:Label ID="Label1" runat="server" Text="Max Mentees:"></asp:Label>

@@ -23,6 +23,9 @@ namespace Sprint1
             String s = Session["StudentID"].ToString();
             try
             {
+                String name = Session["studentFullName"].ToString();
+
+
                 System.Data.SqlClient.SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
                 sqlConnect.Open();
                 SqlCommand sc = new SqlCommand();
@@ -31,7 +34,7 @@ namespace Sprint1
 
                 sc.CommandText = "INSERT INTO studentMentorshipApp (prefName, reason, StudentID, prior) VALUES ("
                     + "@pName, @reason, @StudentID, @prior)";
-                sc.Parameters.Add(new SqlParameter("@pName", HttpUtility.HtmlEncode(txtPName.Text)));
+                sc.Parameters.Add(new SqlParameter("@pName", name));
                 sc.Parameters.Add(new SqlParameter("@reason", HttpUtility.HtmlEncode(txtReason.Text)));
                 sc.Parameters.Add(new SqlParameter("@StudentID", s));
                 sc.Parameters.Add(new SqlParameter("@prior", "y"));

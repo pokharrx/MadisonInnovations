@@ -51,5 +51,12 @@
                 <TodayDayStyle BackColor="#f4efe1" Font-Bold="True" />
             </asp:Calendar>
         </div>
-    <asp:GridView ID="grV" runat="server" Width="250%"></asp:GridView>
+    <asp:GridView ID="grV" runat="server" Width="250%" AutoGenerateColumns="false" >
+    <Columns>
+        <asp:BoundField HeaderText="First Name" DataField="FirstName" />
+        <asp:BoundField HeaderText="Last Name" DataField="LastName" />
+        <asp:BoundField HeaderText="Email" DataField="EmailAddress" />
+
+    </Columns>
+    </asp:GridView>
 </asp:Content>

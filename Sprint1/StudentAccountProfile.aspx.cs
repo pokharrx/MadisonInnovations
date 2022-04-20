@@ -48,6 +48,7 @@ namespace Sprint1
                     txtMajor.Text = queryResults2["Major"].ToString();
                     txtGrade.Text = queryResults2["Grade"].ToString();
                     txtEmploymentStatus.Text = queryResults2["EmploymentStatus"].ToString();
+                    ddlPref.Text = queryResults2["PreferredContact"].ToString();
 
                 }
             }
@@ -64,12 +65,12 @@ namespace Sprint1
                 String fpath = Request.PhysicalApplicationPath + "Resume\\" +
                 fileUploadText.FileName;
                 fileUploadText.SaveAs(fpath);
-                txtDisplay.Text = "Success!";
+                lblStatus.Text = "Your PDF has successfully been stored!";
                 if (File.Exists(fpath))
                 {
                     //read filename and display that is has been saved to account
                     string filename = fileUploadText.FileName;
-                    txtDisplay.Text = filename + " has been saved to your account. To replace the uploaded file, upload another one and it will replace.";
+                    lblStatus.Text = filename + " has been saved to your account. To replace the uploaded file, upload another one and it will replace.";
                     //update Resume column from null to Resume file name
                     String sqlQuery = "UPDATE Student SET Resume = '" + filename + "' WHERE StudentUserName = '" + Session["StudentUserName"].ToString()+"'" ;
 
@@ -85,28 +86,49 @@ namespace Sprint1
                     sqlConnect.Close();
 
 
-                    lstStudentResume.Items.Clear();
-                    updateFROMDB();
+                    //lstStudentResume.Items.Clear();
+                    //updateFROMDB();
 
                 }
             }
             else
             {
-                txtDisplay.Text = "Something went wrong!";
+                lblStatus.Text = "Something went wrong!";
             }
         }
 
         protected void lstStudentResume_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblSelectedIndex.Text = lstStudentResume.SelectedValue;
+            //lblSelectedIndex.Text = lstStudentResume.SelectedValue;
 
             
         }
 
             protected void bttnpdf_Click(object sender, EventArgs e)
         {
-            string StudentResumename = lblSelectedIndex.Text;
-            string FilePath = Server.MapPath("Resume") + "\\" + StudentResumename; //changed this from student resume to resume
+            string resume = "";
+            String sqlQuery = "SELECT [Resume] FROM [Student]";
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnect;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = sqlQuery;
+
+            sqlConnect.Open();
+            SqlDataReader queryResults = sqlCommand.ExecuteReader();
+
+
+            while (queryResults.Read())
+            {
+                resume = queryResults["Resume"].ToString();
+            }
+
+            sqlConnect.Close();
+            queryResults.Close();
+
+            //string StudentResumename = lblSelectedIndex.Text;
+            string FilePath = Server.MapPath("Resume") + "\\" + resume; //changed this from student resume to resume
             WebClient User = new WebClient();
             Byte[] FileBuffer = User.DownloadData(FilePath);
             if (FileBuffer != null)
@@ -117,7 +139,7 @@ namespace Sprint1
             }
             else
             {
-                txtDisplay.Text = "Something went wrong!";
+                lblStatus.Text = "Something went wrong!";
             }
         }
 
@@ -138,10 +160,10 @@ namespace Sprint1
             SqlDataReader queryResults = sqlCommand.ExecuteReader();
 
 
-            while (queryResults.Read())
-            {
-                lstStudentResume.Items.Add(new ListItem(queryResults["Resume"].ToString()));
-            }
+            //while (queryResults.Read())
+            //{
+            //    lstStudentResume.Items.Add(new ListItem(queryResults["Resume"].ToString()));
+            //}
 
             sqlConnect.Close();
             queryResults.Close();
@@ -151,7 +173,7 @@ namespace Sprint1
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             
-            String sqlQuery = "UPDATE Student SET FirstName = @FirstName, LastName=@LastName, EmailAddress=@EmailAddress, PhoneNumber=@PhoneNumber, GradYear=@GradYear, Major=@Major, Grade=@Grade, EmploymentStatus=@EmploymentStatus WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
+            String sqlQuery = "UPDATE Student SET FirstName = @FirstName, LastName=@LastName, EmailAddress=@EmailAddress, PhoneNumber=@PhoneNumber, GradYear=@GradYear, Major=@Major, Grade=@Grade, EmploymentStatus=@EmploymentStatus, PreferredContact=@PreferredContact WHERE StudentUserName = '" + Session["StudentUserName"].ToString() + "'";
             SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
 
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnect);
@@ -163,6 +185,7 @@ namespace Sprint1
             sqlCommand.Parameters.AddWithValue("@Major", txtMajor.Text);
             sqlCommand.Parameters.AddWithValue("@Grade", txtGrade.Text);
             sqlCommand.Parameters.AddWithValue("@EmploymentStatus", txtEmploymentStatus.Text);
+            sqlCommand.Parameters.AddWithValue("@PreferredContact", ddlPref.Text);
 
             sqlCommand.CommandType = CommandType.Text;
             sqlCommand.CommandText = sqlQuery;
@@ -179,6 +202,26 @@ namespace Sprint1
             lblStatus.Text = "Successfully updated Student Info!";
 
             edit.Visible = false;
+            lblStudentFirstName.Visible = false;
+            txtStudentFirstName.Visible = false;
+            lblStudentLastName.Visible = false;
+            txtStudentLastName.Visible = false;
+            lblStudentEmail.Visible = false;
+            txtStudentEmail.Visible = false;
+            lblStudentPhoneNumber.Visible = false;
+            txtStudentPhoneNumber.Visible = false;
+            lblExpectedGraduation.Visible = false;
+            txtExpectedGraduation.Visible = false;
+            lblGrade.Visible = false;
+            txtGrade.Visible = false;
+            lblMajor.Visible = false;
+            txtMajor.Visible = false;
+            txtEmploymentStatus.Visible = false;
+            lblEmploymentStatus.Visible = false;
+            lblPref.Visible = false;
+            ddlPref.Visible = false;
+            btnCancel.Visible = false;
+            
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -186,12 +229,30 @@ namespace Sprint1
             if (edit.Visible == false)
             {
                 edit.Visible = true;
+                btnCancel.Visible = true;
             }
             else
             {
                 edit.Visible = false;
             }
             
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            edit.Visible = false;
+            
+        }
+
+        protected void btnAddResume_Click(object sender, EventArgs e)
+        {
+            btnAddResume.Visible = false;
+            ResumeEdit.Visible = true;
+        }
+
+        protected void btnDone_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StudentAccountProfile.aspx");
         }
 
         //protected void btnPopulate_Click(object sender, EventArgs e)

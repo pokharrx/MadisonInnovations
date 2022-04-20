@@ -115,40 +115,61 @@
         <%--Employment Status --%>
         <asp:Label ID="lblEmploymentStatus" runat="server" Text="Enter Your EmploymentStatus"></asp:Label>
         <asp:TextBox ID="txtEmploymentStatus" runat="server"></asp:TextBox>
+
+        <br />
+
+        <%--Preferred Method of Contact --%>
+        <asp:Label ID="lblPref" runat="server" Text="Enter Your Preferred Method of Contact"></asp:Label>
+        <asp:DropDownList ID="ddlPref" runat="server">
+            <asp:ListItem>Email</asp:ListItem>
+            <asp:ListItem>Call</asp:ListItem>
+            <asp:ListItem>Text</asp:ListItem>
+        </asp:DropDownList>
             <br />
             <br />
        <%-- <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" />--%>
         <asp:Button ID="btnUpdate" runat="server" Text="Update" Onclick="btnUpdate_Click" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" Visible="false" OnClick="btnCancel_Click"/>
+        <br />
 
         <%--Status- lable --%>
-        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lblStatusEdit" runat="server" Text=""></asp:Label>
     </div>
     <div>
         <br />
-        <h1>My Files</h1>
+        <h1>My Resume File</h1>
         <hr />
+        <asp:Button ID="btnAddResume" runat="server" Text="Upload Resume" OnClick="btnAddResume_Click"/>
+        <br />
+        <div id="ResumeEdit" runat="server" visible="false">
             <asp:Label ID="Label1" runat="server" Text="Choose PDF File to
-            Upload. Uploading a file will also replace the file you have attached to your account."></asp:Label>
+            Upload. Uploading a file will replace the file you have attached to your account."></asp:Label>
+        <br />
                         <asp:FileUpload ID="fileUploadText" runat="server" />
                         <br />
             <asp:Button ID="btnUploadFile" runat="server" Text="Upload File"
             OnClick="btnUploadFile_Click" />
                         <br />
-            <asp:TextBox ID="txtDisplay" runat="server" TextMode="MultiLine"
+            <%--<asp:TextBox ID="txtDisplay" runat="server" TextMode="MultiLine"
             Rows="20" Height="40px" Width="269px"></asp:TextBox>
         <asp:Label ID="Label2" runat="server" Text="File that is linked to your acccount"></asp:Label>
-        <br />
-        <asp:ListBox ID="lstStudentResume" runat="server"
+        <br />--%>
+        <%--<asp:ListBox ID="lstStudentResume" runat="server"
             AutoPostBack="false" 
             DataSourceID="sqlsrcStudentResumeLB"
             DataTextField="Resume"
             OnSelectedIndexChanged="lstStudentResume_SelectedIndexChanged">
-        </asp:ListBox>
+        </asp:ListBox>--%>
         <asp:Label ID="lblSelectedIndex" runat="server" Text="Index"></asp:Label>
         <br />
         <asp:Button ID="bttnpdf" runat="server" Text="Click to view PDF" Font-Bold="True" OnClick="bttnpdf_Click" /> 
         <br />
+        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
         <br />
+        <asp:Label ID="lblDone" runat="server" Text="Are you finished uploading a resume?"></asp:Label>
+        <br />
+        <asp:Button ID="btnDone" runat="server" Text="Finish" OnClick="btnDone_Click"/>
+        </div>
 
     
         

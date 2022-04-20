@@ -22,7 +22,7 @@
     <asp:CheckBox ID="chbxOfferStatus" runat="server" />
     <br />
 
-    <asp:Label ID="lblAcceptanceStatus" runat="server" Text="Check off the box if you have recieved an interview: "></asp:Label>
+    <asp:Label ID="lblAcceptanceStatus" runat="server" Text="Check off the box if you have accepted an offer: "></asp:Label>
     <asp:CheckBox ID="chbxAcceptanceStatus" runat="server" />
     <br />
 

@@ -48,7 +48,7 @@
         </Columns>
                 
             </asp:GridView>
-           <asp:SqlDataSource ID="SqlStudentJobApps" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=SDB;Integrated Security=True" ProviderName="System.Data.SqlClient" 
+           <asp:SqlDataSource ID="SqlStudentJobApps" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" ProviderName="System.Data.SqlClient" 
                SelectCommand="SELECT JobApplication. JobApplicationID,  Job. JobTitle,  JobApplication.ApplicationStatus,  JobApplication.InterviewStatus,  JobApplication.OfferStatus,  JobApplication.AcceptedStatus FROM  JobApplication INNER JOIN  Job ON  JobApplication. JobID =  Job. JobID WHERE ( JobApplication.StudentID = @StudentID)"
                UpdateCommand="Update  JobApplication Set ApplicationStatus=@ApplicationStatus,InterviewStatus=@InterviewStatus, OfferStatus=@OfferStatus, AcceptedStatus=@AcceptedStatus Where  JobApplicationID=@JobApplicationID ">
                <SelectParameters>
@@ -82,7 +82,7 @@
         </Columns>
                 
             </asp:GridView>
-           <asp:SqlDataSource ID="SqlStudentInternshipApps" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=SDB;Integrated Security=True" ProviderName="System.Data.SqlClient" 
+           <asp:SqlDataSource ID="SqlStudentInternshipApps" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" ProviderName="System.Data.SqlClient" 
                SelectCommand="SELECT InternshipApplication.InternshipApplicationID, Internship.InternshipTitle, InternshipApplication.ApplicationStatus, InternshipApplication.InterviewStatus, InternshipApplication.OfferStatus, InternshipApplication.AcceptedStatus FROM InternshipApplication INNER JOIN Internship ON InternshipApplication.InternshipID = Internship.InternshipID WHERE (InternshipApplication.StudentID = @StudentID)"
                UpdateCommand="Update InternshipApplication Set ApplicationStatus=@ApplicationStatus,InterviewStatus=@InterviewStatus, OfferStatus=@OfferStatus, AcceptedStatus=@AcceptedStatus Where InternshipApplicationID=@InternshipApplicationID ">
                <SelectParameters>
@@ -116,7 +116,7 @@
         </Columns>
                 
             </asp:GridView>
-           <asp:SqlDataSource ID="SqlStudentOtherApps" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=SDB;Integrated Security=True" ProviderName="System.Data.SqlClient" 
+           <asp:SqlDataSource ID="SqlStudentOtherApps" runat="server" ConnectionString="<%$ ConnectionStrings:SDB %>" ProviderName="System.Data.SqlClient" 
                SelectCommand="SELECT OtherApplication.OtherApplicationID, Other.OtherTitle, OtherApplication.ApplicationStatus, OtherApplication.InterviewStatus,OtherApplication.OfferStatus, OtherApplication.AcceptedStatus FROM OtherApplication INNER JOIN Other ON OtherApplication.OtherID = Other.OtherID WHERE (OtherApplication.StudentID = @StudentID)"
                UpdateCommand="Update OtherApplication Set ApplicationStatus=@ApplicationStatus,InterviewStatus=@InterviewStatus, OfferStatus=@OfferStatus, AcceptedStatus=@AcceptedStatus Where OtherApplicationID=@OtherApplicationID ">
                <SelectParameters>

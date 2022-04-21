@@ -16,8 +16,26 @@ namespace Sprint1
         protected void Page_Load(object sender, EventArgs e)
         {
             MaintainScrollPositionOnPostBack = true;
+            String mentees = "SELECT top 1 numMentees, memberID FROM memberMentorPref;";
+            SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
+            SqlCommand sqlCommand3 = new SqlCommand();
+            sqlCommand3.Connection = sqlConnect3;
+            sqlCommand3.CommandType = CommandType.Text;
+            sqlCommand3.CommandText = mentees;
+
+            sqlConnect3.Open();
+            SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
+            while (queryResults3.Read())
+            {
+                //pull the max
+                lblMax.Text = queryResults3["numMentees"].ToString();
+                Session["load"] = queryResults3["memberID"].ToString();
+
+            }
 
 
+            sqlConnect3.Close();
+            queryResults3.Close();
             if (!IsPostBack)//change it so that the queries populate from new tables
             {
                 if (!IsPostBack)//change it so that the queries populate from new tables
@@ -42,27 +60,9 @@ namespace Sprint1
                             lblInfo.Text = queryResults1["reason"].ToString();
 
                         }
-                        String mentees = "SELECT top 1 numMentees, memberID FROM memberMentorPref;";
+                        
 
-                        SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["SDB"].ConnectionString);
-                        SqlCommand sqlCommand3 = new SqlCommand();
-                        sqlCommand3.Connection = sqlConnect3;
-                        sqlCommand3.CommandType = CommandType.Text;
-                        sqlCommand3.CommandText = mentees;
-
-                        sqlConnect3.Open();
-                        SqlDataReader queryResults3 = sqlCommand3.ExecuteReader();
-                        while (queryResults3.Read())
-                        {
-                            //pull the max
-                            lblMax.Text = queryResults3["numMentees"].ToString();
-                            Session["load"] = queryResults3["memberID"].ToString();
-
-                        }
-
-
-                        sqlConnect3.Close();
-                        queryResults3.Close();
+                        
 
 
                         sqlConnect1.Close();
